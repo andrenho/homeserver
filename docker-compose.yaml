@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  dns:
+    build: dns
+    restart: always
+    image: dns:latest
+    volumes:
+      - type: bind
+        source: ./dns/conf
+        target: /etc/dnsmasq.d
+    ports:
+      - "53:53"
+      - "53:53/udp"
+    dns: 192.168.15.1

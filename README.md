@@ -27,7 +27,8 @@
 ```
 # nmcli device wifi connect ESSID password XXXXXXX
 # sudo pacman -S git sudo vim
-# visudo
+# groupadd sudo
+# useradd -G sudo andre
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
 $ cd homeserver
 $ sudo ./install.sh

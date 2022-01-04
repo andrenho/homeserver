@@ -1,6 +1,6 @@
 - [X] OS installation
 - [X] OS configuration
-- [ ] DNS (on docker)
+- [X] DNS (on docker)
 - [ ] Homepage (homer)
 - [ ] Dynamic DNS name (DuckDNS or ddclient)
 - [ ] Authentication
