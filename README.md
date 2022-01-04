@@ -5,6 +5,7 @@
 1. Create bootable USB stick
 
 - make sure docker is running
+- make sure the SSH key is handy
 
 ```sh
 git clone https://github.com/coreprocess/linux-unattended-installation.git
