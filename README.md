@@ -17,4 +17,7 @@ $ ssh root@SERVER-IP
 # curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis.conf > alis.conf          # Edit to change preferences  (add WI-FI preferences!)
 # curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis-packages.conf > alis-packages.conf  # Edit to change preferences
 # ./alis.sh               # Start installation
+#                         # After reboot...
+# systemctl enable sshd
+# systemctl enable docker
 ```
