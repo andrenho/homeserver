@@ -18,7 +18,9 @@ $ ssh root@SERVER-IP      # Run this on the client
 # REBOOT
 #
 
-# curl -sL https://bit.ly/2F3CATp | bash
-# curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis-packages.conf > alis-packages.conf  # Edit to change preferences
-# ./alis-packages.sh      # Install packages
+# # Setup wi-fi and sudo
+$ sudo pacman -S git
+$ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
+$ cd homeserver
+$ ./install.sh
 ```
