@@ -22,5 +22,5 @@ $ ssh root@SERVER-IP      # Run this on the client
 $ sudo pacman -S git
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
 $ cd homeserver
-$ ./install.sh
+$ sudo ./install.sh
 ```
