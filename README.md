@@ -14,7 +14,7 @@
 ```
 $ ssh root@SERVER-IP
 # curl -sL https://bit.ly/2F3CATp | bash              # Install alis
-# curl https://shorturl.at/tuyWY > alis.conf          # Edit to change preferences  (add WI-FI preferences!)
-# curl https:/shorturl.at/nrEOP > alis-packages.conf  # Edit to change preferences
+# curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis.conf > alis.conf          # Edit to change preferences  (add WI-FI preferences!)
+# curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis-packages.conf > alis-packages.conf  # Edit to change preferences
 # ./alis.sh               # Start installation
 ```
