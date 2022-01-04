@@ -1,9 +1,10 @@
 - [X] OS installation
 - [X] OS configuration
 - [X] DNS (on docker)
-- [ ] Homepage (homer)
+- [ ] Homepage (homer) - HTTP
 - [ ] Dynamic DNS name (DuckDNS or ddclient)
-- [ ] Authentication
+- [ ] HTTPS
+- [ ] Authentication (Authelia)
 - [ ] Torrents (Deluge?)
 - [ ] View media online (jellyfin? plex?)
 - [ ] Openbooks

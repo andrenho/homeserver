@@ -12,7 +12,7 @@ usermod -aG docker andre
 pacman -Suy
 pacman -S --needed \
   wget iwd dhcpcd bash-completion sudo docker man-db man-pages vim tmux git python gcc mlocate \
-  dnsutils docker-compose htop lsof inetutils
+  dnsutils docker-compose htop lsof inetutils unzip
 
 # Get configuration files from the internet
 mkdir -p /usr/share/git-core/contrib/completion
