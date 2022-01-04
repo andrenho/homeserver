@@ -1,0 +1,14 @@
+- [X] OS installation
+- [X] OS configuration
+- [ ] DNS (on docker)
+- [ ] Homepage (homer)
+- [ ] Dynamic DNS name (DuckDNS or ddclient)
+- [ ] Authentication
+- [ ] Torrents (Deluge?)
+- [ ] View media online (jellyfin? plex?)
+- [ ] Openbooks
+- [ ] Password manager (Vaultwarden?)
+- [ ] Backup to other server and cloud
+- [ ] PiKVM
+- [ ] PiHole
+- [ ] https://github.com/awesome-selfhosted/awesome-selfhosted
