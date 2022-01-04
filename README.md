@@ -4,7 +4,6 @@
 
 ```
 #                         # Start the system with latest Arch Linux installation media
-# loadkeys [keymap]       # Load keyboard keymap, eg. loadkeys es, loadkeys us, loadkeys de
 # iwctl --passphrase "[WIFI_KEY]" station [WIFI_INTERFACE] connect "[WIFI_ESSID]"      # (Optional) Connect to WIFI network. _ip link show_ to know WIFI_INTERFACE.
 # passwd                  # Set a password for the root user
 # ip address              # Get IP to run install remotely
