@@ -18,7 +18,7 @@
 
 ```
 # curl -sL https://bit.ly/2F3CATp | bash              # Install alis
-# curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis.conf > alis.conf          # Edit to change preferences
+# curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis.conf > alis.conf
 # ./alis.sh               # Start installation
 ```
 
