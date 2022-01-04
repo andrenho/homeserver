@@ -18,6 +18,6 @@ $ ssh root@SERVER-IP
 # curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis-packages.conf > alis-packages.conf  # Edit to change preferences
 # ./alis.sh               # Start installation
 #                         # After reboot...
+#                         # Setup static IP
 # systemctl enable sshd
-# systemctl enable docker
 ```
