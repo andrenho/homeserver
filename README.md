@@ -1,6 +1,6 @@
 # homeserver
 
-## On the server
+## On the server  (start Arch installation)
 
 ```
 #                         # Start the system with latest Arch Linux installation media
@@ -9,7 +9,7 @@
 # ip address              # Get IP to run install remotely
 ```
 
-## On the client
+## On the client (finish Arch installation)
 
 ```
 $ ssh root@SERVER-IP
