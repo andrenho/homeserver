@@ -12,10 +12,13 @@ $ ssh root@SERVER-IP      # Run this on the client
 #                         # Continue installation...
 # curl -sL https://bit.ly/2F3CATp | bash              # Install alis
 # curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis.conf > alis.conf          # Edit to change preferences  (add WI-FI preferences!)
-# curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis-packages.conf > alis-packages.conf  # Edit to change preferences
 # ./alis.sh               # Start installation
+
+#
+# REBOOT
+#
+
+# curl -sL https://bit.ly/2F3CATp | bash
+# curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis-packages.conf > alis-packages.conf  # Edit to change preferences
 # ./alis-packages.sh      # Install packages
-#                         # After reboot...
-#                         # Setup static IP
-# systemctl enable sshd
 ```
