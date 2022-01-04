@@ -10,24 +10,23 @@
 1. (OPTIONAL) To continue installation remotely, use the commands below, otherwise skip it.
 
 ```
-# passwd      # Set a password for the root user
+# passwd
 # ip address  # Get IP to run install remotely
 ```
 
-1. Configure arch on the server, or connected by SSH:
+1. Install alis and let it configure arch on the server.
 
 ```
-# curl -sL https://bit.ly/2F3CATp | bash              # Install alis
+# curl -sL https://bit.ly/2F3CATp | bash
 # curl https://raw.githubusercontent.com/andrenho/homeserver/master/arch/alis.conf > alis.conf
-# ./alis.sh               # Start installation
+# ./alis.sh
 ```
 
 1. Reboot the system after installation is complete, and install the homeserver.
 
 ```
-# # Setup wi-fi and sudo
 # nmcli device wifi connect ESSID password XXXXXXX
-# sudo pacman -S git sudo
+# sudo pacman -S git sudo vim
 # visudo
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
 $ cd homeserver
