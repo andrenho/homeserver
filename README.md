@@ -4,7 +4,7 @@
 #                         # Start the system with latest Arch Linux installation media
 # iwctl --passphrase "[WIFI_KEY]" station [WIFI_INTERFACE] connect "[WIFI_ESSID]"      # (Optional) Connect to WIFI network. _ip link show_ to know WIFI_INTERFACE.
 
-#                         # If a remote install is desired...
+#                         # If a remote install is desired (otherwise skip these lines)...
 # passwd                  # Set a password for the root user
 # ip address              # Get IP to run install remotely
 $ ssh root@SERVER-IP      # Run this on the client
