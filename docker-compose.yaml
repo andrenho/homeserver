@@ -2,7 +2,7 @@ version: '3.9'
 services:
   dns:
     build: dns
-    restart: always
+    restart: unless-stopped
     image: dns:latest
     volumes:
       - type: bind
@@ -13,6 +13,27 @@ services:
       - "53:53/udp"
     dns: 192.168.15.1
 
+  dynamicdns:
+    build: dynamicdns
+    restart: unless-stopped
+    image: dynamicdns:latest
+    secrets:
+      - source: aws_credentials
+        target: /root/.aws/credentials
+
+  nginx-proxy-mgr:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+      - '81:81'
+    environment:
+      DISABLE_IPV6: 'true'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+
   hello:
     build: hello
     restart: always
@@ -20,25 +41,17 @@ services:
     ports:
       - "8080:80"
 
-  ssl_offload:
-    build: ssl_offload
-    restart: always
-    volumes:
-      - type: bind
-        source: ./ssl_offload/cert
-        target: /etc/ssl
-    image: ssl_offload:latest
-    ports:
-      - "80:80"
-      - "443:443"
-
-  dynamicdns:
-    build: dynamicdns
-    restart: always
-    image: dynamicdns:latest
-    secrets:
-      - source: aws_credentials
-        target: /root/.aws/credentials
+#  ssl_offload:
+#    build: ssl_offload
+#    restart: always
+#    volumes:
+#      - type: bind
+#        source: ./ssl_offload/cert
+#        target: /etc/ssl
+#    image: ssl_offload:latest
+#    ports:
+#      - "80:80"
+#      - "443:443"
 
 #  homer:
 #    restart: always
