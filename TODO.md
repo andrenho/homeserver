@@ -20,4 +20,5 @@
 - [ ] Backup to other server and cloud
 - [ ] PiKVM
 - [ ] PiHole
+- [ ] Protect machine with firewall (ufw?)
 - [ ] https://github.com/awesome-selfhosted/awesome-selfhosted
