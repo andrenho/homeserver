@@ -2,11 +2,11 @@
 - [X] OS configuration
 - [X] DNS (on docker)
 - [X] Open SSH in non-standar port
-- [ ] Split initialization scripts
+- [X] Split initialization scripts
 - [X] Simple hello world HTTP
-  - [ ] Dynamic DNS name (DuckDNS or ddclient)
-    - [ ] AWS credentials/role
-    - [ ] Script to update IP in Route53 (https://api.ipify.org/)
+  - [X] Dynamic DNS name (DuckDNS or ddclient)
+    - [X] AWS credentials/role
+    - [X] Script to update IP in Route53 (https://api.ipify.org/)
   - [ ] Let's encrypt
   - [ ] HTTPS redirection
   - [ ] Authentication (Authelia)
