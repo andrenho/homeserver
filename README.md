@@ -31,5 +31,5 @@
 # useradd -G sudo andre
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
 $ cd homeserver
-$ sudo ./install.sh
+$ ./install.sh
 ```
