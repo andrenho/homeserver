@@ -12,12 +12,17 @@ services:
       - "53:53"
       - "53:53/udp"
     dns: 192.168.15.1
-  homer:
-    restart: always
-    image: b4bz/homer:latest
-    volumes:
-      - type: bind
-        source: ./dns/conf
-        target: /www/asssets
+  hello:
+    build: hello
+    image: hello:latesst
     ports:
-      - "8080:8080"
+      - "8080:80"
+#  homer:
+#    restart: always
+#    image: b4bz/homer:latest
+#    volumes:
+#      - type: bind
+#        source: ./dns/conf
+#        target: /www/asssets
+#    ports:
+#      - "8080:8080"

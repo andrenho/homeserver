@@ -1,10 +1,16 @@
 - [X] OS installation
 - [X] OS configuration
 - [X] DNS (on docker)
+- [X] Open SSH in non-standar port
+- [ ] Split initialization scripts
+- [X] Simple hello world HTTP
+  - [ ] Dynamic DNS name (DuckDNS or ddclient)
+    - [ ] AWS credentials/role
+    - [ ] Script to update IP in Route53 (https://api.ipify.org/)
+  - [ ] Let's encrypt
+  - [ ] HTTPS redirection
+  - [ ] Authentication (Authelia)
 - [ ] Homepage (homer) - HTTP
-- [ ] Dynamic DNS name (DuckDNS or ddclient)
-- [ ] HTTPS
-- [ ] Authentication (Authelia)
 - [ ] Torrents (Deluge?)
 - [ ] View media online (jellyfin? plex?)
 - [ ] Openbooks
