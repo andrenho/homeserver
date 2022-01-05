@@ -10,6 +10,7 @@
   - [ ] Let's encrypt
   - [ ] HTTPS redirection
   - [ ] Authentication (Authelia)
+  - [ ] Log aggregator
 - [ ] Homepage (homer) - HTTP
 - [ ] Torrents (Deluge?)
 - [ ] View media online (jellyfin? plex?)
