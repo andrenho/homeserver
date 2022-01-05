@@ -16,9 +16,16 @@ services:
   hello:
     build: hello
     restart: always
-    image: hello:latesst
+    image: hello:latest
     ports:
       - "8080:80"
+
+  ssl_offload:
+    build: ssl_offload
+    restart: always
+    image: ssl_offload:latest
+    ports:
+      - "80:80"
 
   dynamicdns:
     build: dynamicdns
