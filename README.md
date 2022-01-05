@@ -24,6 +24,7 @@
 
 1. Reboot the system after installation is complete, and install the homeserver. 
   - Make sure to add the AWS credentials file.
+  - Place SSL certificates into the location below.
 
 ```
 # nmcli device wifi connect ESSID password XXXXXXX
@@ -31,6 +32,7 @@
 # groupadd sudo
 # useradd -G sudo andre
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
+$ # Place SSL certificates into homeserver/ssl_offload/cert (certificate.crt and private.key)
 $ cd homeserver
 $ ./install.sh
 ```

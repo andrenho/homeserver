@@ -23,9 +23,14 @@ services:
   ssl_offload:
     build: ssl_offload
     restart: always
+    volumes:
+      - type: bind
+        source: ./ssl_offload/cert
+        target: /etc/ssl
     image: ssl_offload:latest
     ports:
       - "80:80"
+      - "443:443"
 
   dynamicdns:
     build: dynamicdns
