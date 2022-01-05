@@ -1,4 +1,5 @@
 #/bin/sh
 
+sudo systemctl stop docker-compose-app
 docker system prune --volumes -f
-pacman -Scc --noconfirm
+sudo pacman -Scc --noconfirm

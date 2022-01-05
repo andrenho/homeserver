@@ -2,6 +2,7 @@ import boto3
 import ipaddress
 import os
 import requests
+import time
 
 DNS_NAME = os.getenv('DNS_NAME')
 PUBLIC_IP_WS = os.getenv('PUBLIC_IP_WS')
@@ -28,8 +29,11 @@ def update_ip_on_route_53(dns_name, public_ip):
     pass
 
 if __name__ == '__main__':
-    public_ip = get_public_ip()
-    if public_ip != stored_public_ip():
-        print('An IP change was identified! The new IP is ' + public_ip)
-        save_public_ip(public_ip)
-        update_ip_on_route_53(DNS_NAME, public_ip)
+    while True:
+        public_ip = get_public_ip()
+        print('Public IP is ' + public_ip)  # TODO - remove
+        if public_ip != stored_public_ip():
+            print('An IP change was identified! The new IP is ' + public_ip)
+            save_public_ip(public_ip)
+            update_ip_on_route_53(DNS_NAME, public_ip)
+        time.sleep(10)  # TODO - change time
