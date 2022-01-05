@@ -7,7 +7,7 @@ set -ex  # stop at errors
 pacman -Suy
 pacman -S --needed \
   wget iwd dhcpcd bash-completion sudo docker man-db man-pages vim tmux git python gcc mlocate \
-  dnsutils docker-compose htop lsof inetutils unzip
+  dnsutils docker-compose htop lsof inetutils unzip mc
 
 # Get configuration files from the internet
 mkdir -p /usr/share/git-core/contrib/completion
