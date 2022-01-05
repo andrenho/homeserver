@@ -20,14 +20,14 @@ services:
     ports:
       - "8080:80"
 
-  ssl_offload:
-    build: ssl_offload
+  proxy:
+    build: proxy
     restart: always
     volumes:
       - type: bind
-        source: ./ssl_offload/cert
+        source: ./proxy/cert
         target: /etc/ssl
-    image: ssl_offload:latest
+    image: proxy:latest
     ports:
       - "80:80"
       - "443:443"

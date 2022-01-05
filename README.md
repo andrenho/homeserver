@@ -1,20 +1,20 @@
 # homeserver
 
 1. Start the system with latest Arch Linux installation media.
-1. Connect to wi-fi if needed:
+2. Connect to wi-fi if needed:
 
 ```
 # iwctl --passphrase "[WIFI_KEY]" station [WIFI_INTERFACE] connect "[WIFI_ESSID]"
 ```
 
-1. (OPTIONAL) To continue installation remotely, use the commands below, otherwise skip it.
+3. (OPTIONAL) To continue installation remotely, use the commands below, otherwise skip it.
 
 ```
 # passwd
 # ip address  # Get IP to run install remotely
 ```
 
-1. Install alis and let it configure arch on the server.
+4. Install alis and let it configure arch on the server.
 
 ```
 # curl -sL https://bit.ly/2F3CATp | bash
@@ -22,9 +22,9 @@
 # ./alis.sh
 ```
 
-1. Reboot the system after installation is complete, and install the homeserver. 
-  - Make sure to add the AWS credentials file.
-  - Place SSL certificates into the location below.
+5. Reboot the system after installation is complete, and install the homeserver. 
+  - Add the AWS credentials and config file to `/home/andre/.aws/`
+  - Place SSL certificates in `/home/andre/homeserver/proxy/cert`
 
 ```
 # nmcli device wifi connect ESSID password XXXXXXX
@@ -32,7 +32,7 @@
 # groupadd sudo
 # useradd -G sudo andre
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
-$ # Place SSL certificates into homeserver/ssl_offload/cert (certificate.crt and private.key)
+$ # Place SSL certificates into homeserver/proxy/cert (certificate.crt and private.key)
 $ cd homeserver
 $ ./install.sh
 ```
