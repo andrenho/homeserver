@@ -24,7 +24,7 @@
 
 5. Reboot the system after installation is complete, and install the homeserver. 
   - Add the AWS credentials and config file to `/home/andre/.aws/`
-  - Place SSL certificates in `/home/andre/homeserver/proxy/cert`
+  - Place SSL certificates in `/home/andre/homeserver/proxy/cert` after cloning the repository.
 
 ```
 # nmcli device wifi connect ESSID password XXXXXXX
@@ -34,5 +34,6 @@
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
 $ # Place SSL certificates into homeserver/proxy/cert (certificate.crt and private.key)
 $ cd homeserver
+$ ./scripts/add_password.sh     # add password for admin
 $ ./install.sh
 ```
