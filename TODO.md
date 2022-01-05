@@ -7,11 +7,12 @@
   - [X] Dynamic DNS name (DuckDNS or ddclient)
     - [X] AWS credentials/role
     - [X] Script to update IP in Route53 (https://api.ipify.org/)
-  - [ ] Let's encrypt
-  - [ ] HTTPS redirection
+  - [X] SSL certificate
+  - [X] HTTPS redirection
   - [ ] Authentication (Authelia)
   - [ ] Log aggregator
 - [ ] Homepage (homer) - HTTP
+- [ ] SSL certificate auto-renewal
 - [ ] Torrents (Deluge?)
 - [ ] View media online (jellyfin? plex?)
 - [ ] Openbooks
