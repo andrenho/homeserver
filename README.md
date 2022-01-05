@@ -22,7 +22,8 @@
 # ./alis.sh
 ```
 
-1. Reboot the system after installation is complete, and install the homeserver.
+1. Reboot the system after installation is complete, and install the homeserver. 
+  - Make sure to add the AWS credentials file.
 
 ```
 # nmcli device wifi connect ESSID password XXXXXXX

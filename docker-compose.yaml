@@ -12,11 +12,22 @@ services:
       - "53:53"
       - "53:53/udp"
     dns: 192.168.15.1
+
   hello:
     build: hello
+    restart: always
     image: hello:latesst
     ports:
       - "8080:80"
+
+  dynamicdns:
+    build: dynamicdns
+    restart: always
+    image: dynamicdns:latest
+    secrets:
+      - source: aws_credentials
+        target: /root/.aws/credentials
+
 #  homer:
 #    restart: always
 #    image: b4bz/homer:latest
@@ -26,3 +37,7 @@ services:
 #        target: /www/asssets
 #    ports:
 #      - "8080:8080"
+
+secrets:
+  aws_credentials:
+    file: /home/andre/.aws/credentials

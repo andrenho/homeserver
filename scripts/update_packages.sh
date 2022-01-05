@@ -11,7 +11,7 @@ fi
 sudo pacman -Suy
 sudo pacman -S --noconfirm --needed \
   wget iwd dhcpcd bash-completion sudo docker man-db man-pages vim tmux git python gcc mlocate \
-  dnsutils docker-compose htop lsof inetutils unzip mc base-devel
+  dnsutils docker-compose htop lsof inetutils unzip mc base-devel jq
 
 # Install yay, if not installed
 if ! command -v yay &> /dev/null

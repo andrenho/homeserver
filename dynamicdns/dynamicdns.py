@@ -4,8 +4,9 @@ import os
 import requests
 import time
 
-DNS_NAME = os.getenv('DNS_NAME')
 PUBLIC_IP_WS = os.getenv('PUBLIC_IP_WS')
+ZONE_ID = os.getenv('ZONE_ID')
+RECORD_NAME = os.getenv('RECORD_NAME')
 STORED_IP_PATH = '/tmp/public_ip.txt'
 
 def get_public_ip():
@@ -25,15 +26,27 @@ def save_public_ip(public_ip):
     with open(STORED_IP_PATH, 'w') as f:
         return f.write(public_ip)
 
-def update_ip_on_route_53(dns_name, public_ip):
-    pass
+def update_ip_on_route_53(zone_id, public_ip):
+    client = boto3.client('route53')
+    client.change_resource_record_sets(HostedZoneId=zone_id, ChangeBatch={
+        'Changes': [{
+            'Action': 'UPSERT',
+            'ResourceRecordSet': {
+                'ResourceRecords': [{ 'Value': public_ip }],
+                'Name': RECORD_NAME,
+                'Type': 'A',
+                'TTL': 60
+            }
+        }],
+        'Comment': 'Public IP updated to ' + public_ip
+    })
+    print('IP updated on AWS.')
 
 if __name__ == '__main__':
     while True:
         public_ip = get_public_ip()
-        print('Public IP is ' + public_ip)  # TODO - remove
         if public_ip != stored_public_ip():
             print('An IP change was identified! The new IP is ' + public_ip)
             save_public_ip(public_ip)
-            update_ip_on_route_53(DNS_NAME, public_ip)
-        time.sleep(10)  # TODO - change time
+            update_ip_on_route_53(ZONE_ID, public_ip)
+        time.sleep(10)
