@@ -90,4 +90,4 @@ services:
         logo: "assets/tools/qbittorrent.png"
         subtitle: "File sharing via torrent"
         tag: "media"
-        url: "http://homeserver.gamesmith.uk:8080/"
+        url: "http://homeserver.gamesmith.uk:8444/"
