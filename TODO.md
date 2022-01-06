@@ -10,11 +10,11 @@
   - [X] SSL certificate
   - [X] HTTPS redirection
   - [X] Authentication (Authelia)
-  - [ ] Log aggregator
-- [ ] Homepage (homer) - HTTP
-- [ ] SSL certificate auto-renewal
-- [ ] Torrents (Deluge?)
+- [X] Homepage (homer) - HTTP
+- [ ] Torrents (Deluge?, or Qbittorrent + Vuetorrent)
+- [ ] Log aggregator
 - [ ] View media online (jellyfin? plex?)
+- [ ] SSL certificate auto-renewal
 - [ ] Openbooks
 - [ ] Password manager (Vaultwarden?)
 - [ ] Backup to other server and cloud

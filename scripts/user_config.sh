@@ -18,3 +18,7 @@ cp -p arch/.bashrc /home/andre/
 cp -p arch/.tmux.conf /home/andre/
 cp -p arch/.dir_colors /home/andre/
 cp -p arch/.inputrc /home/andre/.inputrc
+
+# Useful directories
+mkdir ~/downloads
+rm -rf ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Public ~/Templates ~/Videos

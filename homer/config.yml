@@ -73,7 +73,7 @@ services:
         logo: "assets/tools/sample.png"
         subtitle: "Hello world sample application"
         tag: "app"
-        url: "https://homeserver.gamesmith.uk:8443/hello"
+        url: "/hello"
           # target: "_blank" # optional html a tag target attribute
   - name: "Config"
     icon: "fas fa-cog"
@@ -83,3 +83,11 @@ services:
         subtitle: "Router configuration 52468313"
         tag: "config"
         url: "http://192.168.15.1"
+  - name: "Media"
+    icon: "fas fa-cog"
+    items:
+      - name: "QBitTorrent"
+        logo: "assets/tools/qbittorrent.png"
+        subtitle: "File sharing via torrent"
+        tag: "media"
+        url: "http://homeserver.gamesmith.uk:8080/"
