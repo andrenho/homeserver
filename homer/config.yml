@@ -86,6 +86,11 @@ services:
   - name: "Media"
     icon: "fas fa-cog"
     items:
+      - name: "Plex"
+        logo: "assets/tools/plex.svg"
+        subtitle: "Watch movies"
+        tag: "media"
+        url: "http://homeserver.gamesmith.uk:32400/web"
       - name: "QBitTorrent"
         logo: "assets/tools/qbittorrent.png"
         subtitle: "File sharing via torrent"

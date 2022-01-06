@@ -7,6 +7,7 @@ services:
 
   dns:
     build: dns
+    container_name: dns
     restart: unless-stopped
     image: dns:latest
     volumes:
@@ -20,6 +21,7 @@ services:
 
   dynamicdns:
     build: dynamicdns
+    container_name: dynamicdns
     restart: unless-stopped
     image: dynamicdns:latest
     secrets:
@@ -32,6 +34,7 @@ services:
 
   proxy:
     build: proxy
+    container_name: proxy
     restart: unless-stopped
     volumes:
       - type: bind
@@ -45,11 +48,13 @@ services:
 
   hello:
     build: hello
+    container_name: hello
     restart: unless-stopped
     image: hello:latest
 
   homer:
     restart: unless-stopped
+    container_name: homer
     image: b4bz/homer:latest
     volumes:
       - type: bind
@@ -61,6 +66,7 @@ services:
 
   torrent:
     build: torrent
+    container_name: torrent
     restart: unless-stopped
     image: torrent:latest
     ports:
@@ -76,6 +82,7 @@ services:
 
   dlna:
     image: vladgh/minidlna
+    container_name: dlna
     volumes:
       - "${HOME}/downloads:/media"
     environment:
@@ -85,6 +92,20 @@ services:
       - GUID=1000
       - TZ=America/Sao_Paulo
     network_mode: host
+
+  plex:
+    image: lscr.io/linuxserver/plex
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - VERSION=docker
+    volumes:
+      - "./plex:/config"
+      - "${HOME}/downloads:/movies"
+      - "${HOME}/downloads:/tv"
+
 
 secrets:
   aws_credentials:
