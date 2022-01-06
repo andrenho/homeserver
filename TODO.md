@@ -12,6 +12,7 @@
   - [X] Authentication (Authelia)
 - [X] Homepage (homer) - HTTP
 - [X] Torrents (Deluge?, or Qbittorrent + Vuetorrent)
+- [ ] Wiki
 - [ ] Log aggregator
 - [ ] View media online (jellyfin? plex?)
 - [ ] Openbooks
