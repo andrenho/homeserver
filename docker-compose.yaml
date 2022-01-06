@@ -77,7 +77,7 @@ services:
       - UMASK=002
       - TZ=America/Sao_Paulo
     volumes:
-      - "./torrent/data:/config"
+      - "${HOME}/homeserver_data/torrent:/config"
       - "${HOME}/downloads:/downloads"
 
   dlna:
@@ -102,10 +102,22 @@ services:
       - PGID=1000
       - VERSION=docker
     volumes:
-      - "./plex:/config"
+      - "${HOME}/homeserver_data/plex:/config"
       - "${HOME}/downloads:/movies"
       - "${HOME}/downloads:/tv"
 
+  dokuwiki:
+    image: lscr.io/linuxserver/dokuwiki
+    container_name: dokuwiki
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+    volumes:
+      - "${HOME}/homeserver_data/wiki:/config"
+    ports:
+      - 6789:80
+    restart: unless-stopped
 
 secrets:
   aws_credentials:

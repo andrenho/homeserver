@@ -19,6 +19,5 @@ cp -p arch/.tmux.conf /home/andre/
 cp -p arch/.dir_colors /home/andre/
 cp -p arch/.inputrc /home/andre/.inputrc
 
-# Useful directories
-mkdir ~/downloads
+# Remove useless directories
 rm -rf ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Public ~/Templates ~/Videos

@@ -54,9 +54,9 @@ colors:
 # Optional navbar
 # links: [] # Allows for navbar (dark mode, layout, and search) without any links
 links:
-  - name: "Wiki"
+  - name: "Awesome Self-Hosted"
     icon: "fas fa-book"
-    url: "https://www.wikipedia.org/"
+    url: "https://github.com/awesome-selfhosted/awesome-selfhosted"
 
 # Services
 # First level array represent a group.
