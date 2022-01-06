@@ -61,6 +61,10 @@ links:
 # Services
 # First level array represent a group.
 # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+# Icons: https://thehomelab.wiki/books/helpful-tools-resources/page/icons-for-self-hosted-dashboards
+#        https://github.com/NX211/homer-icons
+#        https://github.com/WalkxCode/dashboard-icons
+#        https://github.com/edent/SuperTinyIcons
 services:
   - name: "Applications"
     icon: "fas fa-cloud"
@@ -69,5 +73,13 @@ services:
         logo: "assets/tools/sample.png"
         subtitle: "Hello world sample application"
         tag: "app"
-        url: "https://homeserver.gamesmith.uk/hello"
-        target: "_blank" # optional html a tag target attribute
+        url: "https://homeserver.gamesmith.uk:8443/hello"
+          # target: "_blank" # optional html a tag target attribute
+  - name: "Config"
+    icon: "fas fa-cog"
+    items:
+      - name: "Router"
+        logo: "assets/tools/dd-wrt.png"
+        subtitle: "Router configuration 52468313"
+        tag: "config"
+        url: "http://192.168.15.1"
