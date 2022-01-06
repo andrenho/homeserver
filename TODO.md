@@ -11,10 +11,9 @@
   - [X] HTTPS redirection
   - [X] Authentication (Authelia)
 - [X] Homepage (homer) - HTTP
-- [ ] Torrents (Deluge?, or Qbittorrent + Vuetorrent)
+- [X] Torrents (Deluge?, or Qbittorrent + Vuetorrent)
 - [ ] Log aggregator
 - [ ] View media online (jellyfin? plex?)
-- [ ] SSL certificate auto-renewal
 - [ ] Openbooks
 - [ ] Password manager (Vaultwarden?)
 - [ ] Backup to other server and cloud
@@ -22,3 +21,7 @@
 - [ ] PiHole
 - [ ] Protect machine with firewall (ufw?)
 - [ ] https://github.com/awesome-selfhosted/awesome-selfhosted
+
+## Fix issues
+- [ ] SSL certificate auto-renewal
+- [ ] VueTorrent running in HTTP (8080)
