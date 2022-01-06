@@ -11,7 +11,7 @@ fi
 sudo pacman -Suy
 sudo pacman -S --noconfirm --needed \
   wget iwd dhcpcd bash-completion sudo docker man-db man-pages vim tmux git python gcc mlocate \
-  dnsutils docker-compose htop lsof inetutils unzip mc base-devel jq tree
+  dnsutils docker-compose htop lsof inetutils unzip mc base-devel jq tree subdl
 
 # Install yay, if not installed
 if ! command -v yay &> /dev/null
@@ -39,3 +39,6 @@ sudo sh -c 'curl https://raw.githubusercontent.com/git/git/master/contrib/comple
 # Start services
 sudo systemctl enable sshd docker
 sudo systemctl start sshd docker
+
+# Install scripts
+sudo cp scripts/subdl_dir.sh /usr/local/bin
