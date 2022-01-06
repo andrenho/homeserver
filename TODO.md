@@ -9,7 +9,7 @@
     - [X] Script to update IP in Route53 (https://api.ipify.org/)
   - [X] SSL certificate
   - [X] HTTPS redirection
-  - [ ] Authentication (Authelia)
+  - [X] Authentication (Authelia)
   - [ ] Log aggregator
 - [ ] Homepage (homer) - HTTP
 - [ ] SSL certificate auto-renewal

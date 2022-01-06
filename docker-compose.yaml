@@ -1,8 +1,13 @@
 version: '3.9'
 services:
+
+  #
+  # daemons
+  #
+
   dns:
     build: dns
-    restart: always
+    restart: unless-stopped
     image: dns:latest
     volumes:
       - type: bind
@@ -13,16 +18,21 @@ services:
       - "53:53/udp"
     dns: 192.168.15.1
 
-  hello:
-    build: hello
-    restart: always
-    image: hello:latest
-    ports:
-      - "8080:80"
+  dynamicdns:
+    build: dynamicdns
+    restart: unless-stopped
+    image: dynamicdns:latest
+    secrets:
+      - source: aws_credentials
+        target: /root/.aws/credentials
+
+  #
+  # Web services
+  #
 
   proxy:
     build: proxy
-    restart: always
+    restart: unless-stopped
     volumes:
       - type: bind
         source: ./proxy/cert
@@ -32,23 +42,21 @@ services:
       - "80:80"
       - "443:443"
 
-  dynamicdns:
-    build: dynamicdns
-    restart: always
-    image: dynamicdns:latest
-    secrets:
-      - source: aws_credentials
-        target: /root/.aws/credentials
+  hello:
+    build: hello
+    restart: unless-stopped
+    image: hello:latest
 
-#  homer:
-#    restart: always
-#    image: b4bz/homer:latest
-#    volumes:
-#      - type: bind
-#        source: ./dns/conf
-#        target: /www/asssets
-#    ports:
-#      - "8080:8080"
+  homer:
+    restart: unless-stopped
+    image: b4bz/homer:latest
+    volumes:
+      - type: bind
+        source: ./homer
+        target: /www/assets
+    environment:
+      - UID=1000
+      - GID=1000
 
 secrets:
   aws_credentials:
