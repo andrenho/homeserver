@@ -95,6 +95,11 @@ services:
         subtitle: "RSS news feeds"
         url: "/rss/"
         target: "_blank"
+      - name: "openbooks"
+        logo: "assets/tools/openbooks.svg"
+        subtitle: "Book aggregator"
+        url: "/openbooks/"
+        target: "_blank"
   - name: "System"
     icon: "fas fa-cog"
     items:

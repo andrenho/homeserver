@@ -145,6 +145,14 @@ services:
       - DATABASE_URL=postgres://miniflux:secret@miniflux-db/miniflux?sslmode=disable
       - BASE_URL=https://homeserver.gamesmith.uk:8443/rss/
 
+  openbooks:
+    image: evanbuss/openbooks
+    container_name: openbooks
+    restart: unless-stopped
+    command: --persist
+    volumes:
+      - "${HOME}/downloads/books:/books"
+
 secrets:
   aws_credentials:
     file: /home/andre/.aws/credentials
