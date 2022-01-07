@@ -16,7 +16,7 @@
 - [X] View media online (jellyfin? plex?)
 - [X] Docker manager
 - [X] System stats (https://github.com/netdata/netdata)
-- [ ] RSS (Miniflux?)
+- [X] RSS (Miniflux?)
 - [ ] Podcasts
 - [ ] Openbooks
 - [ ] Movies/series torrents (Radarr & Sonarr)

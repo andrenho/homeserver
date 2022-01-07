@@ -90,6 +90,11 @@ services:
         subtitle: "Wiki document management"
         url: "/wiki"
         target: "_blank"
+      - name: "miniflux"
+        logo: "assets/tools/miniflux.png"
+        subtitle: "RSS news feeds"
+        url: "/rss/"
+        target: "_blank"
   - name: "System"
     icon: "fas fa-cog"
     items:

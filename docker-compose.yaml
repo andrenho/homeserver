@@ -41,6 +41,20 @@ services:
       - TZ=America/Sao_Paulo
     network_mode: host
 
+  miniflux-db:
+    image: postgres:latest
+    container_name: miniflux-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=miniflux
+      - POSTGRES_PASSWORD=secret
+    volumes:
+      - "${HOME}/homeserver_data/miniflux:/var/lib/postgresql/data"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "miniflux"]
+      interval: 10s
+      start_period: 30s
+
   #
   # Web services
   #
@@ -107,8 +121,6 @@ services:
       - TZ=America/Sao_Paulo
     volumes:
       - "${HOME}/homeserver_data/wiki:/config"
-    ports:
-      - 6789:80
     restart: unless-stopped
 
   portainer:
@@ -122,6 +134,18 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Sao_Paulo
+
+  miniflux:
+    image: miniflux/miniflux:latest
+    container_name: miniflux
+    restart: unless-stopped
+    ports:
+      - "8083:8080"
+    depends_on:
+      - miniflux-db
+    environment:
+      - DATABASE_URL=postgres://miniflux:secret@miniflux-db/miniflux?sslmode=disable
+      - BASE_URL=https://homeserver.gamesmith.uk:8443/rss/
 
 secrets:
   aws_credentials:
