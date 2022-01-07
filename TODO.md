@@ -27,6 +27,9 @@
 - [ ] Protect machine with firewall (ufw?)
 - [ ] https://github.com/awesome-selfhosted/awesome-selfhosted
 
+## Wildcard certificate
+- [ ] Obtain certificate (https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode)
+
 ## Fix issues
 - [ ] SSL certificate auto-renewal
 - [ ] VueTorrent running in HTTP (8080)
