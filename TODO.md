@@ -13,15 +13,16 @@
 - [X] Homepage (homer) - HTTP
 - [X] Torrents (Deluge?, or Qbittorrent + Vuetorrent)
 - [X] Wiki
+- [X] View media online (jellyfin? plex?)
+- [ ] Docker manager
 - [ ] Log aggregator
-- [ ] View media online (jellyfin? plex?)
+- [ ] RSS
+- [ ] Podcasts
 - [ ] Openbooks
 - [ ] Password manager (Vaultwarden?)
 - [ ] Backup to other server and cloud
 - [ ] PiKVM
 - [ ] PiHole
-- [ ] RSS
-- [ ] Podcasts
 - [ ] Protect machine with firewall (ufw?)
 - [ ] https://github.com/awesome-selfhosted/awesome-selfhosted
 
