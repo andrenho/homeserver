@@ -1,5 +1,7 @@
 # homeserver
 
+## Operating system installation
+
 1. Start the system with latest Arch Linux installation media.
 2. Connect to wi-fi if needed:
 
@@ -22,18 +24,42 @@
 # ./alis.sh
 ```
 
-5. Reboot the system after installation is complete, and install the homeserver. 
-  - Add the AWS credentials and config file to `/home/andre/.aws/`
-  - Place SSL certificates in `/home/andre/homeserver/proxy/cert` after cloning the repository.
+5. Reboot the system after the installation is complete.
+
+## Preparation
+
+1. Open the following ports in the router, all pointing to the homeserver:
+
+| Extern        | Intern | Used by |
+|---------------|--------|---------|
+| Random port   |    22  | SSH, for maintenance |
+| 443 (or 8443) |   443  | Homeserver main port |
+| 8444          |  8444  | VueTorrent |
+| 32400         | 32400  | Plex |
+
+## Homeserver installation
+
+1. Connect to the internet, if on wi-fi, and do basic preparations:
 
 ```
 # nmcli device wifi connect ESSID password XXXXXXX
 # sudo pacman -S git sudo vim
 # groupadd sudo
 # useradd -G sudo andre
+```
+
+2. Install secrets
+  - Add the AWS credentials and config file to `/home/andre/.aws/`
+  - Have the SSL certificates handy.
+
+3. Possibly restore backups to `~/homeserver_data/`, if any.
+
+4. Install the homeserver:
+
+```
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
 $ # Place SSL certificates into homeserver/proxy/cert (certificate.crt and private.key)
 $ cd homeserver
-$ ./scripts/add_password.sh     # add password for admin
+$ ./scripts/add_password.sh     # add password for homeserver admin
 $ ./install.sh
 ```

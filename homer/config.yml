@@ -66,20 +66,6 @@ links:
 #        https://github.com/WalkxCode/dashboard-icons
 #        https://github.com/edent/SuperTinyIcons
 services:
-  - name: "Config"
-    icon: "fas fa-cog"
-    items:
-      - name: "Portainer"
-        logo: "assets/tools/docker.svg"
-        subtitle: "Manage docker containers"
-        url: "/portainer/"
-        target: "_blank"
-      - name: "Router"
-        logo: "assets/tools/dd-wrt.png"
-        subtitle: "Router configuration 52468313"
-        # tag: "config"
-        url: "http://192.168.15.1"
-        target: "_blank"
   - name: "Media"
     icon: "fas fa-film"
     items:
@@ -102,4 +88,18 @@ services:
         logo: "assets/tools/dokuwiki.png"
         subtitle: "Wiki for document management"
         url: "/wiki"
+        target: "_blank"
+  - name: "System"
+    icon: "fas fa-cog"
+    items:
+      - name: "Portainer"
+        logo: "assets/tools/docker.svg"
+        subtitle: "Manage docker containers"
+        url: "/portainer/"
+        target: "_blank"
+      - name: "Router"
+        logo: "assets/tools/dd-wrt.png"
+        subtitle: "Router configuration 52468313"
+        # tag: "config"
+        url: "http://192.168.15.1"
         target: "_blank"
