@@ -15,7 +15,7 @@
 - [X] Wiki
 - [X] View media online (jellyfin? plex?)
 - [X] Docker manager
-- [ ] System stats
+- [ ] System stats (https://github.com/netdata/netdata)
 - [ ] Log aggregator
 - [ ] RSS
 - [ ] Podcasts
