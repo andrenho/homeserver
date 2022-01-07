@@ -57,6 +57,7 @@ links:
   - name: "Awesome Self-Hosted"
     icon: "fas fa-book"
     url: "https://github.com/awesome-selfhosted/awesome-selfhosted"
+    target: "_blank"
 
 # Services
 # First level array represent a group.
@@ -71,22 +72,22 @@ services:
     items:
       - name: "Plex"
         logo: "assets/tools/plex.svg"
-        subtitle: "Watch movies"
+        subtitle: "Media streaming"
         # tag: "media"
         url: "http://homeserver.gamesmith.uk:32400/web"
         target: "_blank"
       - name: "QBitTorrent"
         logo: "assets/tools/qbittorrent.png"
-        subtitle: "File sharing via torrent"
+        subtitle: "Bittorrent client"
         # tag: "media"
         url: "http://homeserver.gamesmith.uk:8444/"
         target: "_blank"
-  - name: "Data management"
+  - name: "Apps"
     icon: "fas fa-file-alt"
     items:
       - name: "dokuwiki"
         logo: "assets/tools/dokuwiki.png"
-        subtitle: "Wiki for document management"
+        subtitle: "Wiki document management"
         url: "/wiki"
         target: "_blank"
   - name: "System"
@@ -94,7 +95,7 @@ services:
     items:
       - name: "Portainer"
         logo: "assets/tools/docker.svg"
-        subtitle: "Manage docker containers"
+        subtitle: "Docker container management"
         url: "/portainer/"
         target: "_blank"
       - name: "netdata"

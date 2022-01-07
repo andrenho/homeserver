@@ -15,11 +15,11 @@
 - [X] Wiki
 - [X] View media online (jellyfin? plex?)
 - [X] Docker manager
-- [ ] System stats (https://github.com/netdata/netdata)
-- [ ] Log aggregator
+- [X] System stats (https://github.com/netdata/netdata)
 - [ ] RSS
 - [ ] Podcasts
 - [ ] Openbooks
+- [ ] Movies/series torrents (Radarr & Sonarr)
 - [ ] Password manager (Vaultwarden?)
 - [ ] Backup to other server and cloud
 - [ ] PiKVM
