@@ -18,6 +18,7 @@
 - [X] System stats (https://github.com/netdata/netdata)
 - [X] RSS (Miniflux?)
 - [X] Openbooks
+- [ ] SSH client (https://github.com/nirui/sshwifty, bwsw/webshell, https://github.com/huashengdun/webssh)
 - [ ] Movies/series torrents (Radarr & Sonarr)
 - [ ] Password manager (Vaultwarden?)
 - [ ] Backup to other server and cloud
