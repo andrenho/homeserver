@@ -46,12 +46,6 @@ services:
       - "443:443"
       - "444:444"
 
-  hello:
-    build: hello
-    container_name: hello
-    restart: unless-stopped
-    image: hello:latest
-
   homer:
     restart: unless-stopped
     container_name: homer

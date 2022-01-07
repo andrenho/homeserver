@@ -66,33 +66,35 @@ links:
 #        https://github.com/WalkxCode/dashboard-icons
 #        https://github.com/edent/SuperTinyIcons
 services:
-  - name: "Applications"
-    icon: "fas fa-cloud"
-    items:
-      - name: "Hello"
-        logo: "assets/tools/sample.png"
-        subtitle: "Hello world sample application"
-        tag: "app"
-        url: "/hello"
-          # target: "_blank" # optional html a tag target attribute
   - name: "Config"
     icon: "fas fa-cog"
     items:
       - name: "Router"
         logo: "assets/tools/dd-wrt.png"
         subtitle: "Router configuration 52468313"
-        tag: "config"
+        # tag: "config"
         url: "http://192.168.15.1"
+        target: "_blank"
   - name: "Media"
-    icon: "fas fa-cog"
+    icon: "fas fa-film"
     items:
       - name: "Plex"
         logo: "assets/tools/plex.svg"
         subtitle: "Watch movies"
-        tag: "media"
+        # tag: "media"
         url: "http://homeserver.gamesmith.uk:32400/web"
+        target: "_blank"
       - name: "QBitTorrent"
         logo: "assets/tools/qbittorrent.png"
         subtitle: "File sharing via torrent"
-        tag: "media"
+        # tag: "media"
         url: "http://homeserver.gamesmith.uk:8444/"
+        target: "_blank"
+  - name: "Data management"
+    icon: "fas fa-file-alt"
+    items:
+      - name: "dokuwiki"
+        logo: "assets/tools/dokuwiki.png"
+        subtitle: "Wiki for document management"
+        url: "/wiki"
+        target: "_blank"

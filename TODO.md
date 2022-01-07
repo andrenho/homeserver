@@ -12,7 +12,7 @@
   - [X] Authentication (Authelia)
 - [X] Homepage (homer) - HTTP
 - [X] Torrents (Deluge?, or Qbittorrent + Vuetorrent)
-- [ ] Wiki
+- [X] Wiki
 - [ ] Log aggregator
 - [ ] View media online (jellyfin? plex?)
 - [ ] Openbooks
@@ -20,6 +20,8 @@
 - [ ] Backup to other server and cloud
 - [ ] PiKVM
 - [ ] PiHole
+- [ ] RSS
+- [ ] Podcasts
 - [ ] Protect machine with firewall (ufw?)
 - [ ] https://github.com/awesome-selfhosted/awesome-selfhosted
 
