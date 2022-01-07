@@ -55,7 +55,6 @@ services:
         target: /etc/ssl
     image: proxy:latest
     ports:
-      - "80:80"
       - "443:443"
 
   homer:
@@ -123,35 +122,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Sao_Paulo
-
-  netdata:
-    image: netdata/netdata:stable
-    container_name: netdata
-    restart: unless-stopped
-    hostname: homeserver.gamesmith.uk
-    cap_add: 
-      - SYS_PTRACE
-    volumes:
-      - "${HOME}/homeserver_data/netdata:/etc/netdata"
-      - netdatalib:/var/lib/netdata
-      - netdatacache:/var/cache/netdata
-      - /etc/passwd:/host/etc/passwd:ro
-      - /etc/group:/host/etc/group:ro
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /etc/os-release:/host/etc/os-release:ro
-    ports:
-      - "19999:19999"
-    security_opt:
-      - apparmor:unconfined
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Sao_Paulo
-
-volumes:
-  netdatalib:
-  netdatacache:
 
 secrets:
   aws_credentials:

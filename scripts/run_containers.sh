@@ -13,5 +13,6 @@ aws --profile default configure get aws_access_key_id > /dev/null || die 'Missin
 docker-compose build --no-cache
 
 sudo cp arch/docker-compose-app.service /etc/systemd/system/
+sudo systemctl enable docker-compose-app
 sudo systemctl restart docker-compose-app
 sudo systemctl daemon-reload

@@ -60,6 +60,9 @@
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
 $ # Place SSL certificates into homeserver/proxy/cert (certificate.crt and private.key)
 $ cd homeserver
-$ ./scripts/add_password.sh     # add password for homeserver admin
-$ ./install.sh
+$ ./scripts/add_password.sh       # add password for homeserver admin
+$ ./scripts/user_config.sh        # create user directories
+$ ./scripts/update_packages.sh    # update pacman packages
+$ ./scripts/install_dash.sh       # install linux-dash
+$ ./scripts/run_containers.sh     # build and run containers
 ```
