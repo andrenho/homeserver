@@ -17,7 +17,7 @@
 - [X] Docker manager
 - [X] System stats (https://github.com/netdata/netdata)
 - [X] RSS (Miniflux?)
-- [ ] Openbooks
+- [X] Openbooks
 - [ ] Movies/series torrents (Radarr & Sonarr)
 - [ ] Password manager (Vaultwarden?)
 - [ ] Backup to other server and cloud
