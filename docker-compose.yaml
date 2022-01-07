@@ -139,8 +139,6 @@ services:
     image: miniflux/miniflux:latest
     container_name: miniflux
     restart: unless-stopped
-    ports:
-      - "8083:8080"
     depends_on:
       - miniflux-db
     environment:
