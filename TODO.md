@@ -14,7 +14,8 @@
 - [X] Torrents (Deluge?, or Qbittorrent + Vuetorrent)
 - [X] Wiki
 - [X] View media online (jellyfin? plex?)
-- [ ] Docker manager
+- [X] Docker manager
+- [ ] System stats
 - [ ] Log aggregator
 - [ ] RSS
 - [ ] Podcasts

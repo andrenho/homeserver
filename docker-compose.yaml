@@ -28,6 +28,19 @@ services:
       - source: aws_credentials
         target: /root/.aws/credentials
 
+  dlna:
+    image: vladgh/minidlna
+    container_name: dlna
+    volumes:
+      - "${HOME}/downloads:/media"
+    environment:
+      - MINIDLNA_MEDIA_DIR=/media
+      - MINIDLNA_FRIENDLY_NAME=HomeServer
+      - PUID=1000
+      - GUID=1000
+      - TZ=America/Sao_Paulo
+    network_mode: host
+
   #
   # Web services
   #
@@ -74,19 +87,6 @@ services:
       - "${HOME}/homeserver_data/torrent:/config"
       - "${HOME}/downloads:/downloads"
 
-  dlna:
-    image: vladgh/minidlna
-    container_name: dlna
-    volumes:
-      - "${HOME}/downloads:/media"
-    environment:
-      - MINIDLNA_MEDIA_DIR=/media
-      - MINIDLNA_FRIENDLY_NAME=HomeServer
-      - PUID=1000
-      - GUID=1000
-      - TZ=America/Sao_Paulo
-    network_mode: host
-
   plex:
     image: lscr.io/linuxserver/plex
     container_name: plex
@@ -112,6 +112,14 @@ services:
     ports:
       - 6789:80
     restart: unless-stopped
+
+  portainer:
+    image: cr.portainer.io/portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - "${HOME}/homeserver_data/portainer:/data"
 
 secrets:
   aws_credentials:
