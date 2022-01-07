@@ -153,6 +153,12 @@ services:
     volumes:
       - "${HOME}/downloads/books:/books"
 
+  ssh:
+    build: ssh
+    image: ssh
+    container_name: ssh
+    restart: unless-stopped
+
 secrets:
   aws_credentials:
     file: /home/andre/.aws/credentials
