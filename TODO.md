@@ -30,3 +30,4 @@
 ## Fix issues
 - [ ] SSL certificate auto-renewal
 - [ ] VueTorrent running in HTTP (8080)
+- [ ] Make the installation generic for any IP, network and domain

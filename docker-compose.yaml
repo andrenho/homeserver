@@ -125,15 +125,16 @@ services:
       - TZ=America/Sao_Paulo
 
   netdata:
-    image: netdata/netdata
+    image: netdata/netdata:stable
     container_name: netdata
     restart: unless-stopped
+    hostname: homeserver.gamesmith.uk
     cap_add: 
       - SYS_PTRACE
     volumes:
-      - "${HOME}/homeserver_data/netdata/netdataconfig:/etc/netdata"
-      - "${HOME}/homeserver_data/netdata/netdatalib:/var/lib/netdata"
-      - "${HOME}/homeserver_data/netdata/netdatacache:/var/cache/netdata"
+      - "${HOME}/homeserver_data/netdata:/etc/netdata"
+      - netdatalib:/var/lib/netdata
+      - netdatacache:/var/cache/netdata
       - /etc/passwd:/host/etc/passwd:ro
       - /etc/group:/host/etc/group:ro
       - /proc:/host/proc:ro
@@ -147,6 +148,10 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Sao_Paulo
+
+volumes:
+  netdatalib:
+  netdatacache:
 
 secrets:
   aws_credentials:
