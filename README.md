@@ -34,7 +34,6 @@
 |---------------|--------|---------|
 | Random port   |    22  | SSH, for maintenance |
 | 443 (or 8443) |   443  | Homeserver main port |
-| 8444          |  8444  | VueTorrent |
 | 32400         | 32400  | Plex |
 
 ## Homeserver installation
