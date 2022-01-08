@@ -2,7 +2,7 @@
 
 - [X] SFTP
 - [X] File manager (share downloads, homeserver\_data, root)
-- [ ] News aggregator
+- [ ] News aggregator (https://hub.docker.com/r/clue/ttrss)
 - [ ] TODO app
 - [ ] Pastebin
 - [ ] Book manager

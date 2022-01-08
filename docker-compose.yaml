@@ -39,20 +39,6 @@ services:
       - TZ=America/Sao_Paulo
     network_mode: host
 
-  miniflux-db:
-    image: postgres:latest
-    container_name: miniflux-db
-    restart: unless-stopped
-    environment:
-      - POSTGRES_USER=miniflux
-      - POSTGRES_PASSWORD=secret
-    volumes:
-      - "${HOME}/volume/data/miniflux:/var/lib/postgresql/data"
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "miniflux"]
-      interval: 10s
-      start_period: 30s
-
   sftp:
     image: atmoz/sftp:alpine
     container_name: sftp
@@ -138,16 +124,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Sao_Paulo
-
-  miniflux:
-    image: miniflux/miniflux:latest
-    container_name: miniflux
-    restart: unless-stopped
-    depends_on:
-      - miniflux-db
-    environment:
-      - DATABASE_URL=postgres://miniflux:secret@miniflux-db/miniflux?sslmode=disable
-      - BASE_URL=https://rss.homeserver.gamesmith.uk:8443/
 
   openbooks:
     image: evanbuss/openbooks
