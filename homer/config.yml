@@ -100,6 +100,11 @@ services:
   - name: "Apps"
     icon: "fas fa-file-alt"
     items:
+      - name: "File Browser"
+        logo: "assets/tools/filebrowser.png"
+        subtitle: "Access files via web interface"
+        url: "https://explorer.homeserver.gamesmith.uk:8443/"
+        target: "_blank"
       - name: "dokuwiki"
         logo: "assets/tools/dokuwiki.png"
         subtitle: "Wiki document management"

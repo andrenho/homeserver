@@ -1,8 +1,7 @@
 # Web apps
 
-- [ ] SFTP
-- [ ] File manager (share downloads, homeserver\_data, root)
-- [ ] File sharing
+- [X] SFTP
+- [X] File manager (share downloads, homeserver\_data, root)
 - [ ] News aggregator
 - [ ] TODO app
 - [ ] Pastebin

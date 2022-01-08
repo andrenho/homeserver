@@ -189,6 +189,20 @@ services:
       - "${HOME}/volume/downloads:/downloads"
     restart: unless-stopped
 
+  explorer:
+    image: filebrowser/filebrowser:s6
+    container_name: explorer
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+    volumes:
+      - "${HOME}/volume:/srv"
+      - "${HOME}/volume/data/explorer/database:/database"
+      - "${HOME}/volume/data/explorer/config:/config"
+    ports:
+      - 8020:80
+
 secrets:
   aws_credentials:
     file: "${HOME}/.aws/credentials"
