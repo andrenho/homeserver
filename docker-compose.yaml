@@ -155,6 +155,32 @@ services:
     container_name: ssh
     restart: unless-stopped
 
+  sonarr:
+    image: lscr.io/linuxserver/sonarr
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+    volumes:
+      - "${HOME}/homeserver_data/sonarr/config:/config"
+      - "${HOME}/homeserver_data/sonarr/tv:/tv"
+      - "${HOME}/downloads:/downloads"
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+    volumes:
+      - "${HOME}/homeserver_data/radarr/config:/config"
+      - "${HOME}/homeserver_data/radarr/movies:/movies"
+      - "${HOME}/downloads:/downloads"
+    restart: unless-stopped
+
 secrets:
   aws_credentials:
     file: /home/andre/.aws/credentials

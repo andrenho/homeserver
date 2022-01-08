@@ -19,16 +19,32 @@
 - [X] RSS (Miniflux?)
 - [X] Openbooks
 - [X] Migrate to subdomains
-- [ ] SSH client (https://github.com/nirui/sshwifty, bwsw/webshell, https://github.com/huashengdun/webssh)
+- [X] SSH client (https://github.com/nirui/sshwifty, bwsw/webshell, https://github.com/huashengdun/webssh)
 - [ ] Movies/series torrents (Radarr & Sonarr)
+- [ ] File manager (share downloads, homeserver\_data, root)
+- [ ] File sharing
+- [ ] TODO app
+- [ ] Pastebin
+- [ ] Book manager
+- [ ] E-book manager, podcasts
+- [ ] Audiobooks
+- [ ] Choose another RSS
 - [ ] Password manager (Vaultwarden?)
+- [ ] Games
 - [ ] Backup to other server and cloud
 - [ ] PiKVM
 - [ ] PiHole
 - [ ] Protect machine with firewall (ufw?)
-- [ ] https://github.com/awesome-selfhosted/awesome-selfhosted
+- [ ] Software development (?)
+- [ ] Put some graphs in frontpage (CPU, RAM... - possibly ditch homer)
+- [ ] View all linuxserver services (in docker)
+- [ ] https://github.com/awesome-selfhosted/awesome-selfhosted, Miscelaneous
+
+## Major infra improvements
+- [ ] Move to IPv6
+- [ ] Move to ansible
+- [ ] Make the installation generic for any IP, network and domain
 
 ## Fix issues
 - [X] SSL certificate auto-renewal
 - [X] VueTorrent running in HTTP (8080)
-- [ ] Make the installation generic for any IP, network and domain
