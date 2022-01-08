@@ -1,5 +1,6 @@
 # Web apps
 
+- [ ] SFTP
 - [ ] File manager (share downloads, homeserver\_data, root)
 - [ ] File sharing
 - [ ] News aggregator
