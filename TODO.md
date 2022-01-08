@@ -23,6 +23,7 @@
 - [ ] Movies/series torrents (Radarr & Sonarr)
 - [ ] File manager (share downloads, homeserver\_data, root)
 - [ ] File sharing
+- [ ] New aggregator
 - [ ] TODO app
 - [ ] Pastebin
 - [ ] Book manager
