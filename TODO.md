@@ -18,6 +18,7 @@
 - [X] System stats (https://github.com/netdata/netdata)
 - [X] RSS (Miniflux?)
 - [X] Openbooks
+- [X] Migrate to subdomains
 - [ ] SSH client (https://github.com/nirui/sshwifty, bwsw/webshell, https://github.com/huashengdun/webssh)
 - [ ] Movies/series torrents (Radarr & Sonarr)
 - [ ] Password manager (Vaultwarden?)
@@ -27,10 +28,7 @@
 - [ ] Protect machine with firewall (ufw?)
 - [ ] https://github.com/awesome-selfhosted/awesome-selfhosted
 
-## Wildcard certificate
-- [ ] Obtain certificate (https://github.com/acmesh-official/acme.sh/wiki/DNS-alias-mode)
-
 ## Fix issues
-- [ ] SSL certificate auto-renewal
-- [ ] VueTorrent running in HTTP (8080)
+- [X] SSL certificate auto-renewal
+- [X] VueTorrent running in HTTP (8080)
 - [ ] Make the installation generic for any IP, network and domain
