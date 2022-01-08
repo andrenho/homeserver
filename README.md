@@ -34,6 +34,7 @@
 |---------------|--------|---------|
 | Random port   |    22  | SSH, for maintenance |
 | 443 (or 8443) |   443  | Homeserver main port |
+| 2222          |  2222  | SFTP |
 | 32400         | 32400  | Plex |
 
 ## Homeserver installation
@@ -49,6 +50,11 @@
 
 2. Install secrets
   - Add the AWS credentials and config file to `/home/andre/.aws/`
+  - Create a file in '/home/andre/secrets/sftp-users.conf' with the following format: `andre_nho:PASSWORD:1000:1000`
+    - Replace `PASSWORD` by a password generated with:
+```
+echo -n "your-password" | docker run -i --rm atmoz/makepasswd --crypt-md5 --clearfrom=-
+```
 
 3. Create SSL certificates
 ```

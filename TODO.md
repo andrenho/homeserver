@@ -1,29 +1,8 @@
-- [X] OS installation
-- [X] OS configuration
-- [X] DNS (on docker)
-- [X] Open SSH in non-standar port
-- [X] Split initialization scripts
-- [X] Simple hello world HTTP
-  - [X] Dynamic DNS name (DuckDNS or ddclient)
-    - [X] AWS credentials/role
-    - [X] Script to update IP in Route53 (https://api.ipify.org/)
-  - [X] SSL certificate
-  - [X] HTTPS redirection
-  - [X] Authentication (Authelia)
-- [X] Homepage (homer) - HTTP
-- [X] Torrents (Deluge?, or Qbittorrent + Vuetorrent)
-- [X] Wiki
-- [X] View media online (jellyfin? plex?)
-- [X] Docker manager
-- [X] System stats (https://github.com/netdata/netdata)
-- [X] RSS (Miniflux?)
-- [X] Openbooks
-- [X] Migrate to subdomains
-- [X] SSH client (https://github.com/nirui/sshwifty, bwsw/webshell, https://github.com/huashengdun/webssh)
-- [ ] Movies/series torrents (Radarr & Sonarr)
+# Web apps
+
 - [ ] File manager (share downloads, homeserver\_data, root)
 - [ ] File sharing
-- [ ] New aggregator
+- [ ] News aggregator
 - [ ] TODO app
 - [ ] Pastebin
 - [ ] Book manager
@@ -32,20 +11,28 @@
 - [ ] Choose another RSS
 - [ ] Password manager (Vaultwarden?)
 - [ ] Games
+- [ ] Configure sonarr & radarr
+
+# Development
+
+- [ ] Create new homepage with apps, graphs (CPU, RAM...) and news
+
+# Infrastructure
+
+- [ ] Reorganize downloads folder (prepare for new HD)
+- [ ] Software development container (?)
 - [ ] Backup to other server and cloud
 - [ ] PiKVM
 - [ ] PiHole
 - [ ] Protect machine with firewall (ufw?)
-- [ ] Software development (?)
-- [ ] Put some graphs in frontpage (CPU, RAM... - possibly ditch homer)
-- [ ] View all linuxserver services (in docker)
-- [ ] https://github.com/awesome-selfhosted/awesome-selfhosted, Miscelaneous
 
-## Major infra improvements
+# Major infrastructre changes
+
 - [ ] Move to IPv6
 - [ ] Move to ansible
-- [ ] Make the installation generic for any IP, network and domain
+- [ ] Make the installation generic for any IP, network, domain, and user name
 
-## Fix issues
-- [X] SSL certificate auto-renewal
-- [X] VueTorrent running in HTTP (8080)
+# Find new stuff
+
+- [ ] View all linuxserver services (in docker)
+- [ ] https://github.com/awesome-selfhosted/awesome-selfhosted, Miscelaneous

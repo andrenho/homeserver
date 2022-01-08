@@ -11,9 +11,7 @@ services:
     restart: unless-stopped
     image: dns:latest
     volumes:
-      - type: bind
-        source: ./dns/conf
-        target: /etc/dnsmasq.d
+      - "./dns/conf:/etc/dnsmasq.d:ro"
     ports:
       - "53:53"
       - "53:53/udp"
@@ -32,7 +30,7 @@ services:
     image: vladgh/minidlna
     container_name: dlna
     volumes:
-      - "${HOME}/downloads:/media"
+      - "${HOME}/volume/downloads:/media"
     environment:
       - MINIDLNA_MEDIA_DIR=/media
       - MINIDLNA_FRIENDLY_NAME=HomeServer
@@ -49,11 +47,23 @@ services:
       - POSTGRES_USER=miniflux
       - POSTGRES_PASSWORD=secret
     volumes:
-      - "${HOME}/homeserver_data/miniflux:/var/lib/postgresql/data"
+      - "${HOME}/volume/data/miniflux:/var/lib/postgresql/data"
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "miniflux"]
       interval: 10s
       start_period: 30s
+
+  sftp:
+    image: atmoz/sftp:alpine
+    container_name: sftp
+    restart: unless-stopped
+    secrets:
+      - source: sftp_users
+        target: /etc/sftp/users.conf
+    volumes:
+      - "${HOME}/volume:/home/andre_nho"
+    ports:
+      - "2222:22"
 
   #
   # Web services
@@ -64,7 +74,7 @@ services:
     container_name: proxy
     restart: unless-stopped
     volumes:
-      - "/etc/letsencrypt:/etc/ssl"
+      - "/etc/letsencrypt:/etc/ssl:ro"
     image: proxy:latest
     ports:
       - "443:443"
@@ -74,9 +84,7 @@ services:
     container_name: homer
     image: b4bz/homer:latest
     volumes:
-      - type: bind
-        source: ./homer
-        target: /www/assets
+      - "./homer:/www/assets:ro"
     environment:
       - UID=1000
       - GID=1000
@@ -92,8 +100,8 @@ services:
       - UMASK=002
       - TZ=America/Sao_Paulo
     volumes:
-      - "${HOME}/homeserver_data/torrent:/config"
-      - "${HOME}/downloads:/downloads"
+      - "${HOME}/volume/data/torrent:/config"
+      - "${HOME}/volume/downloads:/downloads"
 
   plex:
     image: lscr.io/linuxserver/plex
@@ -104,9 +112,9 @@ services:
       - PGID=1000
       - VERSION=docker
     volumes:
-      - "${HOME}/homeserver_data/plex:/config"
-      - "${HOME}/downloads:/movies"
-      - "${HOME}/downloads:/tv"
+      - "${HOME}/volume/data/plex:/config"
+      - "${HOME}/volume/downloads:/movies"
+      - "${HOME}/volume/downloads:/tv"
 
   dokuwiki:
     image: lscr.io/linuxserver/dokuwiki
@@ -116,7 +124,7 @@ services:
       - PGID=1000
       - TZ=America/Sao_Paulo
     volumes:
-      - "${HOME}/homeserver_data/wiki:/config"
+      - "${HOME}/volume/data/wiki:/config"
     restart: unless-stopped
 
   portainer:
@@ -125,7 +133,7 @@ services:
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - "${HOME}/homeserver_data/portainer:/data"
+      - "${HOME}/volume/data/portainer:/data"
     environment:
       - PUID=1000
       - PGID=1000
@@ -147,7 +155,7 @@ services:
     restart: unless-stopped
     command: --persist
     volumes:
-      - "${HOME}/downloads/books:/books"
+      - "${HOME}/volume/books:/books"
 
   ssh:
     build: ssh
@@ -163,9 +171,9 @@ services:
       - PGID=1000
       - TZ=America/Sao_Paulo
     volumes:
-      - "${HOME}/homeserver_data/sonarr/config:/config"
-      - "${HOME}/homeserver_data/sonarr/tv:/tv"
-      - "${HOME}/downloads:/downloads"
+      - "${HOME}/volume/data/sonarr/config:/config"
+      - "${HOME}/volume/data/sonarr/tv:/tv"
+      - "${HOME}/volume/downloads:/downloads"
     restart: unless-stopped
 
   radarr:
@@ -176,11 +184,13 @@ services:
       - PGID=1000
       - TZ=America/Sao_Paulo
     volumes:
-      - "${HOME}/homeserver_data/radarr/config:/config"
-      - "${HOME}/homeserver_data/radarr/movies:/movies"
-      - "${HOME}/downloads:/downloads"
+      - "${HOME}/volume/data/radarr/config:/config"
+      - "${HOME}/volume/data/radarr/movies:/movies"
+      - "${HOME}/volume/downloads:/downloads"
     restart: unless-stopped
 
 secrets:
   aws_credentials:
-    file: /home/andre/.aws/credentials
+    file: "${HOME}/.aws/credentials"
+  sftp_users:
+    file: "${HOME}/secrets/sftp-users.conf"
