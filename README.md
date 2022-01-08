@@ -50,7 +50,11 @@
 
 2. Install secrets
   - Add the AWS credentials and config file to `/home/andre/.aws/`
-  - Have the SSL certificates handy.
+
+3. Create SSL certificates
+```
+$ ./certificate/request_certificate.sh
+```
 
 3. Possibly restore backups to `~/homeserver_data/`, if any.
 
@@ -58,7 +62,6 @@
 
 ```
 $ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
-$ # Place SSL certificates into homeserver/proxy/cert (certificate.crt and private.key)
 $ cd homeserver
 $ ./scripts/add_password.sh       # add password for homeserver admin
 $ ./scripts/user_config.sh        # create user directories
