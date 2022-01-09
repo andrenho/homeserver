@@ -4,19 +4,19 @@
 - [X] File manager (share downloads, homeserver\_data, root)
 - [X] Programmer application
 - [X] News aggregator (https://hub.docker.com/r/clue/ttrss)
-- [ ] Pastebin
 - [ ] Book manager
-- [ ] Replace wiki (?)
+  - [ ] Calibre
+  - [ ] Calibre web
 - [ ] E-book manager, podcasts
 - [ ] Audiobooks
-- [ ] Choose another RSS
 - [ ] Password manager (Vaultwarden?)
 - [ ] Games
 - [ ] TODO app
+- [ ] Pastebin
 
 # Development
 
-- [ ] Create new homepage with apps, graphs (CPU, RAM...) and news
+- [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, and news
 
 # Infrastructure
 

@@ -198,13 +198,29 @@ services:
   # 
   # Support services
   #
+
+  calibre:
+    image: lscr.io/linuxserver/calibre
+    container_name: calibre
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+      - PASSWORD= #optional
+      - CLI_ARGS= #optional
+    volumes:
+      - "${HOME}/volume/books:/config"
+    ports:
+      - 7080:8080
+      - 7081:8081
+    restart: unless-stopped
   
   rss-db:
     image: postgres:9.5-alpine
     container_name: rss-db
     restart: unless-stopped
     volumes:
-      - ${HOME}/volume/data/rss:/var/lib/postgresql/data
+      - "${HOME}/volume/data/rss:/var/lib/postgresql/data"
     environment:
       - POSTGRES_PASSWORD=a8df73gg82
       - POSTGRES_USER=db_user
