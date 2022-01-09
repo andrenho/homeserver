@@ -195,23 +195,28 @@ services:
       - PORT=8080
       - DATABASE_URL=postgres://db_user:a8df73gg82@rss-db:5432/stringer
 
-  # 
-  # Support services
-  #
-
-  calibre:
-    image: lscr.io/linuxserver/calibre
-    container_name: calibre
+  ubooquity:
+    image: lscr.io/linuxserver/ubooquity
+    container_name: ubooquity
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/Sao_Paulo
-      - PASSWORD= #optional
-      - CLI_ARGS= #optional
+      - MAXMEM=256
     volumes:
-      - "${HOME}/volume/books:/config"
+      - "${HOME}/volume/data/ubooquity:/config"
+      - "${HOME}/volume/books:/books"
+      - "${HOME}/volume/comics:/comics"
+      - "${HOME}/volume/books/raw:/files"
+    ports:
+      - 2202:2202
+      - 2203:2203
     restart: unless-stopped
-  
+
+  # 
+  # Support services
+  #
+
   rss-db:
     image: postgres:9.5-alpine
     container_name: rss-db

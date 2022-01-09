@@ -4,11 +4,10 @@
 - [X] File manager (share downloads, homeserver\_data, root)
 - [X] Programmer application
 - [X] News aggregator (https://hub.docker.com/r/clue/ttrss)
-- [ ] Book manager
+- [X] Book manager
   - [X] Calibre
-  - [ ] Calibre web
-- [ ] E-book manager, podcasts
-- [ ] Audiobooks
+- [X] E-book manager
+- [ ] Audiobooks, podcasts
 - [ ] Password manager (Vaultwarden?)
 - [ ] Games
 - [ ] TODO app
@@ -16,7 +15,8 @@
 
 # Development
 
-- [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, and news
+- [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, start/stop services, and news
+- [ ] Write software to run kindlegen
 
 # Infrastructure
 
