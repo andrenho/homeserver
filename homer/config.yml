@@ -152,3 +152,11 @@ services:
         # tag: "config"
         url: "http://192.168.15.1"
         target: "_blank"
+  - name: "Books"
+    icon: "fas fa-book"
+    items:
+      - name: "Calibre"
+        logo: "assets/tools/calibre.jpg"
+        subtitle: "E-book management"
+        url: "https://calibre.homeserver.gamesmith.uk:8443/"
+        target: "_blank"

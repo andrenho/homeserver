@@ -5,7 +5,7 @@
 - [X] Programmer application
 - [X] News aggregator (https://hub.docker.com/r/clue/ttrss)
 - [ ] Book manager
-  - [ ] Calibre
+  - [X] Calibre
   - [ ] Calibre web
 - [ ] E-book manager, podcasts
 - [ ] Audiobooks
