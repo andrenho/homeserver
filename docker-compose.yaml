@@ -165,6 +165,18 @@ services:
       - "${HOME}/volume/downloads:/downloads"
     restart: unless-stopped
 
+  bazarr:
+    image: lscr.io/linuxserver/bazarr
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+    volumes:
+      - "${HOME}/volume/data/bazarr/config:/config"
+      - "${HOME}/volume/downloads:/movies"
+    restart: unless-stopped
+
   explorer:
     image: filebrowser/filebrowser:s6
     container_name: explorer

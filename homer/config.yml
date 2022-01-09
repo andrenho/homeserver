@@ -120,6 +120,11 @@ services:
         subtitle: "Movie monitoring"
         url: "https://radarr.homeserver.gamesmith.uk:8443/"
         target: "_blank"
+      - name: "Bazarr"
+        logo: "assets/tools/bazarr.png"
+        subtitle: "Subtitle monitoring"
+        url: "https://bazarr.homeserver.gamesmith.uk:8443/"
+        target: "_blank"
   - name: "System"
     icon: "fas fa-cog"
     items:
