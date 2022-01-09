@@ -158,7 +158,7 @@ services:
     - name: "Ubooquity"
       logo: "assets/tools/ubooquity.png"
       subtitle: "E-book reader"
-      url: "https://ubooquity.homeserver.gamesmith.uk:8443/ubooquity"
+      url: "https://books.homeserver.gamesmith.uk:8443/ubooquity"
       target: "_blank"
     - name: "Ubooquity (Admin)"
       logo: "assets/tools/ubooquity.png"
