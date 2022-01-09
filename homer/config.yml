@@ -9,7 +9,7 @@ icon: "fas fa-laptop-house" # Optional icon
 header: true
 footer: false
 
-columns: 3
+columns: 4
 connectivityCheck: false
 
 # Optional theme customization
@@ -72,6 +72,29 @@ links:
 #        https://github.com/WalkxCode/dashboard-icons
 #        https://github.com/edent/SuperTinyIcons
 services:
+  - name: "Apps"
+    icon: "far fa-calendar-check"
+    items:
+      - name: "File Browser"
+        logo: "assets/tools/filebrowser.png"
+        subtitle: "Access files via web interface"
+        url: "https://explorer.homeserver.gamesmith.uk:8443/"
+        target: "_blank"
+      - name: "dokuwiki"
+        logo: "assets/tools/dokuwiki.png"
+        subtitle: "Wiki document management"
+        url: "https://wiki.homeserver.gamesmith.uk:8443/"
+        target: "_blank"
+      - name: "openbooks"
+        logo: "assets/tools/openbooks.svg"
+        subtitle: "Book aggregator"
+        url: "https://openbooks.homeserver.gamesmith.uk:8443/"
+        target: "_blank"
+      - name: "stringer"
+        logo: "assets/tools/rss.svg"
+        subtitle: "RSS feed reader"
+        url: "https://rss.homeserver.gamesmith.uk:8443/"
+        target: "_blank"
   - name: "Media"
     icon: "fas fa-film"
     items:
@@ -97,23 +120,13 @@ services:
         subtitle: "Movie monitoring"
         url: "https://radarr.homeserver.gamesmith.uk:8443/"
         target: "_blank"
-  - name: "Apps"
-    icon: "fas fa-file-alt"
+  - name: "Programming"
+    icon: "far fa-file-code"
     items:
-      - name: "File Browser"
-        logo: "assets/tools/filebrowser.png"
-        subtitle: "Access files via web interface"
-        url: "https://explorer.homeserver.gamesmith.uk:8443/"
-        target: "_blank"
-      - name: "dokuwiki"
-        logo: "assets/tools/dokuwiki.png"
-        subtitle: "Wiki document management"
-        url: "https://wiki.homeserver.gamesmith.uk:8443/"
-        target: "_blank"
-      - name: "openbooks"
-        logo: "assets/tools/openbooks.svg"
-        subtitle: "Book aggregator"
-        url: "https://openbooks.homeserver.gamesmith.uk:8443/"
+      - name: "CyberChef"
+        logo: "assets/tools/cyberchef.png"
+        subtitle: "Programmer calculator"
+        url: "https://cyberchef.homeserver.gamesmith.uk:8443/"
         target: "_blank"
   - name: "System"
     icon: "fas fa-cog"

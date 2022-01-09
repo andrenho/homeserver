@@ -20,12 +20,17 @@
 
 # Infrastructure
 
-- [ ] Reorganize downloads folder (prepare for new HD)
+- [X] Reorganize downloads folder (prepare for new HD)
 - [ ] Software development container (?)
 - [ ] Backup to other server and cloud
 - [ ] PiKVM
 - [ ] PiHole
 - [ ] Protect machine with firewall (ufw?)
+
+# Configuration
+
+- [ ] Configure sonarr & radarr
+- [ ] Configure RSS feeds
 
 # Major infrastructre changes
 

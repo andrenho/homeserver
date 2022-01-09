@@ -61,7 +61,7 @@ echo -n "your-password" | docker run -i --rm atmoz/makepasswd --crypt-md5 --clea
 $ ./certificate/request_certificate.sh
 ```
 
-3. Possibly restore backups to `~/homeserver_data/`, if any.
+3. Possibly restore backups to `~/volume/data/`, if any.
 
 4. Install the homeserver:
 
