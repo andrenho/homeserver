@@ -7,11 +7,19 @@
 - [X] Book manager
   - [X] Calibre
 - [X] E-book manager
-- [ ] Audiobooks, podcasts (audioserve)
+- [X] Audiobooks
+- [X] Podcasts (podgrab)
+- [ ] Note taking (Plainpad)
+  - https://github.com/alextselegidis/plainpad
+  - https://github.com/alextselegidis/plainpad/blob/master/docs/docker.md
+  - https://github.com/alextselegidis/plainpad/blob/master/docker/docker-compose.yml
+  - https://github.com/alextselegidis/plainpad/tree/master/docker/server
 - [ ] Password manager (Vaultwarden?)
 - [ ] Games
 - [ ] TODO app
-- [ ] Pastebin
+- [ ] Read it later (wallabag)
+- [ ] Stuff for software development (Regexr)
+- [ ] Check other projects in https://www.linuxserver.io/
 
 # Development
 

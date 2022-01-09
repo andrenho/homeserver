@@ -227,6 +227,18 @@ services:
       - "${HOME}/volume/data/audioserve:/home/audioserve/.audioserve"
       - "${HOME}/volume/audiobooks:/audiobooks"
 
+  podgrab:
+    image: akhilrex/podgrab
+    container_name: podgrab
+    environment:
+      - CHECK_FREQUENCY=30
+    volumes:
+      - "${HOME}/volume/data/podgrab:/config"
+      - "${HOME}/volume/podcasts:/assets"
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+
   # 
   # Support services
   #
