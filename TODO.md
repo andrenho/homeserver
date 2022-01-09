@@ -7,7 +7,7 @@
 - [X] Book manager
   - [X] Calibre
 - [X] E-book manager
-- [ ] Audiobooks, podcasts
+- [ ] Audiobooks, podcasts (audioserve)
 - [ ] Password manager (Vaultwarden?)
 - [ ] Games
 - [ ] TODO app
