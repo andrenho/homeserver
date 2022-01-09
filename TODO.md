@@ -4,15 +4,15 @@
 - [X] File manager (share downloads, homeserver\_data, root)
 - [X] Programmer application
 - [X] News aggregator (https://hub.docker.com/r/clue/ttrss)
-- [ ] TODO app
 - [ ] Pastebin
 - [ ] Book manager
+- [ ] Replace wiki (?)
 - [ ] E-book manager, podcasts
 - [ ] Audiobooks
 - [ ] Choose another RSS
 - [ ] Password manager (Vaultwarden?)
 - [ ] Games
-- [ ] Configure sonarr & radarr
+- [ ] TODO app
 
 # Development
 
