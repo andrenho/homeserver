@@ -29,9 +29,7 @@
   - [X] install all packages
   - [X] map volumes (home and Dockerfile)
   - [X] configure dotfiles
-  - [ ] redirect a few ports
-  - [ ] start a light web server?
-  - [ ] vim autocomplete?
+  - [X] redirect a few ports
 - [ ] Backup to other server and cloud (https://www.duplicati.com/, https://docs.linuxserver.io/images/docker-duplicati)
 - [ ] FTP server only for local network
 - [ ] PiKVM
