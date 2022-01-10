@@ -43,15 +43,6 @@ colors:
     card-shadow: rgba(0, 0, 0, 0.4)
     link-hover: "#ffdd57"
 
-# Optional message
-#message:
-# TODO - add message with system info
-#  #url: https://b4bz.io
-#  style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
-#  title: "Demo !"
-#  icon: "fa fa-grin"
-#  content: "This is a dummy homepage demo. <br /> Find more information on <a href='https://github.com/bastienwirtz/homer'>github.com/bastienwirtz/homer</a>"
-
 # Optional navbar
 # links: [] # Allows for navbar (dark mode, layout, and search) without any links
 links:
@@ -93,6 +84,16 @@ services:
   - name: "Books"
     icon: "fas fa-book"
     items:
+    - name: "Audioserve"
+      logo: "assets/tools/audioserve.png"
+      subtitle: "Audiobook player"
+      url: "https://audioserve.homeserver.gamesmith.uk:8443/"
+      target: "_blank"
+    - name: "openbooks"
+      logo: "assets/tools/openbooks.svg"
+      subtitle: "Book aggregator"
+      url: "https://openbooks.homeserver.gamesmith.uk:8443/"
+      target: "_blank"
     - name: "Ubooquity"
       logo: "assets/tools/ubooquity.png"
       subtitle: "E-book reader"
@@ -103,16 +104,6 @@ services:
       subtitle: "Ubooqiuty admin tools"
       url: "https://books-admin.homeserver.gamesmith.uk:8443/ubooquity/admin"
       target: "_blank"
-    - name: "openbooks"
-      logo: "assets/tools/openbooks.svg"
-      subtitle: "Book aggregator"
-      url: "https://openbooks.homeserver.gamesmith.uk:8443/"
-      target: "_blank"
-    - name: "Audioserve"
-      logo: "assets/tools/audioserve.png"
-      subtitle: "Audiobook player"
-      url: "https://audioserve.homeserver.gamesmith.uk:8443/"
-      target: "_blank"
   - name: "Media"
     icon: "fas fa-film"
     items:
@@ -122,16 +113,16 @@ services:
         # tag: "media"
         url: "http://homeserver.gamesmith.uk:32400/web"
         target: "_blank"
+      - name: "Podgrab"
+        logo: "assets/tools/podgrab.svg"
+        subtitle: "Podcast player"
+        url: "https://podgrab.homeserver.gamesmith.uk:8443/"
+        target: "_blank"
       - name: "QBitTorrent"
         logo: "assets/tools/qbittorrent.png"
         subtitle: "Bittorrent client"
         # tag: "media"
         url: "https://torrent.homeserver.gamesmith.uk:8443/"
-        target: "_blank"
-      - name: "Podgrab"
-        logo: "assets/tools/podgrab.svg"
-        subtitle: "Podcast player"
-        url: "https://podgrab.homeserver.gamesmith.uk:8443/"
         target: "_blank"
   - name: "System"
     icon: "fas fa-cog"
@@ -188,3 +179,13 @@ services:
         subtitle: "Subtitle monitoring"
         url: "https://bazarr.homeserver.gamesmith.uk:8443/"
         target: "_blank"
+          
+# Optional message
+#message:
+# TODO - add message with system info
+#  #url: https://b4bz.io
+#  style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
+#  title: "Demo !"
+#  icon: "fa fa-grin"
+#  content: "This is a dummy homepage demo. <br /> Find more information on <a href='https://github.com/bastienwirtz/homer'>github.com/bastienwirtz/homer</a>"
+
