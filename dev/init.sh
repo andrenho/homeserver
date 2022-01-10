@@ -29,4 +29,6 @@ ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
 echo $TZ > /etc/timezone
 echo "dev" > /etc/hostname
 rm -f /etc/service/sshd/down 
+
+mkdir -p /usr/share/git-core/contrib/completion
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > /usr/share/git-core/contrib/completion/git-prompt.sh
