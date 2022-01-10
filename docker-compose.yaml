@@ -82,6 +82,8 @@ services:
       - "7001:7001"
       - "7002:7002"
       - "7003:7003"
+      - "7080:7080"
+      - "7081:7081"
 
   backup:
     build: backup
@@ -108,6 +110,8 @@ services:
     image: proxy:latest
     ports:
       - "443:443"
+      - "7443:7443"
+      - "7444:7444"
 
   homer:
     restart: unless-stopped

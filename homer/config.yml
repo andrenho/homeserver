@@ -145,7 +145,7 @@ services:
         target: "_blank"
       - name: "Router"
         logo: "assets/tools/dd-wrt.png"
-        subtitle: "Router configuration 52468313"
+        subtitle: "Router configuration"
         # tag: "config"
         url: "http://192.168.15.1"
         target: "_blank"

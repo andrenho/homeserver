@@ -35,7 +35,8 @@
 | Random port   |    22       | SSH, for maintenance |
 | 443 (or 8443) |   443       | Homeserver main port |
 | Random port   |  2222       | SFTP |
-| 7000..7003    |  7000.7003  | Development server |
+| 7000..7003    |  7000.7003  | Development server (unencrypted) |
+| 7443,7444     |  7443,7444  | Development server (SSL) [internally, offloaded to 7080 and 7081] |
 | 32400         | 32400       | Plex |
 
 Do **not** open port 21, as these are used for internal unsecure FTP.
