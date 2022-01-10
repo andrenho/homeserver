@@ -55,6 +55,7 @@ services:
     build: dev
     container_name: dev
     restart: unless-stopped
+    hostname: dev
     ports:
       - "6969:22"
 
