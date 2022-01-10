@@ -295,8 +295,11 @@ services:
     volumes:
       - "${HOME}/volume/data/podgrab:/config"
       - "${HOME}/volume/podcasts:/assets"
-    ports:
-      - 8080:8080
+    restart: unless-stopped
+
+  hoppscotch:
+    image: hoppscotch/hoppscotch
+    container_name: hoppscotch
     restart: unless-stopped
 
   # 

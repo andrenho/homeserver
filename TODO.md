@@ -13,7 +13,6 @@
     - [ ] Regexr
     - [ ] https://github.com/hoppscotch/hoppscotch (https://hoppscotch.io/pt-br)
 - [ ] Note taking (Plainpad)
-- [ ] Password manager (Vaultwarden?)
 - [ ] TODO app
 - [ ] Read it later (wallabag)
 - [ ] Check other projects in https://www.linuxserver.io/
@@ -34,7 +33,7 @@
   - [X] redirect a few ports
 - [X] Backup to other server and cloud (https://www.duplicati.com/, https://docs.linuxserver.io/images/docker-duplicati)
 - [X] FTP server only for local network
-- [ ] Open additional HTTPS ports for dev server
+- [X] Open additional HTTPS ports for dev server
 - [ ] PiHole
 - [ ] Protect machine with firewall (ufw?) - protect FTP port
 - [ ] PiKVM
