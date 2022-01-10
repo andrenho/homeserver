@@ -30,12 +30,13 @@
 
 1. Open the following ports in the router, all pointing to the homeserver:
 
-| Extern        | Intern | Used by |
-|---------------|--------|---------|
-| Random port   |    22  | SSH, for maintenance |
-| 443 (or 8443) |   443  | Homeserver main port |
-| 2222          |  2222  | SFTP |
-| 32400         | 32400  | Plex |
+| Extern        | Intern      | Used by |
+|---------------|-------------|---------|
+| Random port   |    22       | SSH, for maintenance |
+| 443 (or 8443) |   443       | Homeserver main port |
+| Random port   |  2222       | SFTP |
+| 7000..7003    |  7000.7003  | Development server |
+| 32400         | 32400       | Plex |
 
 ## Homeserver installation
 

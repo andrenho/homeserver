@@ -61,6 +61,10 @@ services:
       - "${HOME}/volume/dev:/home/dev"
     ports:
       - "6969:22"
+      - "7000:7000"
+      - "7001:7001"
+      - "7002:7002"
+      - "7003:7003"
 
   #
   # Web services
