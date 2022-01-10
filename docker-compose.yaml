@@ -66,6 +66,18 @@ services:
       - "7002:7002"
       - "7003:7003"
 
+  backup:
+    build: backup
+    container_name: backup
+    restart: always
+    volumes:
+      - "${HOME}/volume/data:/data:ro"
+    environment:
+      - BUCKET_NAME=homeserver-gamesmith-backup
+    secrets:
+      - source: aws_credentials
+        target: /root/.aws/credentials
+
   #
   # Web services
   #

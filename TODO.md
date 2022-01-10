@@ -20,12 +20,13 @@
 # Development
 
 - [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, start/stop services, and news
+  - Describe SFTP, FTP, SSH (?) servers
 - [ ] Write software to run kindlegen
 
 # Infrastructure
 
 - [X] Reorganize downloads folder (prepare for new HD)
-- [ ] Software development container (c & web)
+- [X] Software development container (c & web)
   - [X] install all packages
   - [X] map volumes (home and Dockerfile)
   - [X] configure dotfiles
