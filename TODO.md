@@ -9,19 +9,18 @@
 - [X] E-book manager
 - [X] Audiobooks
 - [X] Podcasts (podgrab)
+- [ ] Stuff for software development (Regexr)
 - [ ] Note taking (Plainpad)
 - [ ] Password manager (Vaultwarden?)
-- [ ] Games
 - [ ] TODO app
 - [ ] Read it later (wallabag)
-- [ ] Stuff for software development (Regexr)
 - [ ] Check other projects in https://www.linuxserver.io/
 
 # Development
 
+- [ ] Write software to run kindlegen
 - [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, start/stop services, and news
   - Describe SFTP, FTP, SSH (?) servers
-- [ ] Write software to run kindlegen
 
 # Infrastructure
 
@@ -33,16 +32,16 @@
   - [X] redirect a few ports
 - [X] Backup to other server and cloud (https://www.duplicati.com/, https://docs.linuxserver.io/images/docker-duplicati)
 - [X] FTP server only for local network
-- [ ] PiKVM
 - [ ] PiHole
 - [ ] Protect machine with firewall (ufw?) - protect FTP port
+- [ ] PiKVM
 - [ ] Is backup working?
 
 # Configuration
 
-- [ ] Configure sonarr & radarr & bazarr
 - [ ] Configure RSS feeds
 - [ ] Remove simple auth from audible to configure Android
+- [ ] Configure sonarr & radarr & bazarr
 
 # Major infrastructre changes
 
@@ -50,8 +49,3 @@
 - [ ] Move to ansible
 - [ ] Make the installation generic for any IP, network, timezone, domain, and user name
   - Centralize passwords
-
-# Find new stuff
-
-- [ ] View all linuxserver services (in docker)
-- [ ] https://github.com/awesome-selfhosted/awesome-selfhosted, Miscelaneous
