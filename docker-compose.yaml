@@ -56,6 +56,9 @@ services:
     container_name: dev
     restart: unless-stopped
     hostname: dev
+    volumes:
+      - "${HOME}/homeserver/dev:/docker-host"
+      - "${HOME}/volume/dev:/home/dev"
     ports:
       - "6969:22"
 

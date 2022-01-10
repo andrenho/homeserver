@@ -4,9 +4,14 @@ CMD ["/sbin/my_init"]
 ENV TZ=America/Sao_Paulo
 COPY init.sh /tmp/init.sh
 RUN chmod +x /tmp/init.sh && /tmp/init.sh
-COPY init-user.sh /tmp/init-user.sh
-COPY key.pub /tmp/key.pub
-RUN chown dev:dev /tmp/init-user.sh /tmp/key.pub
-USER dev
-RUN chmod +x /tmp/init-user.sh && /tmp/init-user.sh
-USER root
+COPY key.pub /key.pub
+
+COPY init-user.sh /etc/my_init.d/init-user.sh
+RUN chmod +x /etc/my_init.d/init-user.sh
+
+COPY .bashrc /
+COPY .dir_colors /
+COPY .inputrc /
+COPY .tmux.conf /
+COPY .vimrc /
+RUN chown dev:dev /.bashrc /.dir_colors /.inputrc /.tmux.conf /.vimrc

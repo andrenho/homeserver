@@ -27,7 +27,7 @@
 - [X] Reorganize downloads folder (prepare for new HD)
 - [ ] Software development container (c & web)
   - [X] install all packages
-  - [ ] map volumes (home and Dockerfile)
+  - [X] map volumes (home and Dockerfile)
   - [ ] configure dotfiles
   - [ ] redirect a few ports
   - [ ] start a light web server?
