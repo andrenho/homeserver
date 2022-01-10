@@ -1,43 +1,15 @@
-# Web apps
+# Infrastructure
 
-- [X] SFTP
-- [X] File manager (share downloads, homeserver\_data, root)
-- [X] Programmer application
-- [X] News aggregator (https://hub.docker.com/r/clue/ttrss)
-- [X] Book manager
-  - [X] Calibre
-- [X] E-book manager
-- [X] Audiobooks
-- [X] Podcasts (podgrab)
-- [ ] Stuff for software development
-    - [ ] Regexr
-    - [ ] https://github.com/hoppscotch/hoppscotch (https://hoppscotch.io/pt-br)
-- [ ] Note taking (Plainpad)
-- [ ] TODO app
-- [ ] Read it later (wallabag)
-- [ ] Check other projects in https://www.linuxserver.io/
+- [ ] Is backup working?
+- [ ] PiHole
+- [ ] Protect machine with firewall (ufw?) - protect FTP port
+- [ ] PiKVM
 
 # Development
 
 - [ ] Write software to run kindlegen
 - [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, start/stop services, and news
   - Describe SFTP, FTP, SSH (?) servers
-
-# Infrastructure
-
-- [X] Reorganize downloads folder (prepare for new HD)
-- [X] Software development container (c & web)
-  - [X] install all packages
-  - [X] map volumes (home and Dockerfile)
-  - [X] configure dotfiles
-  - [X] redirect a few ports
-- [X] Backup to other server and cloud (https://www.duplicati.com/, https://docs.linuxserver.io/images/docker-duplicati)
-- [X] FTP server only for local network
-- [X] Open additional HTTPS ports for dev server
-- [ ] PiHole
-- [ ] Protect machine with firewall (ufw?) - protect FTP port
-- [ ] PiKVM
-- [ ] Is backup working?
 
 # Configuration
 
@@ -51,3 +23,9 @@
 - [ ] Move to ansible
 - [ ] Make the installation generic for any IP, network, timezone, domain, and user name
   - Centralize passwords
+# Web apps
+
+- [ ] Note taking (Plainpad)
+- [ ] TODO app
+- [ ] Read it later (wallabag)
+- [ ] Check other projects in https://www.linuxserver.io/
