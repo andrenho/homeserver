@@ -9,7 +9,9 @@
 - [X] E-book manager
 - [X] Audiobooks
 - [X] Podcasts (podgrab)
-- [ ] Stuff for software development (Regexr)
+- [ ] Stuff for software development
+    - [ ] Regexr
+    - [ ] https://github.com/hoppscotch/hoppscotch (https://hoppscotch.io/pt-br)
 - [ ] Note taking (Plainpad)
 - [ ] Password manager (Vaultwarden?)
 - [ ] TODO app
