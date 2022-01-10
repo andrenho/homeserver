@@ -26,9 +26,12 @@
 
 - [X] Reorganize downloads folder (prepare for new HD)
 - [ ] Software development container (c & web)
-  - https://github.com/jeroenpeeters/docker-ssh
-  - https://gist.github.com/d11wtq/8699521
-  - https://www.howtoforge.com/reverse-proxy-for-https-ssh-and-mysql-mariadb-using-nginx/
+  - install all packages
+  - map volume
+  - configure dotfiles
+  - vim autocomplete?
+  - redirect a few ports
+  - start a light web server?
 - [ ] Backup to other server and cloud (https://www.duplicati.com/, https://docs.linuxserver.io/images/docker-duplicati)
 - [ ] FTP server only for local network
 - [ ] PiKVM
