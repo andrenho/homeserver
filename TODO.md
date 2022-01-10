@@ -31,11 +31,12 @@
   - [X] map volumes (home and Dockerfile)
   - [X] configure dotfiles
   - [X] redirect a few ports
-- [ ] Backup to other server and cloud (https://www.duplicati.com/, https://docs.linuxserver.io/images/docker-duplicati)
-- [ ] FTP server only for local network
+- [X] Backup to other server and cloud (https://www.duplicati.com/, https://docs.linuxserver.io/images/docker-duplicati)
+- [X] FTP server only for local network
 - [ ] PiKVM
 - [ ] PiHole
-- [ ] Protect machine with firewall (ufw?)
+- [ ] Protect machine with firewall (ufw?) - protect FTP port
+- [ ] Is backup working?
 
 # Configuration
 

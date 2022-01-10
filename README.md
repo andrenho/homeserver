@@ -38,6 +38,8 @@
 | 7000..7003    |  7000.7003  | Development server |
 | 32400         | 32400       | Plex |
 
+Do **not** open port 21, as these are used for internal unsecure FTP.
+
 ## Homeserver installation
 
 1. Connect to the internet, if on wi-fi, and do basic preparations:
