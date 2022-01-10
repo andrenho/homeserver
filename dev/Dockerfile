@@ -1,6 +1,7 @@
 FROM phusion/baseimage:master-amd64
 CMD ["/sbin/my_init"]
 
+ENV TZ=America/Sao_Paulo
 COPY init.sh /tmp/init.sh
 RUN chmod +x /tmp/init.sh && /tmp/init.sh
 COPY init-user.sh /tmp/init-user.sh

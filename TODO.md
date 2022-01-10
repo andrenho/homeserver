@@ -26,12 +26,12 @@
 
 - [X] Reorganize downloads folder (prepare for new HD)
 - [ ] Software development container (c & web)
-  - install all packages
-  - map volume
-  - configure dotfiles
-  - vim autocomplete?
-  - redirect a few ports
-  - start a light web server?
+  - [X] install all packages
+  - [ ] map volumes (home and Dockerfile)
+  - [ ] configure dotfiles
+  - [ ] redirect a few ports
+  - [ ] start a light web server?
+  - [ ] vim autocomplete?
 - [ ] Backup to other server and cloud (https://www.duplicati.com/, https://docs.linuxserver.io/images/docker-duplicati)
 - [ ] FTP server only for local network
 - [ ] PiKVM
@@ -48,7 +48,7 @@
 
 - [ ] Move to IPv6, open port 433 on router
 - [ ] Move to ansible
-- [ ] Make the installation generic for any IP, network, domain, and user name
+- [ ] Make the installation generic for any IP, network, timezone, domain, and user name
   - Centralize passwords
 
 # Find new stuff
