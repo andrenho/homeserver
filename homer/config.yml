@@ -2,8 +2,8 @@
 # Homepage configuration
 # See https://fontawesome.com/icons for icons options
 
-title: "André's Home Server"
-subtitle: "Dashboard"
+title: "Home Server"
+subtitle: "André's"
 icon: "fas fa-laptop-house" # Optional icon
 
 header: true
