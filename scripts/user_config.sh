@@ -21,3 +21,12 @@ cp -p arch/.inputrc /home/andre/.inputrc
 
 # Remove useless directories
 rm -rf ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Public ~/Templates ~/Videos
+
+# Add configuration to connect to dev
+echo << EOF >> ~/.ssh/config
+HOST dev
+  HostName 127.0.0.1
+  Port 6969
+  User dev
+  IdentityFile ~/.ssh/homeserver-dev.key
+EOF

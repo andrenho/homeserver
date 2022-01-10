@@ -55,6 +55,8 @@ services:
     build: dev
     container_name: dev
     restart: unless-stopped
+    ports:
+      - "6969:22"
 
   #
   # Web services
