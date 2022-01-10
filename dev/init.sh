@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -x
+set -xe
 
 # installation process
 
@@ -11,7 +11,7 @@ apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 apt-get -y install \
     vim sudo git build-essential autotools-dev automake gdb autoconf plantuml \
     ruby python3 lua5.3 nodejs gcc-avr clang linux-headers-generic man \
-    colordiff bc dircolors wget bash-completion tmux mlocate htop mc jq tree
+    colordiff bc wget bash-completion tmux mlocate htop mc jq tree
 apt-get -y clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 # create user dev

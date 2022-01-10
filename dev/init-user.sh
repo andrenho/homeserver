@@ -2,7 +2,7 @@
 
 exec 19>/var/log/init-user.log
 BASH_XTRACEFD=19
-set -x
+set -xe
 
 # setup SSH key
 
