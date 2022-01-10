@@ -65,6 +65,8 @@ services:
       FTP_USER_NAME: homeserver
       FTP_USER_PASS: upload
       FTP_USER_HOME: /home/username
+      FTP_USER_UID: 1000
+      FTP_USER_GID: 1000
 
   dev:
     build: dev
