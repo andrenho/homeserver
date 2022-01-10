@@ -28,7 +28,7 @@
 - [ ] Software development container (c & web)
   - [X] install all packages
   - [X] map volumes (home and Dockerfile)
-  - [ ] configure dotfiles
+  - [X] configure dotfiles
   - [ ] redirect a few ports
   - [ ] start a light web server?
   - [ ] vim autocomplete?

@@ -14,4 +14,5 @@ COPY .dir_colors /
 COPY .inputrc /
 COPY .tmux.conf /
 COPY .vimrc /
-RUN chown dev:dev /.bashrc /.dir_colors /.inputrc /.tmux.conf /.vimrc
+COPY .profile /
+RUN chown dev:dev /.bashrc /.dir_colors /.inputrc /.tmux.conf /.vimrc /.profile

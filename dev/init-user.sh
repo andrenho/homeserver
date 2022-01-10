@@ -20,8 +20,9 @@ cp -n /.dir_colors /home/dev/
 cp -n /.inputrc /home/dev/
 cp -n /.tmux.conf /home/dev/
 cp -n /.vimrc /home/dev/
-rm -f /.bashrc /.dir_colors /.inputrc /.tmux.conf /.vimrc
-chown dev:dev /home/dev/.bashrc /home/dev/.dir_colors /home/dev/.inputrc /home/dev/.tmux.conf /home/dev/.vimrc
+cp -n /.profile /home/dev/
+rm -f /.bashrc /.dir_colors /.inputrc /.tmux.conf /.vimrc /.profile
+chown dev:dev /home/dev/.bashrc /home/dev/.dir_colors /home/dev/.inputrc /home/dev/.tmux.conf /home/dev/.vimrc /home/dev/.profile
 
 # remove this script
 
