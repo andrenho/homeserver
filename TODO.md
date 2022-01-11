@@ -1,7 +1,7 @@
 # Infrastructure
 
-- [ ] Is backup working?
-- [ ] PiHole
+- [X] Is backup working?
+- [X] PiHole
 - [ ] Protect machine with firewall (ufw?) - protect FTP port
 - [ ] PiKVM
 
