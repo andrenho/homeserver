@@ -184,6 +184,12 @@ services:
         # tag: "config"
         url: "http://192.168.15.1"
         target: "_blank"
+      - name: "Router (advanced)"
+        logo: "assets/tools/dd-wrt.png"
+        subtitle: "Advanced config (user: support)"
+        # tag: "config"
+        url: "http://192.168.15.1/padrao"
+        target: "_blank"
           
 # Optional message
 #message:
