@@ -23,9 +23,14 @@
 - [ ] Move to ansible
 - [ ] Make the installation generic for any IP, network, timezone, domain, and user name
   - Centralize passwords
+
 # Web apps
 
 - [ ] Note taking (Plainpad)
 - [ ] TODO app
 - [ ] Read it later (wallabag)
 - [ ] Check other projects in https://www.linuxserver.io/
+
+# Problems
+
+- [ ] Stringer (RSS) is having problems with certificates

@@ -1,21 +1,45 @@
 version: '3.9'
 services:
 
+  # 
+  # Pi-hole
+  #
+
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+    environment:
+      - TZ='America/Sao_Paulo'
+      - FTLCONF_REPLY_ADDR4=192.168.15.2
+      - PIHOLE_DNS_=8.8.8.8;8.8.4.4
+      - VIRTUAL_HOST=pihole.homeserver.gamesmith.uk
+      - WEBPASSWORD=admin
+    volumes:
+      - '${HOME}/volume/data/pihole/etc/:/etc/pihole/'
+      - '${HOME}/volume/data/pihole/dnsmasq.d/:/etc/dnsmasq.d/'
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+
   #
   # daemons
   #
 
-  dns:
-    build: dns
-    container_name: dns
-    restart: unless-stopped
-    image: dns:latest
-    volumes:
-      - "./dns/conf:/etc/dnsmasq.d:ro"
-    ports:
-      - "53:53"
-      - "53:53/udp"
-    dns: 192.168.15.1
+  #dns:
+  #  build: dns
+  #  container_name: dns
+  #  restart: unless-stopped
+  #  image: dns:latest
+  #  volumes:
+  #    - "./dns/conf:/etc/dnsmasq.d:ro"
+  #  ports:
+  #    - "53:53"
+  #    - "53:53/udp"
+  #  dns: 192.168.15.1
 
   dynamicdns:
     build: dynamicdns
