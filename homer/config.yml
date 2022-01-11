@@ -176,7 +176,7 @@ services:
       - name: "Pi-hole"
         logo: "assets/tools/pihole.svg"
         subtitle: "DNS, DCHP and ad blocking"
-        url: "https://pihole.homeserver.gamesmith.uk:8443/"
+        url: "https://pihole.homeserver.gamesmith.uk:8443/admin/"
         target: "_blank"
       - name: "Router"
         logo: "assets/tools/dd-wrt.png"
