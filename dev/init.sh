@@ -17,6 +17,7 @@ apt-get -y clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # install libraries
 
+ln -s /usr/bin/python3 /usr/local/bin/python
 curl https://bootstrap.pypa.io/get-pip.py | python
 
 # create user dev
@@ -29,7 +30,6 @@ chown dev:dev /home/dev
 
 # system configuration
 
-ln -s /usr/bin/python3 /usr/local/bin/python
 ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
 echo $TZ > /etc/timezone
 echo "dev" > /etc/hostname
