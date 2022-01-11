@@ -11,8 +11,13 @@ apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 apt-get -y install \
     vim sudo git build-essential autotools-dev automake gdb autoconf plantuml \
     ruby python3 lua5.3 nodejs gcc-avr clang linux-headers-generic man \
-    colordiff bc wget bash-completion tmux mlocate htop mc jq tree
+    colordiff bc wget bash-completion tmux mlocate htop mc jq tree \
+    python3.8-venv
 apt-get -y clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
+
+# install libraries
+
+curl https://bootstrap.pypa.io/get-pip.py | python
 
 # create user dev
 
