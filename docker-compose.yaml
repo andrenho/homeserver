@@ -18,12 +18,18 @@ services:
       - PIHOLE_DNS_=8.8.8.8;8.8.4.4
       - VIRTUAL_HOST=pihole.homeserver.gamesmith.uk
       - WEBPASSWORD=admin
+      - DNSMASQ_LISTENING=all
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
     volumes:
       - '${HOME}/volume/data/pihole/etc/:/etc/pihole/'
       - '${HOME}/volume/data/pihole/dnsmasq.d/:/etc/dnsmasq.d/'
     cap_add:
       - NET_ADMIN
+    #network_mode: host
     restart: unless-stopped
+
 
   #
   # daemons

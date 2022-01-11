@@ -9,7 +9,7 @@ icon: "fas fa-laptop-house" # Optional icon
 header: true
 footer: false
 
-columns: 4
+columns: 3
 connectivityCheck: false
 
 # Optional theme customization
@@ -124,30 +124,6 @@ services:
         # tag: "media"
         url: "https://torrent.homeserver.gamesmith.uk:8443/"
         target: "_blank"
-  - name: "System"
-    icon: "fas fa-cog"
-    items:
-      - name: "WebSSH"
-        logo: "assets/tools/tux.png"
-        subtitle: "Secure shell client"
-        url: "https://ssh.homeserver.gamesmith.uk:8443/#fontsize=18"
-        target: "_blank"
-      - name: "Dash"
-        logo: "assets/tools/dash.png"
-        subtitle: "Host server monitoring"
-        url: "/dash/"
-        target: "_blank"
-      - name: "Portainer"
-        logo: "assets/tools/docker.svg"
-        subtitle: "Docker container management"
-        url: "/portainer/"
-        target: "_blank"
-      - name: "Router"
-        logo: "assets/tools/dd-wrt.png"
-        subtitle: "Router configuration"
-        # tag: "config"
-        url: "http://192.168.15.1"
-        target: "_blank"
   - name: "Programming"
     icon: "far fa-file-code"
     items:
@@ -178,6 +154,35 @@ services:
         logo: "assets/tools/bazarr.png"
         subtitle: "Subtitle monitoring"
         url: "https://bazarr.homeserver.gamesmith.uk:8443/"
+        target: "_blank"
+  - name: "System"
+    icon: "fas fa-cog"
+    items:
+      - name: "WebSSH"
+        logo: "assets/tools/tux.png"
+        subtitle: "Secure shell client"
+        url: "https://ssh.homeserver.gamesmith.uk:8443/#fontsize=18"
+        target: "_blank"
+      - name: "Dash"
+        logo: "assets/tools/dash.png"
+        subtitle: "Host server monitoring"
+        url: "/dash/"
+        target: "_blank"
+      - name: "Portainer"
+        logo: "assets/tools/docker.svg"
+        subtitle: "Docker container management"
+        url: "/portainer/"
+        target: "_blank"
+      - name: "Pi-hole"
+        logo: "assets/tools/pihole.svg"
+        subtitle: "DNS, DCHP and ad blocking"
+        url: "https://pihole.homeserver.gamesmith.uk:8443/"
+        target: "_blank"
+      - name: "Router"
+        logo: "assets/tools/dd-wrt.png"
+        subtitle: "Router configuration"
+        # tag: "config"
+        url: "http://192.168.15.1"
         target: "_blank"
           
 # Optional message
