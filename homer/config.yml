@@ -166,7 +166,7 @@ services:
       - name: "Dash"
         logo: "assets/tools/dash.png"
         subtitle: "Host server monitoring"
-        url: "/dash/"
+        url: "https://dash.homeserver.gamesmith.uk:8443/"
         target: "_blank"
       - name: "Portainer"
         logo: "assets/tools/docker.svg"
