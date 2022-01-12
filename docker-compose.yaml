@@ -308,7 +308,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - "AUDIOSERVE_SHARED_SECRET=changeme"
+        #- AUDIOSERVE_SHARED_SECRET=changeme
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - "${HOME}/volume/data/audioserve:/home/audioserve/.audioserve"

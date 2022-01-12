@@ -1,8 +1,5 @@
 # Infrastructure
 
-- [X] Is backup working?
-- [X] PiHole
-- [ ] Protect machine with firewall (ufw?) - protect FTP port
 - [ ] PiKVM
 
 # Development
@@ -10,12 +7,12 @@
 - [ ] Write software to run kindlegen
 - [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, start/stop services, and news
   - Describe SFTP, FTP, SSH (?) servers
+- [ ] Multi-feeds from news sites
 
 # Configuration
 
-- [ ] Configure RSS feeds
-- [ ] Remove simple auth from audible to configure Android
 - [ ] Configure sonarr & radarr & bazarr
+- [ ] Configure RSS feeds
 
 # Major infrastructre changes
 
@@ -34,3 +31,4 @@
 # Problems
 
 - [ ] Stringer (RSS) is having problems with certificates
+- [ ] Audioserve in mobile can't access the server
