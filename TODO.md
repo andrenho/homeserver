@@ -33,4 +33,4 @@
 
 - [ ] Stringer (RSS) is having problems with certificates
 - [ ] Audioserve in mobile can't access the server
-- [ ] Remove authentication from apps that are already protected: File Browser, Vue Torrent
+- [X] Remove authentication from apps that are already protected: File Browser, Vue Torrent
