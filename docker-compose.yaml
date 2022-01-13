@@ -124,6 +124,17 @@ services:
       - source: aws_credentials
         target: /root/.aws/credentials
 
+  mqtt:
+    image: eclipse-mosquitto
+    container_name: mqtt
+    restart: unless-stopped
+    volumes:
+      - "./mqtt/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro"
+      - "${HOME}/volume/data/mqtt:/mosquitto/data"
+      - "/var/log/mosquitto:/mosquitto/log"
+    ports:
+      - 1883:1883
+
   #
   # Web services
   #
@@ -163,6 +174,10 @@ services:
     volumes:
       - "${HOME}/volume/data/torrent:/config"
       - "${HOME}/volume/downloads:/downloads"
+      - "${HOME}/volume/movies:/movies"
+      - "${HOME}/volume/tv:/tv"
+      - "${HOME}/volume/books:/books"
+      - "${HOME}/volume/audiobooks:/audiobooks"
 
   plex:
     image: lscr.io/linuxserver/plex
@@ -174,8 +189,8 @@ services:
       - VERSION=docker
     volumes:
       - "${HOME}/volume/data/plex:/config"
-      - "${HOME}/volume/downloads:/movies"
-      - "${HOME}/volume/downloads:/tv"
+      - "${HOME}/volume/movies:/movies"
+      - "${HOME}/volume/tv:/tv"
 
   dokuwiki:
     image: lscr.io/linuxserver/dokuwiki

@@ -1,5 +1,6 @@
 # Infrastructure
 
+- [ ] MQTT server
 - [ ] PiKVM
 
 # Development

@@ -34,6 +34,7 @@
 |---------------|-------------|---------|
 | Random port   |    22       | SSH, for maintenance |
 | 443 (or 8443) |   443       | Homeserver main port |
+| 1883          |  1883       | MQTT |
 | Random port   |  2222       | SFTP |
 | 7000..7003    |  7000.7003  | Development server (unencrypted) |
 | 7443,7444     |  7443,7444  | Development server (SSL) [internally, offloaded to 7080 and 7081] |
