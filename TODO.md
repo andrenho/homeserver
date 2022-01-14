@@ -17,10 +17,10 @@
 
 # Major infrastructre changes
 
-- [ ] Move to IPv6, open port 433 on router
 - [ ] Move to ansible
 - [ ] Make the installation generic for any IP, network, timezone, domain, and user name
   - Centralize passwords
+- [ ] Move to IPv6, open port 433 on router
 
 # Web apps
 
