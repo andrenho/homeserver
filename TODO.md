@@ -1,19 +1,21 @@
 # Infrastructure
 
-- [X] MQTT server
 - [ ] PiKVM
 
 # Development
 
 - [ ] Write software to run kindlegen
 - [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, start/stop services, and news
-  - Describe SFTP, FTP, SSH (?) servers
+  - Check last backup date
+  - Each directory size
+- [ ] Write a decent note taking app
 - [ ] Multi-feeds from news sites
 
 # Configuration
 
 - [ ] Configure sonarr & radarr & bazarr
 - [ ] Configure RSS feeds
+- [ ] Move dev and data back to main hard disk (?)
 
 # Major infrastructre changes
 
@@ -22,15 +24,7 @@
   - Centralize passwords
 - [ ] Move to IPv6, open port 433 on router
 
-# Web apps
-
-- [ ] Note taking (Plainpad)
-- [ ] TODO app
-- [ ] Read it later (wallabag)
-- [ ] Check other projects in https://www.linuxserver.io/
-
 # Problems
 
 - [ ] Stringer (RSS) is having problems with certificates
 - [ ] Audioserve in mobile can't access the server
-- [X] Remove authentication from apps that are already protected: File Browser, Vue Torrent

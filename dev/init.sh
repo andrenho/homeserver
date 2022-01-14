@@ -12,7 +12,7 @@ apt-get -y install \
     vim sudo git build-essential autotools-dev automake gdb autoconf plantuml \
     ruby python3 lua5.3 nodejs gcc-avr clang linux-headers-generic man \
     colordiff bc wget bash-completion tmux mlocate htop mc jq tree \
-    python3.8-venv sqlite3
+    python3.8-venv sqlite3 file npm mysql-server telnet traceroute
 
 # install libraries
 
