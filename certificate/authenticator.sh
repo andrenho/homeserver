@@ -18,4 +18,4 @@ EOF
 
 aws route53 change-resource-record-sets --hosted-zone-id Z1E6IX3AW27X6H --change-batch file://createrec.json
 
-sleep 180
+sleep 240
