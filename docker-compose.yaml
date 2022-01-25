@@ -53,25 +53,25 @@ services:
   #    - GUID=1000
   #    - TZ=America/Sao_Paulo
   #  network_mode: host
-  #
-  #sftp:
-  #  image: atmoz/sftp:alpine
-  #  container_name: sftp
-  #  restart: unless-stopped
-  #  secrets:
-  #    - source: sftp_users
-  #      target: /etc/sftp/users.conf
-  #  volumes:
-  #    - "${HOME}/volume:/home/andre_nho"
-  #  ports:
-  #    - "2222:22"
+  
+  sftp:
+    image: atmoz/sftp:alpine
+    container_name: sftp
+    restart: unless-stopped
+    secrets:
+      - source: sftp_users
+        target: /etc/sftp/users.conf
+    volumes:
+      - "${VOLUME_DIR}:/home/${USERNAME:-andre_nho}"
+    ports:
+      - "2222:22"
   
   ftp:
     image: stilliard/pure-ftpd
     container_name: ftp
     restart: unless-stopped
     volumes:
-      - "${HOME}/volume:/home/username/"
+      - "${VOLUME_DIR}:/home/username/"
     ports:
       - "21:21"
       - "30000-30009:30000-30009"
@@ -351,4 +351,4 @@ secrets:
   aws_credentials:
     file: "${HOME}/.aws/credentials"
   sftp_users:
-    file: "${HOME}/secrets/sftp-users.conf"
+    file: "${HOME}/sftp-users.conf"
