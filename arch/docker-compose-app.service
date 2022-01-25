@@ -9,7 +9,7 @@ User=andre
 Group=andre
 RemainAfterExit=yes
 WorkingDirectory=/home/andre/homeserver
-ExecStart=/usr/bin/docker-compose up -d
+ExecStart=/usr/bin/docker-compose up -d --env-file env
 ExecStop=/usr/bin/docker-compose down
 TimeoutStartSec=0
 

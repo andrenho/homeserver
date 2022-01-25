@@ -73,15 +73,15 @@ services:
     volumes:
       - "${HOME}/volume:/home/username/"
     ports:
-      - 2121:21
+      - "21:21"
       - "30000-30009:30000-30009"
     environment:
       PUBLICHOST: "localhost"
-      FTP_USER_NAME: homeserver
-      FTP_USER_PASS: upload
+      FTP_USER_NAME: ${USERNAME:-homeserver}
+      FTP_USER_PASS: ${PASSWORD:-upload}
       FTP_USER_HOME: /home/username
-      FTP_USER_UID: 1000
-      FTP_USER_GID: 1000
+      FTP_USER_UID: ${UID:-1000}
+      FTP_USER_GID: ${GID:-1000}
   
   #dev:
   #  build: dev
