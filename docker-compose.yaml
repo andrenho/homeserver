@@ -65,7 +65,7 @@ services:
   #    - "${HOME}/volume:/home/andre_nho"
   #  ports:
   #    - "2222:22"
-  #
+  
   ftp:
     image: stilliard/pure-ftpd
     container_name: ftp
@@ -73,7 +73,7 @@ services:
     volumes:
       - "${HOME}/volume:/home/username/"
     ports:
-      - 21:21
+      - 2121:21
       - "30000-30009:30000-30009"
     environment:
       PUBLICHOST: "localhost"
