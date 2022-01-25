@@ -1,83 +1,71 @@
 version: '3.9'
 services:
 
-  # 
-  # Pi-hole
+  ## 
+  ## Pi-hole
+  ##
   #
-
-  pihole:
-    container_name: pihole
-    image: pihole/pihole:latest
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "80:80/tcp"
-    environment:
-      - TZ='America/Sao_Paulo'
-      - FTLCONF_REPLY_ADDR4=192.168.15.2
-      - PIHOLE_DNS_=8.8.8.8;8.8.4.4
-      - VIRTUAL_HOST=pihole.homeserver.gamesmith.uk
-      - WEBPASSWORD=admin
-      - DNSMASQ_LISTENING=all
-    volumes:
-      - '${HOME}/volume/data/pihole/etc/:/etc/pihole/'
-      - '${HOME}/volume/data/pihole/dnsmasq.d/:/etc/dnsmasq.d/'
-    cap_add:
-      - NET_ADMIN
-    #network_mode: host
-    restart: unless-stopped
-
-
-  #
-  # daemons
-  #
-
-  #dns:
-  #  build: dns
-  #  container_name: dns
-  #  restart: unless-stopped
-  #  image: dns:latest
-  #  volumes:
-  #    - "./dns/conf:/etc/dnsmasq.d:ro"
+  #pihole:
+  #  container_name: pihole
+  #  image: pihole/pihole:latest
   #  ports:
-  #    - "53:53"
+  #    - "53:53/tcp"
   #    - "53:53/udp"
-  #  dns: 192.168.15.1
-
-  dynamicdns:
-    build: dynamicdns
-    container_name: dynamicdns
-    restart: unless-stopped
-    image: dynamicdns:latest
-    secrets:
-      - source: aws_credentials
-        target: /root/.aws/credentials
-
-  dlna:
-    image: vladgh/minidlna
-    container_name: dlna
-    volumes:
-      - "${HOME}/volume/downloads:/media"
-    environment:
-      - MINIDLNA_MEDIA_DIR=/media
-      - MINIDLNA_FRIENDLY_NAME=HomeServer
-      - PUID=1000
-      - GUID=1000
-      - TZ=America/Sao_Paulo
-    network_mode: host
-
-  sftp:
-    image: atmoz/sftp:alpine
-    container_name: sftp
-    restart: unless-stopped
-    secrets:
-      - source: sftp_users
-        target: /etc/sftp/users.conf
-    volumes:
-      - "${HOME}/volume:/home/andre_nho"
-    ports:
-      - "2222:22"
-
+  #    - "80:80/tcp"
+  #  environment:
+  #    - TZ='America/Sao_Paulo'
+  #    - FTLCONF_REPLY_ADDR4=192.168.15.2
+  #    - PIHOLE_DNS_=8.8.8.8;8.8.4.4
+  #    - VIRTUAL_HOST=pihole.homeserver.gamesmith.uk
+  #    - WEBPASSWORD=admin
+  #    - DNSMASQ_LISTENING=all
+  #  volumes:
+  #    - '${HOME}/volume/data/pihole/etc/:/etc/pihole/'
+  #    - '${HOME}/volume/data/pihole/dnsmasq.d/:/etc/dnsmasq.d/'
+  #  cap_add:
+  #    - NET_ADMIN
+  #  #network_mode: host
+  #  restart: unless-stopped
+  #
+  #
+  ##
+  ## daemons
+  ##
+  #
+  #dynamicdns:
+  #  build: dynamicdns
+  #  container_name: dynamicdns
+  #  restart: unless-stopped
+  #  image: dynamicdns:latest
+  #  secrets:
+  #    - source: aws_credentials
+  #      target: /root/.aws/credentials
+  #
+  #dlna:
+  #  image: vladgh/minidlna
+  #  container_name: dlna
+  #  volumes:
+  #    - "${HOME}/volume/downloads:/media"
+  #  environment:
+  #    - MINIDLNA_MEDIA_DIR=/media
+  #    - MINIDLNA_FRIENDLY_NAME=HomeServer
+  #    - PUID=1000
+  #    - GUID=1000
+  #    - TZ=America/Sao_Paulo
+  #  network_mode: host
+  #
+  #sftp:
+  #  image: atmoz/sftp:alpine
+  #  container_name: sftp
+  #  restart: unless-stopped
+  #  secrets:
+  #    - source: sftp_users
+  #      target: /etc/sftp/users.conf
+  #  volumes:
+  #    - "${HOME}/volume:/home/andre_nho"
+  #  ports:
+  #    - "2222:22"
+  #
   ftp:
     image: stilliard/pure-ftpd
     container_name: ftp
@@ -94,270 +82,270 @@ services:
       FTP_USER_HOME: /home/username
       FTP_USER_UID: 1000
       FTP_USER_GID: 1000
-
-  dev:
-    build: dev
-    container_name: dev
-    restart: unless-stopped
-    hostname: dev
-    volumes:
-      - "${HOME}/homeserver/dev:/docker-host"
-      - "${HOME}/volume/dev:/home/dev"
-    ports:
-      - "6969:22"
-      - "7000:7000"
-      - "7001:7001"
-      - "7002:7002"
-      - "7003:7003"
-      - "7080:7080"
-      - "7081:7081"
-
-  backup:
-    build: backup
-    container_name: backup
-    restart: always
-    volumes:
-      - "${HOME}/volume/data:/data:ro"
-    environment:
-      - BUCKET_NAME=homeserver-gamesmith-backup
-    secrets:
-      - source: aws_credentials
-        target: /root/.aws/credentials
-
-  mqtt:
-    image: eclipse-mosquitto
-    container_name: mqtt
-    restart: unless-stopped
-    volumes:
-      - "./mqtt/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro"
-      - "${HOME}/volume/data/mqtt:/mosquitto/data"
-      - "/var/log/mosquitto:/mosquitto/log"
-    ports:
-      - 1883:1883
-
+  
+  #dev:
+  #  build: dev
+  #  container_name: dev
+  #  restart: unless-stopped
+  #  hostname: dev
+  #  volumes:
+  #    - "${HOME}/homeserver/dev:/docker-host"
+  #    - "${HOME}/volume/dev:/home/dev"
+  #  ports:
+  #    - "6969:22"
+  #    - "7000:7000"
+  #    - "7001:7001"
+  #    - "7002:7002"
+  #    - "7003:7003"
+  #    - "7080:7080"
+  #    - "7081:7081"
   #
-  # Web services
+  #backup:
+  #  build: backup
+  #  container_name: backup
+  #  restart: always
+  #  volumes:
+  #    - "${HOME}/volume/data:/data:ro"
+  #  environment:
+  #    - BUCKET_NAME=homeserver-gamesmith-backup
+  #  secrets:
+  #    - source: aws_credentials
+  #      target: /root/.aws/credentials
   #
-
-  proxy:
-    build: proxy
-    container_name: proxy
-    restart: unless-stopped
-    volumes:
-      - "/etc/letsencrypt:/etc/ssl:ro"
-    image: proxy:latest
-    ports:
-      - "443:443"
-      - "7443:7443"
-      - "7444:7444"
-
-  homer:
-    restart: unless-stopped
-    container_name: homer
-    image: b4bz/homer:latest
-    volumes:
-      - "./homer:/www/assets:ro"
-    environment:
-      - UID=1000
-      - GID=1000
-
-  torrent:
-    build: torrent
-    container_name: torrent
-    restart: unless-stopped
-    image: torrent:latest
-    environment:
-      - PUID=1000
-      - GUID=1000
-      - UMASK=002
-      - TZ=America/Sao_Paulo
-    volumes:
-      - "${HOME}/volume/data/torrent:/config"
-      - "${HOME}/volume/downloads:/downloads"
-      - "${HOME}/volume/movies:/movies"
-      - "${HOME}/volume/tv:/tv"
-      - "${HOME}/volume/books:/books"
-      - "${HOME}/volume/audiobooks:/audiobooks"
-
-  plex:
-    image: lscr.io/linuxserver/plex
-    container_name: plex
-    network_mode: host
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - VERSION=docker
-    volumes:
-      - "${HOME}/volume/data/plex:/config"
-      - "${HOME}/volume/movies:/movies"
-      - "${HOME}/volume/tv:/tv"
-
-  dokuwiki:
-    image: lscr.io/linuxserver/dokuwiki
-    container_name: dokuwiki
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Sao_Paulo
-    volumes:
-      - "${HOME}/volume/data/wiki:/config"
-    restart: unless-stopped
-
-  portainer:
-    image: cr.portainer.io/portainer/portainer-ce:latest
-    container_name: portainer
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - "${HOME}/volume/data/portainer:/data"
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Sao_Paulo
-
-  openbooks:
-    image: evanbuss/openbooks
-    container_name: openbooks
-    restart: unless-stopped
-    command: --persist
-    volumes:
-      - "${HOME}/volume/books:/books"
-
-  ssh:
-    build: ssh
-    image: ssh
-    container_name: ssh
-    restart: unless-stopped
-
-  sonarr:
-    image: lscr.io/linuxserver/sonarr
-    container_name: sonarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Sao_Paulo
-    volumes:
-      - "${HOME}/volume/data/sonarr/config:/config"
-      - "${HOME}/volume/data/sonarr/tv:/tv"
-      - "${HOME}/volume/downloads:/downloads"
-    restart: unless-stopped
-
-  radarr:
-    image: lscr.io/linuxserver/radarr
-    container_name: radarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Sao_Paulo
-    volumes:
-      - "${HOME}/volume/data/radarr/config:/config"
-      - "${HOME}/volume/data/radarr/movies:/movies"
-      - "${HOME}/volume/downloads:/downloads"
-    restart: unless-stopped
-
-  bazarr:
-    image: lscr.io/linuxserver/bazarr
-    container_name: bazarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Sao_Paulo
-    volumes:
-      - "${HOME}/volume/data/bazarr/config:/config"
-      - "${HOME}/volume/downloads:/movies"
-    restart: unless-stopped
-
-  explorer:
-    image: filebrowser/filebrowser:s6
-    container_name: explorer
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Sao_Paulo
-    volumes:
-      - "${HOME}/volume:/srv"
-      - "${HOME}/volume/data/explorer/database:/database"
-      - "${HOME}/volume/data/explorer/config:/config"
-    ports:
-      - 8020:80
-
-  cyberchef:
-    image: mpepping/cyberchef
-    container_name: cyberchef
-    restart: unless-stopped
-
-  rss:
-    image: mockdeep/stringer:0.1
-    container_name: rss
-    depends_on:
-      - rss-db
-    restart: unless-stopped
-    environment:
-      - SECRET_TOKEN=8ef98wef8a
-      - PORT=8080
-      - DATABASE_URL=postgres://db_user:a8df73gg82@rss-db:5432/stringer
-
-  ubooquity:
-    image: lscr.io/linuxserver/ubooquity
-    container_name: ubooquity
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Sao_Paulo
-      - MAXMEM=256
-    volumes:
-      - "${HOME}/volume/data/ubooquity:/config"
-      - "${HOME}/volume/books:/books"
-      - "${HOME}/volume/comics:/comics"
-      - "${HOME}/volume/books/raw:/files"
-    ports:
-      - 2202:2202
-      - 2203:2203
-    restart: unless-stopped
-
-  audioserve:
-    image: izderadicka/audioserve
-    container_name: audioserve
-    restart: unless-stopped
-    command: --tags --transcoding-max-parallel-processes 24 --no-authentication /audiobooks
-    environment:
-      - PUID=1000
-      - PGID=1000
-        #- AUDIOSERVE_SHARED_SECRET=changeme
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - "${HOME}/volume/data/audioserve:/home/audioserve/.audioserve"
-      - "${HOME}/volume/audiobooks:/audiobooks"
-
-  podgrab:
-    image: akhilrex/podgrab
-    container_name: podgrab
-    environment:
-      - CHECK_FREQUENCY=30
-    volumes:
-      - "${HOME}/volume/data/podgrab:/config"
-      - "${HOME}/volume/podcasts:/assets"
-    restart: unless-stopped
-
-  hoppscotch:
-    image: hoppscotch/hoppscotch
-    container_name: hoppscotch
-    restart: unless-stopped
-
-  # 
-  # Support services
+  #mqtt:
+  #  image: eclipse-mosquitto
+  #  container_name: mqtt
+  #  restart: unless-stopped
+  #  volumes:
+  #    - "./mqtt/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro"
+  #    - "${HOME}/volume/data/mqtt:/mosquitto/data"
+  #    - "/var/log/mosquitto:/mosquitto/log"
+  #  ports:
+  #    - 1883:1883
   #
-
-  rss-db:
-    image: postgres:9.5-alpine
-    container_name: rss-db
-    restart: unless-stopped
-    volumes:
-      - "${HOME}/volume/data/rss:/var/lib/postgresql/data"
-    environment:
-      - POSTGRES_PASSWORD=a8df73gg82
-      - POSTGRES_USER=db_user
-      - POSTGRES_DB=stringer
+  ##
+  ## Web services
+  ##
+  #
+  #proxy:
+  #  build: proxy
+  #  container_name: proxy
+  #  restart: unless-stopped
+  #  volumes:
+  #    - "/etc/letsencrypt:/etc/ssl:ro"
+  #  image: proxy:latest
+  #  ports:
+  #    - "443:443"
+  #    - "7443:7443"
+  #    - "7444:7444"
+  #
+  #homer:
+  #  restart: unless-stopped
+  #  container_name: homer
+  #  image: b4bz/homer:latest
+  #  volumes:
+  #    - "./homer:/www/assets:ro"
+  #  environment:
+  #    - UID=1000
+  #    - GID=1000
+  #
+  #torrent:
+  #  build: torrent
+  #  container_name: torrent
+  #  restart: unless-stopped
+  #  image: torrent:latest
+  #  environment:
+  #    - PUID=1000
+  #    - GUID=1000
+  #    - UMASK=002
+  #    - TZ=America/Sao_Paulo
+  #  volumes:
+  #    - "${HOME}/volume/data/torrent:/config"
+  #    - "${HOME}/volume/downloads:/downloads"
+  #    - "${HOME}/volume/movies:/movies"
+  #    - "${HOME}/volume/tv:/tv"
+  #    - "${HOME}/volume/books:/books"
+  #    - "${HOME}/volume/audiobooks:/audiobooks"
+  #
+  #plex:
+  #  image: lscr.io/linuxserver/plex
+  #  container_name: plex
+  #  network_mode: host
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - VERSION=docker
+  #  volumes:
+  #    - "${HOME}/volume/data/plex:/config"
+  #    - "${HOME}/volume/movies:/movies"
+  #    - "${HOME}/volume/tv:/tv"
+  #
+  #dokuwiki:
+  #  image: lscr.io/linuxserver/dokuwiki
+  #  container_name: dokuwiki
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - TZ=America/Sao_Paulo
+  #  volumes:
+  #    - "${HOME}/volume/data/wiki:/config"
+  #  restart: unless-stopped
+  #
+  #portainer:
+  #  image: cr.portainer.io/portainer/portainer-ce:latest
+  #  container_name: portainer
+  #  restart: unless-stopped
+  #  volumes:
+  #    - /var/run/docker.sock:/var/run/docker.sock
+  #    - "${HOME}/volume/data/portainer:/data"
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - TZ=America/Sao_Paulo
+  #
+  #openbooks:
+  #  image: evanbuss/openbooks
+  #  container_name: openbooks
+  #  restart: unless-stopped
+  #  command: --persist
+  #  volumes:
+  #    - "${HOME}/volume/books:/books"
+  #
+  #ssh:
+  #  build: ssh
+  #  image: ssh
+  #  container_name: ssh
+  #  restart: unless-stopped
+  #
+  #sonarr:
+  #  image: lscr.io/linuxserver/sonarr
+  #  container_name: sonarr
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - TZ=America/Sao_Paulo
+  #  volumes:
+  #    - "${HOME}/volume/data/sonarr/config:/config"
+  #    - "${HOME}/volume/data/sonarr/tv:/tv"
+  #    - "${HOME}/volume/downloads:/downloads"
+  #  restart: unless-stopped
+  #
+  #radarr:
+  #  image: lscr.io/linuxserver/radarr
+  #  container_name: radarr
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - TZ=America/Sao_Paulo
+  #  volumes:
+  #    - "${HOME}/volume/data/radarr/config:/config"
+  #    - "${HOME}/volume/data/radarr/movies:/movies"
+  #    - "${HOME}/volume/downloads:/downloads"
+  #  restart: unless-stopped
+  #
+  #bazarr:
+  #  image: lscr.io/linuxserver/bazarr
+  #  container_name: bazarr
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - TZ=America/Sao_Paulo
+  #  volumes:
+  #    - "${HOME}/volume/data/bazarr/config:/config"
+  #    - "${HOME}/volume/downloads:/movies"
+  #  restart: unless-stopped
+  #
+  #explorer:
+  #  image: filebrowser/filebrowser:s6
+  #  container_name: explorer
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - TZ=America/Sao_Paulo
+  #  volumes:
+  #    - "${HOME}/volume:/srv"
+  #    - "${HOME}/volume/data/explorer/database:/database"
+  #    - "${HOME}/volume/data/explorer/config:/config"
+  #  ports:
+  #    - 8020:80
+  #
+  #cyberchef:
+  #  image: mpepping/cyberchef
+  #  container_name: cyberchef
+  #  restart: unless-stopped
+  #
+  #rss:
+  #  image: mockdeep/stringer:0.1
+  #  container_name: rss
+  #  depends_on:
+  #    - rss-db
+  #  restart: unless-stopped
+  #  environment:
+  #    - SECRET_TOKEN=8ef98wef8a
+  #    - PORT=8080
+  #    - DATABASE_URL=postgres://db_user:a8df73gg82@rss-db:5432/stringer
+  #
+  #ubooquity:
+  #  image: lscr.io/linuxserver/ubooquity
+  #  container_name: ubooquity
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #    - TZ=America/Sao_Paulo
+  #    - MAXMEM=256
+  #  volumes:
+  #    - "${HOME}/volume/data/ubooquity:/config"
+  #    - "${HOME}/volume/books:/books"
+  #    - "${HOME}/volume/comics:/comics"
+  #    - "${HOME}/volume/books/raw:/files"
+  #  ports:
+  #    - 2202:2202
+  #    - 2203:2203
+  #  restart: unless-stopped
+  #
+  #audioserve:
+  #  image: izderadicka/audioserve
+  #  container_name: audioserve
+  #  restart: unless-stopped
+  #  command: --tags --transcoding-max-parallel-processes 24 --no-authentication /audiobooks
+  #  environment:
+  #    - PUID=1000
+  #    - PGID=1000
+  #      #- AUDIOSERVE_SHARED_SECRET=changeme
+  #  volumes:
+  #    - /etc/localtime:/etc/localtime:ro
+  #    - "${HOME}/volume/data/audioserve:/home/audioserve/.audioserve"
+  #    - "${HOME}/volume/audiobooks:/audiobooks"
+  #
+  #podgrab:
+  #  image: akhilrex/podgrab
+  #  container_name: podgrab
+  #  environment:
+  #    - CHECK_FREQUENCY=30
+  #  volumes:
+  #    - "${HOME}/volume/data/podgrab:/config"
+  #    - "${HOME}/volume/podcasts:/assets"
+  #  restart: unless-stopped
+  #
+  #hoppscotch:
+  #  image: hoppscotch/hoppscotch
+  #  container_name: hoppscotch
+  #  restart: unless-stopped
+  #
+  ## 
+  ## Support services
+  ##
+  #
+  #rss-db:
+  #  image: postgres:9.5-alpine
+  #  container_name: rss-db
+  #  restart: unless-stopped
+  #  volumes:
+  #    - "${HOME}/volume/data/rss:/var/lib/postgresql/data"
+  #  environment:
+  #    - POSTGRES_PASSWORD=a8df73gg82
+  #    - POSTGRES_USER=db_user
+  #    - POSTGRES_DB=stringer
 
 secrets:
   aws_credentials:
