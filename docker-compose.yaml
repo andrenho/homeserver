@@ -1,6 +1,37 @@
 version: '3.9'
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        subnet: 172.28.0.0/16
+
+secrets:
+  aws_credentials:
+    file: "${HOME}/.aws/credentials"
+  sftp_users:
+    file: "${HOME}/sftp-users.conf"
+
 services:
 
+  ftp:
+    image: stilliard/pure-ftpd
+    container_name: ftp
+    restart: unless-stopped
+    volumes:
+      - "${VOLUME_DIR}:/home/username/"
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
+    environment:
+      PUBLICHOST: "172.28.0.1"
+      FTP_USER_NAME: ${USERNAME:-homeserver}
+      FTP_USER_PASS: ${PASSWORD:-upload}
+      FTP_USER_HOME: /home/username
+      FTP_USER_UID: ${UID:-1000}
+      FTP_USER_GID: ${GID:-1000}
+  
   ## 
   ## Pi-hole
   ##
@@ -65,23 +96,6 @@ services:
   #    - "${VOLUME_DIR}:/home/${USERNAME:-andre_nho}"
   #  ports:
   #    - "2222:22"
-  
-  ftp:
-    image: stilliard/pure-ftpd
-    container_name: ftp
-    restart: unless-stopped
-    volumes:
-      - "${VOLUME_DIR}:/home/username/"
-    ports:
-      - "21:21"
-      - "30000-30009:30000-30009"
-    environment:
-      PUBLICHOST: "localhost"
-      FTP_USER_NAME: ${USERNAME:-homeserver}
-      FTP_USER_PASS: ${PASSWORD:-upload}
-      FTP_USER_HOME: /home/username
-      FTP_USER_UID: ${UID:-1000}
-      FTP_USER_GID: ${GID:-1000}
   
   #dev:
   #  build: dev
@@ -347,8 +361,3 @@ services:
   #    - POSTGRES_USER=db_user
   #    - POSTGRES_DB=stringer
 
-secrets:
-  aws_credentials:
-    file: "${HOME}/.aws/credentials"
-  sftp_users:
-    file: "${HOME}/sftp-users.conf"
