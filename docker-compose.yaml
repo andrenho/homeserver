@@ -54,17 +54,17 @@ services:
   #    - TZ=America/Sao_Paulo
   #  network_mode: host
   
-  sftp:
-    image: atmoz/sftp:alpine
-    container_name: sftp
-    restart: unless-stopped
-    secrets:
-      - source: sftp_users
-        target: /etc/sftp/users.conf
-    volumes:
-      - "${VOLUME_DIR}:/home/${USERNAME:-andre_nho}"
-    ports:
-      - "2222:22"
+  #sftp:
+  #  image: atmoz/sftp:alpine
+  #  container_name: sftp
+  #  restart: unless-stopped
+  #  secrets:
+  #    - source: sftp_users
+  #      target: /etc/sftp/users.conf
+  #  volumes:
+  #    - "${VOLUME_DIR}:/home/${USERNAME:-andre_nho}"
+  #  ports:
+  #    - "2222:22"
   
   ftp:
     image: stilliard/pure-ftpd
