@@ -22,6 +22,8 @@ services:
     volumes:
       - "${VOLUME_DIR}:/home/username/volume"
       - "${DATA_DIR}:/home/username/data"
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
     ports:
       - "21:21"
       - "30000-30009:30000-30009"
