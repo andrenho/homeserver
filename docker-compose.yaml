@@ -30,8 +30,8 @@ services:
       FTP_USER_NAME: ${USERNAME:-homeserver}
       FTP_USER_PASS: ${PASSWORD:-upload}
       FTP_USER_HOME: /home/username
-      FTP_USER_UID: ${UID:-1000}
-      FTP_USER_GID: ${GID:-1000}
+      FTP_USER_UID: ${DATA_UID:-1000}
+      FTP_USER_GID: ${DATA_GID:-1000}
 
 #  sftp:
 #    image: atmoz/sftp:alpine
