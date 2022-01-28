@@ -20,7 +20,8 @@ services:
     container_name: ftp
     restart: unless-stopped
     volumes:
-      - "${VOLUME_DIR}:/home/username/"
+      - "${VOLUME_DIR}:/home/username/volume"
+      - "${DATA_DIR}:/home/username/data"
     ports:
       - "21:21"
       - "30000-30009:30000-30009"
@@ -32,17 +33,18 @@ services:
       FTP_USER_UID: ${UID:-1000}
       FTP_USER_GID: ${GID:-1000}
 
-  sftp:
-    image: atmoz/sftp:alpine
-    container_name: sftp
-    restart: unless-stopped
-    secrets:
-      - source: sftp_users
-        target: /etc/sftp/users.conf
-    volumes:
-      - "${VOLUME_DIR}:/home/${USERNAME:-andre_nho}"
-    ports:
-      - "2222:22"
+#  sftp:
+#    image: atmoz/sftp:alpine
+#    container_name: sftp
+#    restart: unless-stopped
+#    secrets:
+#      - source: sftp_users
+#        target: /etc/sftp/users.conf
+#    volumes:
+#      - "${VOLUME_DIR}:/home/${USERNAME:-andre_nho}/volume"
+#      - "${DATA_DIR}:/home/${USERNAME:-andre_nho}/data"
+#    ports:
+#      - "2222:22"
   
   ## 
   ## Pi-hole
