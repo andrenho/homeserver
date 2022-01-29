@@ -10,8 +10,6 @@ networks:
 secrets:
   aws_credentials:
     file: "${HOME}/.aws/credentials"
-  sftp_users:
-    file: "${PASSWORD_DIR}/sftp-users.conf"
 
 services:
 
