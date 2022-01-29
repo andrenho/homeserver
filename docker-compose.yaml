@@ -16,21 +16,23 @@ secrets:
 services:
 
   ftp:
-    image: instrumentisto/pure-ftpd
+    image: stilliard/pure-ftpd
     container_name: ftp
     restart: unless-stopped
     volumes:
-      - "${VOLUME_DIR}:/home/data/volume"
-      - "${DATA_DIR}:/home/data/data"
+      - "${VOLUME_DIR}:/home/admin/volume"
+      - "${DATA_DIR}:/home/admin/data"
     ports:
       - "21:21"
       - "30000-30009:30000-30009"
     environment:
+      PUBLICHOST: "172.28.0.1"
       FTP_USER_NAME: ${USERNAME:-homeserver}
       FTP_USER_PASS: ${PASSWORD:-upload}
-      FTP_USER_HOME: /home/username
+      FTP_USER_HOME: /home/admin
       FTP_USER_UID: ${DATA_UID:-1000}
       FTP_USER_GID: ${DATA_GID:-1000}
+      ADDED_FLAGS: "-d -d"
 
 #  sftp:
 #    image: atmoz/sftp:alpine
