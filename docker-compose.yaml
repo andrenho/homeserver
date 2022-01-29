@@ -16,19 +16,16 @@ secrets:
 services:
 
   ftp:
-    image: stilliard/pure-ftpd
+    image: instrumentisto/pure-ftpd
     container_name: ftp
     restart: unless-stopped
     volumes:
-      - "${VOLUME_DIR}:/home/username/volume"
-      - "${DATA_DIR}:/home/username/data"
-      - /etc/passwd:/etc/passwd:ro
-      - /etc/group:/etc/group:ro
+      - "${VOLUME_DIR}:/home/data/volume"
+      - "${DATA_DIR}:/home/data/data"
     ports:
       - "21:21"
       - "30000-30009:30000-30009"
     environment:
-      PUBLICHOST: "172.28.0.1"
       FTP_USER_NAME: ${USERNAME:-homeserver}
       FTP_USER_PASS: ${PASSWORD:-upload}
       FTP_USER_HOME: /home/username
