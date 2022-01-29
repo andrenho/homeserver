@@ -41,7 +41,7 @@ services:
       - "${DATA_DIR}:/home/${USERNAME}/data"
     ports:
       - "2222:22"
-    command: "${USERNAME}:${PASSWORD}:${DATA_UID}"
+    command: "${USERNAME}:${PASSWORD}:${DATA_UID}:${DATA_GID}"
   
   ## 
   ## Pi-hole
