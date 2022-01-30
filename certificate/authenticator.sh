@@ -19,5 +19,5 @@ ID=$(aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE --cha
 
 echo "Record '_acme-challenge.$CERTBOT_DOMAIN' with value '$CERTBOT_VALIDATION'... created with request id $ID. Now waiting for change..."
 
-aws route53 wait resource-record-sets-changed --id $ID
+aws route53 wait resource-record-sets-changed --id "$ID"
 echo "Change $ID completed."
