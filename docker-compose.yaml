@@ -42,6 +42,13 @@ services:
     ports:
       - "2222:22"
     command: "${USERNAME}:${PASSWORD}:${DATA_UID}:${DATA_GID}"
+
+  hello:
+    image: lmmendes/http-hello-world
+    container_name: hello
+    restart: unless-stopped
+    ports:
+      - "8088:80"
   
   ## 
   ## Pi-hole
