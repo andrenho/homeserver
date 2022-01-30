@@ -6,7 +6,7 @@ cat <<EOF  > createrec.json
 {
   "Comment": "Challenge for certbot",
   "Changes": [{
-    "Action": "CREATE",
+    "Action": "UPSERT",
     "ResourceRecordSet": {
       "Name": "_acme-challenge.$CERTBOT_DOMAIN",
       "Type": "TXT",
@@ -16,6 +16,5 @@ cat <<EOF  > createrec.json
 }
 EOF
 
-aws route53 change-resource-record-sets --hosted-zone-id Z1E6IX3AW27X6H --change-batch file://createrec.json
-
-sleep 240
+ID=$(aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE --change-batch file://createrec.json | jq ".ChangeInfo.Id")
+aws route53 wait resource-record-sets-changed --id $ID
