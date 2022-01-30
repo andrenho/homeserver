@@ -2,7 +2,7 @@
 
 echo 'Cleaning up authorization record...'
 
-CHANGEREC=$(mktemp)
+CHANGEREC="$(mktemp)"
 
 cat <<EOF  > $CHANGEREC
 {
@@ -24,7 +24,7 @@ HOSTED_ZONE=$(aws route53 list-hosted-zones-by-name | jq --arg name "$DOMAIN." -
 echo "------ Found hosted zone $HOSTED_ZONE."
 
 echo "------ Removing authorization record '_acme-challenge.$CERTBOT_DOMAIN' with value '$CERTBOT_VALIDATION'..."
-ID=$(aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE --change-batch file://$(CHANGEREC) | jq -r ".ChangeInfo.Id")
+ID=$(aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE --change-batch file://$CHANGEREC | jq -r ".ChangeInfo.Id")
 
 echo "------ Record '_acme-challenge.$CERTBOT_DOMAIN' with value '$CERTBOT_VALIDATION'... removed with request id '$ID'. Now waiting for change..."
 
