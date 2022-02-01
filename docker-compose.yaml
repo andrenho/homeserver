@@ -43,13 +43,6 @@ services:
       - "2222:22"
     command: "${USERNAME}:${PASSWORD}:${DATA_UID}:${DATA_GID}"
 
-  hello:
-    image: lmmendes/http-hello-world
-    container_name: hello
-    restart: unless-stopped
-    ports:
-      - "8088:80"
-  
   ## 
   ## Pi-hole
   ##
@@ -143,22 +136,32 @@ services:
   #  ports:
   #    - 1883:1883
   #
-  ##
-  ## Web services
-  ##
   #
-  #proxy:
-  #  build: proxy
-  #  container_name: proxy
-  #  restart: unless-stopped
-  #  volumes:
-  #    - "/etc/letsencrypt:/etc/ssl:ro"
-  #  image: proxy:latest
-  #  ports:
-  #    - "443:443"
-  #    - "7443:7443"
-  #    - "7444:7444"
+  # Web services
   #
+  
+  hello:
+    image: lmmendes/http-hello-world
+    container_name: hello
+    restart: unless-stopped
+      #ports:
+      #- "8088:80"
+  
+  proxy:
+    image: nginx:latest
+    container_name: proxy
+    restart: unless-stopped
+    volumes:
+      - "./proxy/templates:/etc/nginx/templates"
+      - "/etc/letsencrypt:/etc/ssl:ro"
+    environment:
+      HOST_DOMAIN: "${HOST_DOMAIN}"
+    ports:
+      - "443:443"
+      - "7443:7443"
+      - "7444:7444"
+
+  
   #homer:
   #  restart: unless-stopped
   #  container_name: homer
