@@ -152,7 +152,8 @@ services:
     container_name: proxy
     restart: unless-stopped
     volumes:
-      - "./proxy/templates:/etc/nginx/templates"
+      - "./proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./proxy/templates:/etc/nginx/templates:ro"
       - "/etc/letsencrypt:/etc/ssl:ro"
     environment:
       HOST_DOMAIN: "${HOST_DOMAIN}"
