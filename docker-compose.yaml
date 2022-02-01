@@ -144,8 +144,6 @@ services:
     image: lmmendes/http-hello-world
     container_name: hello
     restart: unless-stopped
-      #ports:
-      #- "8088:80"
   
   proxy:
     image: nginx:latest
@@ -154,7 +152,7 @@ services:
     volumes:
       - "./proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
       - "./proxy/templates:/etc/nginx/templates:ro"
-      - "/etc/letsencrypt:/etc/ssl:ro"
+      - "${SSLKEYS_DIR}:/ssl:ro"
     environment:
       HOST_DOMAIN: "${HOST_DOMAIN}"
     ports:

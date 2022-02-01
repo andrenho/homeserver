@@ -1,12 +1,12 @@
 server {
 
-  listen                443;
+  listen                443 ssl;
   server_name           ${HOST_DOMAIN};
-  #ssl_certificate       /etc/ssl/live/homeserver.gamesmith.uk/fullchain.pem;
-  #ssl_certificate_key   /etc/ssl/live/homeserver.gamesmith.uk/privkey.pem;
   add_header            Strict-Transport-Security "max-age=0;";
 
   location / {
-    proxy_pass http://hello:80;
+    proxy_pass          http://hello:80;
   }
 }
+
+# vim:syntax=nginx
