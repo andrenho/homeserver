@@ -2,7 +2,7 @@
 
 - [X] FTP
 - [X] SFTP
-- [ ] Certificates
+- [X] Certificates
 - [ ] Hello + Proxy
   - [ ] Auth
 - [ ] DynamicDNS
