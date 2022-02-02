@@ -18,8 +18,8 @@ cat <<EOF  > $CHANGEREC
 }
 EOF
 
-echo "------ Finding hosted zone..."
 DOMAIN=$(expr match "$CERTBOT_DOMAIN" '.*\.\(.*\..*\)')
+echo "++++++ Finding hosted zone for domain $DOMAIN..."
 HOSTED_ZONE=$(aws route53 list-hosted-zones-by-name | jq --arg name "$DOMAIN." -r '.HostedZones | .[] | select(.Name=="\($name)") | .Id')
 echo "------ Found hosted zone $HOSTED_ZONE."
 
