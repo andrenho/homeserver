@@ -1,11 +1,18 @@
 #!/bin/sh
 
-sudo mkdir /root/.aws
-sudo cp /home/andre/.aws/* /root/.aws
-sudo certbot certonly --agree-tos --email andre.nho@gmail.com \
-  --preferred-challenges=dns \
-  --manual --manual-auth-hook $(pwd)/authenticator.sh \
-  --manual-cleanup-hook $(pwd)/cleanup.sh \
-  -d homeserver.gamesmith.uk -d '*.homeserver.gamesmith.uk' -v \
-  --staging \
-  $@
+set -x
+
+mkdir -p /ssl
+
+if [ ! -f /ssl/fullchain.pem ]; then
+
+  certbot certonly -n --agree-tos --email ${EMAIL} \
+    --preferred-challenges=dns \
+    --manual --manual-auth-hook $(pwd)/authenticator.sh \
+    --manual-cleanup-hook $(pwd)/cleanup.sh \
+    --fullchain-path /ssl \
+    --key-path /ssl \
+    -d ${DOMAIN} -d "*.${DOMAIN}" -v \
+    ${EXTRA_PARAMS}
+
+fi
