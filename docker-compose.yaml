@@ -21,7 +21,7 @@ services:
       - "${VOLUME_DIR}:/home/admin/volume"
       - "${DATA_DIR}:/home/admin/data"
     ports:
-      - "21:21"
+      - "${P}21:21"
       - "30000-30009:30000-30009"
     environment:
       PUBLICHOST: "172.28.0.1"
@@ -40,7 +40,7 @@ services:
       - "${VOLUME_DIR}:/home/${USERNAME}/volume"
       - "${DATA_DIR}:/home/${USERNAME}/data"
     ports:
-      - "2222:22"
+      - "${P}2222:22"
     command: "${USERNAME}:${PASSWORD}:${DATA_UID}:${DATA_GID}"
 
   ## 

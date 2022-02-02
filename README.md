@@ -1,5 +1,22 @@
 # homeserver
 
+# Running in test environment
+
+1. Create a temporary directory with `mkdir /tmp/data /tmp/volume`.
+2. Run homeserver with `docker-compose up -d`.
+
+All services have `admin/admin` as user and password.
+
+The following services are now available:
+
+- FTP: `ftp://admin:admin@localhost:221`
+- SFTP: `sftp://admin:admin@localhost:22222`
+- HTTPS: `https://admin:admin@localhost:2443`
+
+---
+
+# Running in production
+
 ## Operating system installation
 
 1. Start the system with latest Arch Linux installation media.
@@ -47,35 +64,15 @@ Do **not** open port 21, as these are used for internal unsecure FTP.
 1. Connect to the internet, if on wi-fi, and do basic preparations:
 
 ```
-# nmcli device wifi connect ESSID password XXXXXXX
-# sudo pacman -S git sudo vim
-# groupadd sudo
-# useradd -G sudo andre
+# nmcli device wifi connect ESSID password XXXXXXX   # (if on wi-fi)
+# sudo pacman -S sshd
+# systemctl enable sshd
+# systemctl start sshd
 ```
 
-2. Install secrets
-  - Add the AWS credentials and config file to `/home/andre/.aws/`
-  - Create a file in '/home/andre/secrets/sftp-users.conf' with the following format: `andre_nho:PASSWORD:1000:1000`
-    - Replace `PASSWORD` by a password generated with:
-```
-echo -n "your-password" | docker run -i --rm atmoz/makepasswd --crypt-md5 --clearfrom=-
-```
+2. From another computer:
+  - close `https://github.com/andrenho/home-ansible`
+  - edit variables files (in `global_vars`)
+  - run ansible for this server
 
-3. Create SSL certificates
-```
-$ ./certificate/request_certificate.sh
-```
-
-3. Possibly restore backups to `~/volume/data/`, if any.
-
-4. Install the homeserver:
-
-```
-$ git clone https://XXXX:XXXX@github.com/andrenho/homeserver.git
-$ cd homeserver
-$ ./scripts/add_password.sh       # add password for homeserver admin
-$ ./scripts/user_config.sh        # create user directories
-$ ./scripts/update_packages.sh    # update pacman packages
-$ ./scripts/install_dash.sh       # install linux-dash
-$ ./scripts/run_containers.sh     # build and run containers
-```
+3. The homeserver should be up and running now.

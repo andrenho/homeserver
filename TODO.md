@@ -1,3 +1,33 @@
+# Home network
+
+- [X] FTP
+- [X] SFTP
+- [ ] Certificates
+- [ ] Hello + Proxy
+  - [ ] Auth
+- [ ] DynamicDNS
+- [ ] DLNA
+- [ ] Backup
+- [ ] MQTT
+- [ ] CI/CD - Concourse (?)
+- [ ] Better homer
+- [ ] Plex
+- [ ] Torrent
+- [ ] Portainer
+- [ ] WebSSH
+- [ ] Filebrowser
+- [ ] Pi-Hole
+
+- [ ] Dokuwiki (or better wiki?)
+- [ ] Openbooks
+- [ ] Sonarr/Radarr/Bazarr
+- [ ] Cyberchef
+- [ ] RSS (+db)
+- [ ] Ubooquity (find better)
+- [ ] Audioserve
+- [ ] Podgrab
+- [ ] Hoppscotch
+
 # Infrastructure
 
 - [ ] PiKVM
