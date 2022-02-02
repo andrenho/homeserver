@@ -13,6 +13,29 @@ secrets:
 
 services:
 
+  # 
+  # One shot / cron
+  #
+
+  certificate:
+    build: certificate
+    container_name: certificate
+    restart: unless-stopped
+    secrets:
+      - source: aws_credentials
+        target: /root/.aws/credentials
+    volumes:
+      - "${DATA_DIR}/certificate/var:/var/lib/letsencrypt"
+      - "${DATA_DIR}/certificate/etc:/etc/letsencrypt"
+    environment:
+      EMAIL: ${EMAIL}
+      DOMAIN: ${HOST_DOMAIN}
+      EXTRA_PARAMS: ${CERTBOT_EXTRA_PARAMS}
+
+  # 
+  # Deamons
+  # 
+
   ftp:
     image: stilliard/pure-ftpd
     container_name: ftp
