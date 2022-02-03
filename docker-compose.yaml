@@ -66,6 +66,24 @@ services:
       - "${P}2222:22"
     command: "${USERNAME}:${PASSWORD}:${DATA_UID}:${DATA_GID}"
 
+  #
+  # Web services
+  #
+  
+  plex:
+    image: lscr.io/linuxserver/plex
+    container_name: plex
+    network_mode: host
+    environment:
+      - PUID=${DATA_UID}
+      - PGID=${DATA_GID}
+      - VERSION=docker
+    volumes:
+      - "${DATA_DIR}/plex:/config"
+      - "${VOLUME_DIR}/movies:/movies"
+      - "${VOLUME_DIR}/tv:/tv"
+  
+
   ## 
   ## Pi-hole
   ##
@@ -211,19 +229,6 @@ services:
   #    - "${HOME}/volume/tv:/tv"
   #    - "${HOME}/volume/books:/books"
   #    - "${HOME}/volume/audiobooks:/audiobooks"
-  #
-  #plex:
-  #  image: lscr.io/linuxserver/plex
-  #  container_name: plex
-  #  network_mode: host
-  #  environment:
-  #    - PUID=1000
-  #    - PGID=1000
-  #    - VERSION=docker
-  #  volumes:
-  #    - "${HOME}/volume/data/plex:/config"
-  #    - "${HOME}/volume/movies:/movies"
-  #    - "${HOME}/volume/tv:/tv"
   #
   #dokuwiki:
   #  image: lscr.io/linuxserver/dokuwiki
