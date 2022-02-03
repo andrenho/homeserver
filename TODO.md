@@ -1,7 +1,7 @@
 # Home network
 
 - [X] FTP
-  - [X] Not working
+  - [ ] Not working remotely
 - [X] SFTP
   - [X] Not working
 - [X] Certificates
@@ -12,7 +12,7 @@
 - [X] DynamicDNS
 - [X] Hello + Proxy
   - [X] Auth
-- [ ] Move to master
+- [X] Move to master
 - [ ] DLNA
 - [ ] MQTT
 - [ ] CI/CD - Concourse (?)
