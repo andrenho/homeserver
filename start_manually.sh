@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker-compose --env-file /root/.docker-env up --build -d
+git pull && docker-compose --env-file /root/.docker-env up --build -d
