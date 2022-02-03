@@ -9,9 +9,9 @@
 - [X] Plex
 - [X] Backup
   - [X] Include certificate
+- [ ] DynamicDNS
 - [ ] Hello + Proxy
   - [ ] Auth
-- [ ] DynamicDNS
 - [ ] DLNA
 - [ ] MQTT
 - [ ] CI/CD - Concourse (?)

@@ -33,6 +33,34 @@ services:
       EXTRA_PARAMS: ${CERTBOT_EXTRA_PARAMS}
 
   # 
+  # Supporting services
+  #
+
+  backup:
+    build: backup
+    container_name: backup
+    restart: always
+    volumes:
+      - "${DATA_DIR}:/data:ro"
+      - "${CERTS_DIR}:/certs:ro"
+    environment:
+      BUCKET_NAME: ${BACKUP_BUCKET}
+    secrets:
+      - source: aws_credentials
+        target: /root/.aws/credentials
+  
+  dynamicdns:
+    build: dynamicdns
+    container_name: dynamicdns
+    restart: unless-stopped
+    image: dynamicdns:latest
+    environment:
+      RECORD_NAME: ${HOST_DOMAIN}
+    secrets:
+      - source: aws_credentials
+        target: /root/.aws/credentials
+  
+  # 
   # Deamons
   # 
 
@@ -66,19 +94,6 @@ services:
       - "${P}2222:22"
     command: "${USERNAME}:${PASSWORD}:${DATA_UID}:${DATA_GID}"
 
-  backup:
-    build: backup
-    container_name: backup
-    restart: always
-    volumes:
-      - "${DATA_DIR}:/data:ro"
-      - "${CERTS_DIR}:/certs:ro"
-    environment:
-      BUCKET_NAME: ${BACKUP_BUCKET}
-    secrets:
-      - source: aws_credentials
-        target: /root/.aws/credentials
-  
   #
   # Web services
   #
@@ -127,15 +142,6 @@ services:
   ##
   ## daemons
   ##
-  #
-  #dynamicdns:
-  #  build: dynamicdns
-  #  container_name: dynamicdns
-  #  restart: unless-stopped
-  #  image: dynamicdns:latest
-  #  secrets:
-  #    - source: aws_credentials
-  #      target: /root/.aws/credentials
   #
   #dlna:
   #  image: vladgh/minidlna
