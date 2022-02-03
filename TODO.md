@@ -5,8 +5,8 @@
 - [X] SFTP
   - [X] Not working
 - [X] Certificates
-  - [ ] Move certificate directory outside of data
-- [ ] Plex
+  - [X] Move certificate directory outside of data
+- [X] Plex
 - [ ] Backup
   - [ ] Include certificate
 - [ ] Hello + Proxy
