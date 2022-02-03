@@ -11,7 +11,7 @@
   - [X] Include certificate
 - [X] DynamicDNS
 - [X] Hello + Proxy
-  - [ ] Auth
+  - [X] Auth
 - [ ] Move to master
 - [ ] DLNA
 - [ ] MQTT
