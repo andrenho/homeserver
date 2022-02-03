@@ -9,7 +9,7 @@
 - [X] Plex
 - [X] Backup
   - [X] Include certificate
-- [ ] DynamicDNS
+- [X] DynamicDNS
 - [ ] Hello + Proxy
   - [ ] Auth
 - [ ] DLNA
