@@ -7,8 +7,8 @@
 - [X] Certificates
   - [X] Move certificate directory outside of data
 - [X] Plex
-- [ ] Backup
-  - [ ] Include certificate
+- [X] Backup
+  - [X] Include certificate
 - [ ] Hello + Proxy
   - [ ] Auth
 - [ ] DynamicDNS
