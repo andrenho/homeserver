@@ -68,14 +68,12 @@ services:
     image: stilliard/pure-ftpd
     container_name: ftp
     restart: unless-stopped
+    network_mode: host
     volumes:
       - "${VOLUME_DIR}:/home/admin/volume"
       - "${DATA_DIR}:/home/admin/data"
-    ports:
-      - "${P}21:21"
-      - "30000-30009:30000-30009"
     environment:
-      PUBLICHOST: "172.28.0.1"
+      PUBLICHOST: localhost
       FTP_USER_NAME: ${USERNAME}
       FTP_USER_PASS: ${PASSWORD}
       FTP_USER_HOME: /home/admin
