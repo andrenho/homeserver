@@ -1,13 +1,12 @@
 FROM alpine:3.11
 
-ENV DIR_ORIGIN /data
+ENV DATA_DIR /data
+ENV CERTS_DIR /certs
 ENV BUCKET_NAME set-bucket-name
 ENV AWS_CLI_VER 2.2.43
 
 VOLUME ["/data"]
-
-COPY backup.sh /backup.sh
-COPY cronjobs /etc/crontabs/root
+VOLUME ["/certs"]
 
 ENV GLIBC_VER=2.31-r0
 
@@ -36,6 +35,10 @@ RUN apk --no-cache add binutils curl tar \
         binutils \
         curl \
     && rm -rf /var/cache/apk/* 
+
+COPY backup-data.sh /backup-data.sh
+COPY backup-certs.sh /backup-certs.sh
+COPY cronjobs /etc/crontabs/root
 
 CMD ["crond", "-f", "-d", "8"]
 # CMD ["/backup.sh"]

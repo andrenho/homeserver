@@ -1,2 +1,4 @@
-0 3 * * *  /backup.sh > /proc/1/fd/1 2>/proc/1/fd/2
+# n h d m w  command
+0   3 * * *  /backup-data.sh > /proc/1/fd/1 2>/proc/1/fd/2
+0   4 * * 6  /backup-certs.sh > /proc/1/fd/1 2>/proc/1/fd/2
 

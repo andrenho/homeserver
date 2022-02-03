@@ -66,6 +66,19 @@ services:
       - "${P}2222:22"
     command: "${USERNAME}:${PASSWORD}:${DATA_UID}:${DATA_GID}"
 
+  backup:
+    build: backup
+    container_name: backup
+    restart: always
+    volumes:
+      - "${DATA_DIR}:/data:ro"
+      - "${CERTS_DIR}:/certs:ro"
+    environment:
+      BUCKET_NAME: ${BACKUP_BUCKET}
+    secrets:
+      - source: aws_credentials
+        target: /root/.aws/credentials
+  
   #
   # Web services
   #
@@ -153,18 +166,6 @@ services:
   #    - "7003:7003"
   #    - "7080:7080"
   #    - "7081:7081"
-  #
-  #backup:
-  #  build: backup
-  #  container_name: backup
-  #  restart: always
-  #  volumes:
-  #    - "${HOME}/volume/data:/data:ro"
-  #  environment:
-  #    - BUCKET_NAME=homeserver-gamesmith-backup
-  #  secrets:
-  #    - source: aws_credentials
-  #      target: /root/.aws/credentials
   #
   #mqtt:
   #  image: eclipse-mosquitto
