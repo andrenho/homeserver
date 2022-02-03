@@ -10,8 +10,9 @@
 - [X] Backup
   - [X] Include certificate
 - [X] DynamicDNS
-- [ ] Hello + Proxy
+- [X] Hello + Proxy
   - [ ] Auth
+- [ ] Move to master
 - [ ] DLNA
 - [ ] MQTT
 - [ ] CI/CD - Concourse (?)
@@ -21,7 +22,6 @@
 - [ ] WebSSH
 - [ ] Filebrowser
 - [ ] Pi-Hole
-- [ ] Move to master
 
 - [ ] Dokuwiki (or better wiki?)
 - [ ] Openbooks

@@ -106,6 +106,7 @@ services:
       - "./proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
       - "./proxy/templates:/etc/nginx/templates:ro"
       - "${CERTS_DIR}:/certs:ro"
+      - "${HTPASSWD_FILE}:/etc/nginx/.htpasswd:ro"
     environment:
       HOST_DOMAIN: "${HOST_DOMAIN}"
     ports:
