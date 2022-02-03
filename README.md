@@ -11,7 +11,7 @@ The following services are now available:
 
 - FTP: `ftp://admin:admin@localhost:221`
 - SFTP: `sftp://admin:admin@localhost:22222`
-- HTTPS: `https://admin:admin@localhost:2443`
+- HTTPS: `https://admin:admin@dev.homeserver.gamesmith.uk:2443`
 
 ---
 
