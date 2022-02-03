@@ -1,22 +1,27 @@
 # Home network
 
 - [X] FTP
+  - [X] Not working
 - [X] SFTP
+  - [X] Not working
 - [X] Certificates
+  - [ ] Move certificate directory outside of data
+- [ ] Plex
+- [ ] Backup
+  - [ ] Include certificate
 - [ ] Hello + Proxy
   - [ ] Auth
 - [ ] DynamicDNS
 - [ ] DLNA
-- [ ] Backup
 - [ ] MQTT
 - [ ] CI/CD - Concourse (?)
 - [ ] Better homer
-- [ ] Plex
 - [ ] Torrent
 - [ ] Portainer
 - [ ] WebSSH
 - [ ] Filebrowser
 - [ ] Pi-Hole
+- [ ] Move to master
 
 - [ ] Dokuwiki (or better wiki?)
 - [ ] Openbooks

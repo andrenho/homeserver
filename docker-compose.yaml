@@ -26,7 +26,7 @@ services:
         target: /root/.aws/credentials
     volumes:
       - "${DATA_DIR}/certificate/var:/var/lib/letsencrypt"
-      - "${DATA_DIR}/certificate/etc:/etc/letsencrypt"
+      - "${CERTS_DIR}:/etc/letsencrypt"
     environment:
       EMAIL: ${EMAIL}
       DOMAIN: ${HOST_DOMAIN}
