@@ -13,8 +13,8 @@
 - [X] Hello + Proxy
   - [X] Auth
 - [X] Move to master
-- [ ] DLNA
-- [ ] MQTT
+- [X] DLNA
+- [X] MQTT
 - [ ] CI/CD - Concourse (?)
 - [ ] Better homer
 - [ ] Torrent
@@ -32,6 +32,8 @@
 - [ ] Audioserve
 - [ ] Podgrab
 - [ ] Hoppscotch
+
+- [X] Remove old data
 
 # Infrastructure
 
