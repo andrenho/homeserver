@@ -2,7 +2,7 @@ FROM    ubuntu
 
 COPY    resolv.conf /etc/
 RUN     apt-get update && \
-        apt-get install -y snapd curl unzip jq python3 python3-venv libaugeas0 cron && \
+        apt-get install -y curl unzip jq python3 python3-venv libaugeas0 cron && \
         python3 -m venv /opt/certbot/ && \
         /opt/certbot/bin/pip install --upgrade pip && \
         /opt/certbot/bin/pip install certbot && \
