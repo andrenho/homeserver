@@ -1,9 +1,17 @@
 #!/bin/sh
 
-sudo mkdir /root/.aws
-sudo cp /home/andre/.aws/* /root/.aws
-sudo certbot certonly --agree-tos --email andre.nho@gmail.com \
+set -x
+
+certbot certonly -n --agree-tos --email ${EMAIL} --manual-public-ip-logging-ok \
   --preferred-challenges=dns \
-  --manual --manual-auth-hook /home/andre/homeserver/certificate/authenticator.sh \
-  --manual-cleanup-hook /home/andre/homeserver/certificate/cleanup.sh \
-  -d homeserver.gamesmith.uk -d '*.homeserver.gamesmith.uk' -v
+  --manual --manual-auth-hook $(pwd)/authenticator.sh \
+  --manual-cleanup-hook $(pwd)/cleanup.sh \
+  -d ${DOMAIN} \
+  ${EXTRA_PARAMS}
+
+certbot certonly -n --agree-tos --email ${EMAIL} --manual-public-ip-logging-ok \
+  --preferred-challenges=dns \
+  --manual --manual-auth-hook $(pwd)/authenticator.sh \
+  --manual-cleanup-hook $(pwd)/cleanup.sh \
+  -d '*.'"${DOMAIN}"'' \
+  ${EXTRA_PARAMS}

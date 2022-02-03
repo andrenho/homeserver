@@ -1,0 +1,14 @@
+server {
+
+  listen                443 ssl;
+  server_name           hello.${HOST_DOMAIN};
+
+  ssl_certificate       /certs/live/${HOST_DOMAIN}-0001/fullchain.pem;
+  ssl_certificate_key   /certs/live/${HOST_DOMAIN}-0001/privkey.pem;
+
+  location / {
+    proxy_pass          http://hello:80;
+  }
+}
+
+# vim:syntax=nginx

@@ -1,3 +1,38 @@
+# Home network
+
+- [X] FTP
+  - [X] Not working
+- [X] SFTP
+  - [X] Not working
+- [X] Certificates
+  - [X] Move certificate directory outside of data
+- [X] Plex
+- [X] Backup
+  - [X] Include certificate
+- [X] DynamicDNS
+- [X] Hello + Proxy
+  - [X] Auth
+- [ ] Move to master
+- [ ] DLNA
+- [ ] MQTT
+- [ ] CI/CD - Concourse (?)
+- [ ] Better homer
+- [ ] Torrent
+- [ ] Portainer
+- [ ] WebSSH
+- [ ] Filebrowser
+- [ ] Pi-Hole
+
+- [ ] Dokuwiki (or better wiki?)
+- [ ] Openbooks
+- [ ] Sonarr/Radarr/Bazarr
+- [ ] Cyberchef
+- [ ] RSS (+db)
+- [ ] Ubooquity (find better)
+- [ ] Audioserve
+- [ ] Podgrab
+- [ ] Hoppscotch
+
 # Infrastructure
 
 - [ ] PiKVM
