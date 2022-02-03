@@ -95,9 +95,26 @@ services:
     command: "${USERNAME}:${PASSWORD}:${DATA_UID}:${DATA_GID}"
 
   #
-  # Web services
+  # Proxy
   #
-  
+
+  proxy:
+    image: nginx:latest
+    container_name: proxy
+    restart: unless-stopped
+    volumes:
+      - "./proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./proxy/templates:/etc/nginx/templates:ro"
+      - "${CERTS_DIR}:/certs:ro"
+    environment:
+      HOST_DOMAIN: "${HOST_DOMAIN}"
+    ports:
+      - "${P}443:443"
+
+  # 
+  # Web services (public)
+  # 
+
   plex:
     image: lscr.io/linuxserver/plex
     container_name: plex
@@ -111,6 +128,15 @@ services:
       - "${VOLUME_DIR}/movies:/movies"
       - "${VOLUME_DIR}/tv:/tv"
   
+  #
+  # Web services (behind proxy)
+  #
+  
+  hello:
+    image: lmmendes/http-hello-world
+    container_name: hello
+    restart: unless-stopped
+      
 
   ## 
   ## Pi-hole
@@ -188,25 +214,6 @@ services:
   # Web services
   #
   
-      #hello:
-      #  image: lmmendes/http-hello-world
-      #  container_name: hello
-      #  restart: unless-stopped
-      #
-      #proxy:
-      #  image: nginx:latest
-      #  container_name: proxy
-      #  restart: unless-stopped
-      #  volumes:
-      #    - "./proxy/nginx.conf:/etc/nginx/nginx.conf:ro"
-      #    - "./proxy/templates:/etc/nginx/templates:ro"
-      #    - "${SSLKEYS_DIR}:/ssl:ro"
-      #  environment:
-      #    HOST_DOMAIN: "${HOST_DOMAIN}"
-      #  ports:
-      #    - "443:443"
-      #    - "7443:7443"
-      #    - "7444:7444"
 
   
   #homer:

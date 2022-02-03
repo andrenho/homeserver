@@ -1,8 +1,7 @@
 server {
 
   listen                443 ssl;
-  server_name           ${HOST_DOMAIN};
-  add_header            Strict-Transport-Security "max-age=0;";
+  server_name           hello.${HOST_DOMAIN};
 
   location / {
     proxy_pass          http://hello:80;
