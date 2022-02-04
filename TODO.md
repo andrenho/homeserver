@@ -34,6 +34,7 @@
 
 - [ ] Cleanup repository + volume
 - [ ] Drone (?)
+- [ ] Point DNS to Pi-Hole
 - [ ] Add intelligence to home page
 
 - [X] Remove old data

@@ -217,33 +217,33 @@ services:
       - 8020:80
   
 
-  ## 
-  ## Pi-hole
-  ##
+  # 
+  # Pi-hole
   #
-  #pihole:
-  #  container_name: pihole
-  #  image: pihole/pihole:latest
-  #  ports:
-  #    - "53:53/tcp"
-  #    - "53:53/udp"
-  #    - "80:80/tcp"
-  #  environment:
-  #    - TZ='America/Sao_Paulo'
-  #    - FTLCONF_REPLY_ADDR4=192.168.15.2
-  #    - PIHOLE_DNS_=8.8.8.8;8.8.4.4
-  #    - VIRTUAL_HOST=pihole.homeserver.gamesmith.uk
-  #    - WEBPASSWORD=admin
-  #    - DNSMASQ_LISTENING=all
-  #  volumes:
-  #    - '${HOME}/volume/data/pihole/etc/:/etc/pihole/'
-  #    - '${HOME}/volume/data/pihole/dnsmasq.d/:/etc/dnsmasq.d/'
-  #  cap_add:
-  #    - NET_ADMIN
-  #  #network_mode: host
-  #  restart: unless-stopped
-  #
-  #
+  
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+    environment:
+      - TZ='America/Sao_Paulo'
+      - FTLCONF_REPLY_ADDR4=192.168.15.2
+      - PIHOLE_DNS_=8.8.8.8;8.8.4.4
+      - VIRTUAL_HOST=pihole.${HOST_DOMAIN}
+      - WEBPASSWORD=${PASSWORD}
+      - DNSMASQ_LISTENING=all
+    volumes:
+      - '${DATA_DIR}/pihole/etc/:/etc/pihole/'
+      - '${DATA_DIR}/pihole/dnsmasq.d/:/etc/dnsmasq.d/'
+    cap_add:
+      - NET_ADMIN
+    #network_mode: host
+    restart: unless-stopped
+  
+  
   ##
   ## daemons
   ##
