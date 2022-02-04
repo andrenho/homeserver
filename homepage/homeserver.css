@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: 'Lato',sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-height: 100px;
+    background-color: teal;
+    color: white;
+    padding-left: 32px;
+}
+
+.header-title {
+    display: flex;
+    flex-direction:column;
+}
+
+.title-top {
+    font-size: small;
+}
+
+.title-bottom {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.toolbar {
+    display: flex;
+    gap: 28px;
+    min-height: 44px;
+    align-items: center;
+    padding-left: 32px;
+    background-color: darkslategray;
+}
+
+.toolbar, a {
+    color: white;
+    text-decoration: none;
+}
+
+.t-icon {
+    padding-right: 8px;
+}
