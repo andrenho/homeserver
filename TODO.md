@@ -20,7 +20,7 @@
 - [X] Portainer
 - [X] WebSSH
 - [X] Filebrowser
-- [ ] Pi-Hole
+- [X] Pi-Hole
 
 - [ ] Dokuwiki (or better wiki?)
 - [ ] Openbooks
