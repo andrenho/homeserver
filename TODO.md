@@ -17,7 +17,7 @@
 - [X] MQTT
 - [X] Better homer
 - [X] Torrent
-- [ ] Portainer
+- [X] Portainer
 - [ ] WebSSH
 - [ ] Filebrowser
 - [ ] Pi-Hole

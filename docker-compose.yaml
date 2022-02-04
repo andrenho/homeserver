@@ -196,6 +196,12 @@ services:
       - PGID=${DATA_GID}
       - TZ=America/Sao_Paulo
   
+  ssh:
+    build: ssh
+    image: ssh
+    container_name: ssh
+    restart: unless-stopped
+  
 
   ## 
   ## Pi-hole
@@ -280,12 +286,6 @@ services:
   #  command: --persist
   #  volumes:
   #    - "${HOME}/volume/books:/books"
-  #
-  #ssh:
-  #  build: ssh
-  #  image: ssh
-  #  container_name: ssh
-  #  restart: unless-stopped
   #
   #sonarr:
   #  image: lscr.io/linuxserver/sonarr

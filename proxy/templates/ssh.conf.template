@@ -1,0 +1,25 @@
+server {
+
+    listen                443 ssl;
+    server_name           ssh.${HOST_DOMAIN};
+ 
+    ssl_certificate       /certs/live/${HOST_DOMAIN}-0001/fullchain.pem;
+    ssl_certificate_key   /certs/live/${HOST_DOMAIN}-0001/privkey.pem;
+
+    add_header            Strict-Transport-Security "max-age=0;";
+
+    location / {
+        proxy_pass          http://ssh:8080/;
+
+        proxy_http_version  1.1;
+        proxy_read_timeout  300;
+
+        proxy_set_header    Host $http_host;
+        proxy_set_header    Upgrade $http_upgrade;
+        proxy_set_header    Connection "upgrade";
+        proxy_set_header    X-Real-IP $remote_addr;
+        proxy_set_header    X-Real-PORT $remote_port;
+    }
+}
+
+# vim:syntax=nginx
