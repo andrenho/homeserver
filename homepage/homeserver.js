@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (e.dataset.href)
             e.href = e.dataset.href
                 .replace("${HOST}", window.location.host)
+                .replace("${HOSTNAME}", window.location.hostname)
                 .replace("${PROTOCOL}", window.location.protocol);
     }
 });

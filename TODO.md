@@ -15,7 +15,7 @@
 - [X] Move to master
 - [X] DLNA
 - [X] MQTT
-- [ ] Better homer
+- [X] Better homer
 - [ ] Torrent
 - [ ] Portainer
 - [ ] WebSSH
@@ -33,6 +33,7 @@
 - [ ] Hoppscotch
 
 - [ ] Drone (?)
+- [ ] Add intelligence to home page
 
 - [X] Remove old data
 
