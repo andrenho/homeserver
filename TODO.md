@@ -15,7 +15,6 @@
 - [X] Move to master
 - [X] DLNA
 - [X] MQTT
-- [ ] CI/CD - Concourse (?)
 - [ ] Better homer
 - [ ] Torrent
 - [ ] Portainer
@@ -32,6 +31,8 @@
 - [ ] Audioserve
 - [ ] Podgrab
 - [ ] Hoppscotch
+
+- [ ] Drone (?)
 
 - [X] Remove old data
 

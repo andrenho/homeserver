@@ -155,6 +155,12 @@ services:
   #
   # Web services (behind proxy)
   #
+
+  homepage:
+    image: dragas/thttpd
+    container_name: homepage
+    volumes:
+      - "./homepage:/var/www/http:ro"
   
   hello:
     image: lmmendes/http-hello-world
