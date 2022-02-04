@@ -18,7 +18,7 @@
 - [X] Better homer
 - [X] Torrent
 - [X] Portainer
-- [ ] WebSSH
+- [X] WebSSH
 - [ ] Filebrowser
 - [ ] Pi-Hole
 

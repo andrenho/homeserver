@@ -202,6 +202,20 @@ services:
     container_name: ssh
     restart: unless-stopped
   
+  explorer:
+    image: filebrowser/filebrowser
+    container_name: explorer
+    environment:
+      - PUID=${DATA_UID}
+      - PGID=${DATA_GID}
+      - TZ=America/Sao_Paulo
+    volumes:
+      - "${VOLUME_DIR}:/srv"
+      - "${DATA_DIR}/explorer/database:/database"
+      - "${DATA_DIR}/explorer/config:/config"
+    ports:
+      - 8020:80
+  
 
   ## 
   ## Pi-hole
@@ -324,20 +338,6 @@ services:
   #    - "${HOME}/volume/data/bazarr/config:/config"
   #    - "${HOME}/volume/downloads:/movies"
   #  restart: unless-stopped
-  #
-  #explorer:
-  #  image: filebrowser/filebrowser:s6
-  #  container_name: explorer
-  #  environment:
-  #    - PUID=1000
-  #    - PGID=1000
-  #    - TZ=America/Sao_Paulo
-  #  volumes:
-  #    - "${HOME}/volume:/srv"
-  #    - "${HOME}/volume/data/explorer/database:/database"
-  #    - "${HOME}/volume/data/explorer/config:/config"
-  #  ports:
-  #    - 8020:80
   #
   #cyberchef:
   #  image: mpepping/cyberchef
