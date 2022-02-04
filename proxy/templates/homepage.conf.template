@@ -1,0 +1,14 @@
+server {
+
+  listen                443 ssl;
+  server_name           ${HOST_DOMAIN};
+
+  ssl_certificate       /certs/live/${HOST_DOMAIN}/fullchain.pem;
+  ssl_certificate_key   /certs/live/${HOST_DOMAIN}/privkey.pem;
+
+  location / {
+    proxy_pass          http://homepage:80;
+  }
+}
+
+# vim:syntax=nginx
