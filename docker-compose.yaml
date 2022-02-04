@@ -184,6 +184,18 @@ services:
       - "${VOLUME_DIR}/books:/books"
       - "${VOLUME_DIR}/audiobooks:/audiobooks"
   
+  portainer:
+    image: cr.portainer.io/portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - "${DATA_DIR}/portainer:/data"
+    environment:
+      - PUID=${DATA_UID}
+      - PGID=${DATA_GID}
+      - TZ=America/Sao_Paulo
+  
 
   ## 
   ## Pi-hole
@@ -260,18 +272,6 @@ services:
   #  volumes:
   #    - "${HOME}/volume/data/wiki:/config"
   #  restart: unless-stopped
-  #
-  #portainer:
-  #  image: cr.portainer.io/portainer/portainer-ce:latest
-  #  container_name: portainer
-  #  restart: unless-stopped
-  #  volumes:
-  #    - /var/run/docker.sock:/var/run/docker.sock
-  #    - "${HOME}/volume/data/portainer:/data"
-  #  environment:
-  #    - PUID=1000
-  #    - PGID=1000
-  #    - TZ=America/Sao_Paulo
   #
   #openbooks:
   #  image: evanbuss/openbooks

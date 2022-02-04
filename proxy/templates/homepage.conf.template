@@ -9,6 +9,17 @@ server {
   location / {
     proxy_pass          http://homepage:80;
   }
+
+  location /portainer/ {
+    auth_basic          "off";
+    rewrite             ^/portainer(/.*)$ $1 break;
+    gzip                off;
+    proxy_pass          http://portainer:9000;
+    proxy_http_version  1.1;
+    proxy_set_header    Upgrade $http_upgrade;
+    proxy_set_header    Connection "Upgrade";
+  }
+
 }
 
 # vim:syntax=nginx

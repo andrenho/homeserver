@@ -85,7 +85,7 @@ body {
 }
 
 .app-image, img {
-    max-height: 48px;
+    height: 48px;
     max-width: 48px;
     padding-right: 12px;
 }
