@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 body {
     margin: 0;
     font-family: 'Lato',sans-serif;
+    background-color: #f5f5f5;
 }
 
 .header {
@@ -43,4 +46,69 @@ body {
 
 .t-icon {
     padding-right: 8px;
+}
+
+.content {
+    display: flex;
+    padding: 64px;
+    width: calc(100wh);
+}
+
+.serverinfo {
+    min-width: 180px;
+}
+
+.applications {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.app-title {
+    font-size: x-large;
+    margin-bottom: 12px;
+}
+
+.app-card {
+    display: flex;
+    background-color: white;
+    border-radius: 0.1rem;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+    padding: 24px;
+    align-items: center;
+    min-width: 300px;
+    position: relative;
+}
+
+.app-card:hover {
+    transform: translate(6px, 0px);
+}
+
+.app-image, img {
+    max-height: 48px;
+    max-width: 48px;
+    padding-right: 12px;
+}
+
+.app-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-name {
+    font-size: large;
+    font-weight: bold;
+}
+
+.app-desc {
+    font-weight: lighter;
+}
+
+.app-link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
