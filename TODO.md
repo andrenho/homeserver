@@ -21,6 +21,7 @@
 - [X] WebSSH
 - [X] Filebrowser
 - [X] Pi-Hole
+- [ ] Some icons are not working in homepage
 
 - [ ] Dokuwiki (or better wiki?)
 - [ ] Openbooks
