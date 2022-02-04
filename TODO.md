@@ -19,7 +19,7 @@
 - [X] Torrent
 - [X] Portainer
 - [X] WebSSH
-- [ ] Filebrowser
+- [X] Filebrowser
 - [ ] Pi-Hole
 
 - [ ] Dokuwiki (or better wiki?)
@@ -32,6 +32,7 @@
 - [ ] Podgrab
 - [ ] Hoppscotch
 
+- [ ] Cleanup repository + volume
 - [ ] Drone (?)
 - [ ] Add intelligence to home page
 
