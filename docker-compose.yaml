@@ -167,6 +167,23 @@ services:
     container_name: hello
     restart: unless-stopped
       
+  torrent:
+    image: cr.hotio.dev/hotio/qbittorrent
+    container_name: torrent
+    restart: unless-stopped
+    environment:
+      - PUID=${DATA_UID}
+      - GUID=${DATA_GID}
+      - UMASK=002
+      - TZ=America/Sao_Paulo
+    volumes:
+      - "${DATA_DIR}/torrent:/config"
+      - "${VOLUME_DIR}/downloads:/downloads"
+      - "${VOLUME_DIR}/movies:/movies"
+      - "${VOLUME_DIR}/tv:/tv"
+      - "${VOLUME_DIR}/books:/books"
+      - "${VOLUME_DIR}/audiobooks:/audiobooks"
+  
 
   ## 
   ## Pi-hole
@@ -232,24 +249,6 @@ services:
   #  environment:
   #    - UID=1000
   #    - GID=1000
-  #
-  #torrent:
-  #  build: torrent
-  #  container_name: torrent
-  #  restart: unless-stopped
-  #  image: torrent:latest
-  #  environment:
-  #    - PUID=1000
-  #    - GUID=1000
-  #    - UMASK=002
-  #    - TZ=America/Sao_Paulo
-  #  volumes:
-  #    - "${HOME}/volume/data/torrent:/config"
-  #    - "${HOME}/volume/downloads:/downloads"
-  #    - "${HOME}/volume/movies:/movies"
-  #    - "${HOME}/volume/tv:/tv"
-  #    - "${HOME}/volume/books:/books"
-  #    - "${HOME}/volume/audiobooks:/audiobooks"
   #
   #dokuwiki:
   #  image: lscr.io/linuxserver/dokuwiki
