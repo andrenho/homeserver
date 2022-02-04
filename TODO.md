@@ -16,7 +16,7 @@
 - [X] DLNA
 - [X] MQTT
 - [X] Better homer
-- [ ] Torrent
+- [X] Torrent
 - [ ] Portainer
 - [ ] WebSSH
 - [ ] Filebrowser
