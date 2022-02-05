@@ -35,6 +35,7 @@
 - [X] Ubooquity (find better) - Kavita
 
 - [X] Cleanup repository + volume
+- [ ] Add ptr to modem
 - [ ] Point DNS to Pi-Hole
 
 - [X] Remove old data
