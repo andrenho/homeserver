@@ -22,16 +22,18 @@
 - [X] Filebrowser
 - [X] Pi-Hole
 - [ ] Some icons are not working in homepage
+- [ ] Mobile-friendly home page
 
-- [ ] Dokuwiki (or better wiki?)
 - [ ] Openbooks
-- [ ] Sonarr/Radarr/Bazarr
-- [ ] Cyberchef
-- [ ] RSS (+db)
-- [ ] Ubooquity (find better)
 - [ ] Audioserve
 - [ ] Podgrab
+- [ ] Cyberchef
 - [ ] Hoppscotch
+- [ ] RSS (+db) (find better?)
+- [ ] Ubooquity (find better)
+- [ ] Dokuwiki (or better wiki?)
+
+- [ ] Sonarr/Radarr/Bazarr (?)
 
 - [ ] Cleanup repository + volume
 - [ ] Drone (?)
