@@ -1,0 +1,19 @@
+server {
+
+  listen                443 ssl;
+  server_name           hoppscotch.${HOST_DOMAIN};
+
+  ssl_certificate       /certs/live/${HOST_DOMAIN}-0001/fullchain.pem;
+  ssl_certificate_key   /certs/live/${HOST_DOMAIN}-0001/privkey.pem;
+
+  location / {
+      proxy_pass        http://hoppscotch:3000;
+
+      proxy_set_header  Host $http_host;
+      proxy_set_header  X-Real-IP $remote_addr;
+      proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header  X-Forwarded-Proto https;
+  }
+}
+
+# vim:syntax=nginx

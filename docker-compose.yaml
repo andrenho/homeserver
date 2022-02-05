@@ -216,7 +216,59 @@ services:
     ports:
       - 8020:80
   
+  openbooks:
+    image: evanbuss/openbooks
+    container_name: openbooks
+    restart: unless-stopped
+    command: --persist
+    volumes:
+      - "${VOLUME_DIR}/books:/books"
+  
+  audioserve:
+    image: izderadicka/audioserve
+    container_name: audioserve
+    restart: unless-stopped
+    command: --tags --transcoding-max-parallel-processes 24 --no-authentication /audiobooks
+    environment:
+      - PUID=${DATA_UID}
+      - PGID=${DATA_GID}
+        #- AUDIOSERVE_SHARED_SECRET=changeme
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - "${DATA_DIR}/audioserve:/home/audioserve/.audioserve"
+      - "${VOLUME_DIR}/audiobooks:/audiobooks"
 
+  podgrab:
+    image: akhilrex/podgrab
+    container_name: podgrab
+    environment:
+      - CHECK_FREQUENCY=30
+    volumes:
+      - "${DATA_DIR}/podgrab:/config"
+      - "${VOLUME_DIR}/podcasts:/assets"
+    restart: unless-stopped
+
+  cyberchef:
+    image: mpepping/cyberchef
+    container_name: cyberchef
+    restart: unless-stopped
+  
+  hoppscotch:
+    image: hoppscotch/hoppscotch
+    container_name: hoppscotch
+    restart: unless-stopped
+
+  dokuwiki:
+    image: lscr.io/linuxserver/dokuwiki
+    container_name: dokuwiki
+    environment:
+      - PUID=${DATA_UID}
+      - PGID=${DATA_GID}
+      - TZ=America/Sao_Paulo
+    volumes:
+      - "${DATA_DIR}/wiki:/config"
+    restart: unless-stopped
+  
   # 
   # Pi-hole
   #
@@ -244,11 +296,6 @@ services:
     restart: unless-stopped
   
   
-  ##
-  ## daemons
-  ##
-  #
-  
   #dev:
   #  build: dev
   #  container_name: dev
@@ -266,41 +313,8 @@ services:
   #    - "7080:7080"
   #    - "7081:7081"
   
-  #
-  # Web services
-  #
-  
 
   
-  #homer:
-  #  restart: unless-stopped
-  #  container_name: homer
-  #  image: b4bz/homer:latest
-  #  volumes:
-  #    - "./homer:/www/assets:ro"
-  #  environment:
-  #    - UID=1000
-  #    - GID=1000
-  #
-  #dokuwiki:
-  #  image: lscr.io/linuxserver/dokuwiki
-  #  container_name: dokuwiki
-  #  environment:
-  #    - PUID=1000
-  #    - PGID=1000
-  #    - TZ=America/Sao_Paulo
-  #  volumes:
-  #    - "${HOME}/volume/data/wiki:/config"
-  #  restart: unless-stopped
-  #
-  #openbooks:
-  #  image: evanbuss/openbooks
-  #  container_name: openbooks
-  #  restart: unless-stopped
-  #  command: --persist
-  #  volumes:
-  #    - "${HOME}/volume/books:/books"
-  #
   #sonarr:
   #  image: lscr.io/linuxserver/sonarr
   #  container_name: sonarr
@@ -339,11 +353,6 @@ services:
   #    - "${HOME}/volume/downloads:/movies"
   #  restart: unless-stopped
   #
-  #cyberchef:
-  #  image: mpepping/cyberchef
-  #  container_name: cyberchef
-  #  restart: unless-stopped
-  #
   #rss:
   #  image: mockdeep/stringer:0.1
   #  container_name: rss
@@ -371,35 +380,6 @@ services:
   #  ports:
   #    - 2202:2202
   #    - 2203:2203
-  #  restart: unless-stopped
-  #
-  #audioserve:
-  #  image: izderadicka/audioserve
-  #  container_name: audioserve
-  #  restart: unless-stopped
-  #  command: --tags --transcoding-max-parallel-processes 24 --no-authentication /audiobooks
-  #  environment:
-  #    - PUID=1000
-  #    - PGID=1000
-  #      #- AUDIOSERVE_SHARED_SECRET=changeme
-  #  volumes:
-  #    - /etc/localtime:/etc/localtime:ro
-  #    - "${HOME}/volume/data/audioserve:/home/audioserve/.audioserve"
-  #    - "${HOME}/volume/audiobooks:/audiobooks"
-  #
-  #podgrab:
-  #  image: akhilrex/podgrab
-  #  container_name: podgrab
-  #  environment:
-  #    - CHECK_FREQUENCY=30
-  #  volumes:
-  #    - "${HOME}/volume/data/podgrab:/config"
-  #    - "${HOME}/volume/podcasts:/assets"
-  #  restart: unless-stopped
-  #
-  #hoppscotch:
-  #  image: hoppscotch/hoppscotch
-  #  container_name: hoppscotch
   #  restart: unless-stopped
   #
   ## 

@@ -29,9 +29,10 @@
 - [ ] Podgrab
 - [ ] Cyberchef
 - [ ] Hoppscotch
+- [ ] Dokuwiki
+
 - [ ] RSS (+db) (find better?)
 - [ ] Ubooquity (find better)
-- [ ] Dokuwiki (or better wiki?)
 
 - [ ] Sonarr/Radarr/Bazarr (?)
 
