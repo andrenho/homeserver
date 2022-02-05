@@ -31,8 +31,8 @@
 - [X] Hoppscotch
 - [X] Dokuwiki
 
-- [ ] RSS (+db) (find better?)
-- [ ] Ubooquity (find better)
+- [X] RSS (+db) (find better?)
+- [ ] Ubooquity (find better) - Kavita
 
 - [ ] Cleanup repository + volume
 - [ ] Drone (?)
