@@ -21,8 +21,8 @@
 - [X] WebSSH
 - [X] Filebrowser
 - [X] Pi-Hole
-- [ ] Some icons are not working in homepage
-- [ ] Mobile-friendly home page
+- [X] Some icons are not working in homepage
+- [X] Mobile-friendly home page
 
 - [ ] Openbooks
 - [ ] Audioserve
