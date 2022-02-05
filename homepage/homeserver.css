@@ -52,6 +52,7 @@ body {
     display: flex;
     padding: 64px;
     padding-top: 32px;
+    padding-right: 8px;
     width: calc(100wh);
 }
 
@@ -63,6 +64,10 @@ body {
     display: flex;
     gap: 48px;
     flex-wrap: wrap;
+}
+
+.application-group {
+    padding-right: 24px;
 }
 
 .app-title {
@@ -127,6 +132,7 @@ body {
     .toolbar a {
         padding-top: 4px;
         padding-bottom: 4px;
+        font-size: smaller;
     }
     .serverinfo {
         order: 99;
@@ -139,5 +145,8 @@ body {
     }
     .app-card:hover {
         transform: unset;
+    }
+    .application-group {
+        padding-right: 0px;
     }
 }
