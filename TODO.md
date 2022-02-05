@@ -34,7 +34,7 @@
 - [X] RSS (+db) (find better?)
 - [X] Ubooquity (find better) - Kavita
 
-- [ ] Cleanup repository + volume
+- [X] Cleanup repository + volume
 - [ ] Point DNS to Pi-Hole
 
 - [X] Remove old data
