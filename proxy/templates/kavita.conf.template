@@ -6,6 +6,8 @@ server {
     ssl_certificate      /certs/live/${HOST_DOMAIN}-0001/fullchain.pem;
     ssl_certificate_key  /certs/live/${HOST_DOMAIN}-0001/privkey.pem;
 
+    auth_basic            "off";
+
     location / {
         proxy_pass              http://reader:5000;
 
