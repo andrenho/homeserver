@@ -3,13 +3,12 @@
 body {
     margin: 0;
     font-family: 'Lato',sans-serif;
-    background-color: #f5f5f5;
+    background-color: #e8e8e8;
 }
 
 .header {
     display: flex;
     align-items: center;
-    gap: 24px;
     min-height: 100px;
     background-color: teal;
     color: white;
@@ -19,6 +18,7 @@ body {
 .header-title {
     display: flex;
     flex-direction:column;
+    padding-left: 24px;
 }
 
 .title-top {
@@ -32,16 +32,16 @@ body {
 
 .toolbar {
     display: flex;
-    gap: 28px;
     min-height: 44px;
     align-items: center;
     padding-left: 32px;
     background-color: darkslategray;
 }
 
-.toolbar, a {
+.toolbar a {
     color: white;
     text-decoration: none;
+    padding-right: 28px;
 }
 
 .t-icon {
@@ -51,6 +51,7 @@ body {
 .content {
     display: flex;
     padding: 64px;
+    padding-top: 32px;
     width: calc(100wh);
 }
 
@@ -66,7 +67,8 @@ body {
 
 .app-title {
     font-size: x-large;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    margin-top: 18px;
 }
 
 .app-card {
@@ -111,4 +113,31 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+@media (max-width:600px) {
+    .content {
+        flex-direction: column;
+        padding: 16px;
+    }
+    .toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .toolbar a {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+    .serverinfo {
+        order: 99;
+    }
+    .app-card {
+        min-width: unset;
+    }
+    .application-group {
+        width: 100%;
+    }
+    .app-card:hover {
+        transform: unset;
+    }
 }
