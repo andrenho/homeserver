@@ -32,7 +32,7 @@
 - [X] Dokuwiki
 
 - [X] RSS (+db) (find better?)
-- [ ] Ubooquity (find better) - Kavita
+- [X] Ubooquity (find better) - Kavita
 
 - [ ] Cleanup repository + volume
 - [ ] Point DNS to Pi-Hole
