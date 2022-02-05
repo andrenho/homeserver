@@ -279,6 +279,21 @@ services:
       - SECRET_TOKEN=8ef98wef8a
       - PORT=8080
       - DATABASE_URL=postgres://db_user:a8df73gg82@rss-db:5432/stringer
+
+  reader:
+    image: kizaing/kavita
+    container_name: reader
+    restart: unless-stopped
+    volumes:
+      - "${DATA_DIR}/reader:/kavita/config"
+      - "${VOLUME_DIR}/books:/books"
+      - "${VOLUME_DIR}/comics:/comics"
+    environment:
+      - PUID=${DATA_UID}
+      - PGID=${DATA_GID}
+      - TZ=America/Sao_Paulo
+    ports:
+      - "5000:5000"  # TODO - remove
   
   # 
   # Pi-hole

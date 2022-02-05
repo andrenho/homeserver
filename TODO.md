@@ -35,13 +35,13 @@
 - [ ] Ubooquity (find better) - Kavita
 
 - [ ] Cleanup repository + volume
-- [ ] Drone (?)
 - [ ] Point DNS to Pi-Hole
-- [ ] Add intelligence to home page
 
 - [X] Remove old data
 
 - [ ] Sonarr/Radarr/Bazarr (?)
+
+- [ ] Implement CI/CD on github actions
 
 # Infrastructure
 
