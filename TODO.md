@@ -24,12 +24,12 @@
 - [X] Some icons are not working in homepage
 - [X] Mobile-friendly home page
 
-- [ ] Openbooks
-- [ ] Audioserve
-- [ ] Podgrab
-- [ ] Cyberchef
-- [ ] Hoppscotch
-- [ ] Dokuwiki
+- [X] Openbooks
+- [X] Audioserve
+- [X] Podgrab
+- [X] Cyberchef
+- [X] Hoppscotch
+- [X] Dokuwiki
 
 - [ ] RSS (+db) (find better?)
 - [ ] Ubooquity (find better)
