@@ -38,10 +38,6 @@
 - [ ] Add ptr to modem
 - [ ] Point DNS to Pi-Hole
 
-- [X] Remove old data
-
-- [ ] Sonarr/Radarr/Bazarr (?)
-
 - [ ] Implement CI/CD on github actions
 
 # Infrastructure
