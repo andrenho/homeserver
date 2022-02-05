@@ -268,6 +268,17 @@ services:
     volumes:
       - "${DATA_DIR}/wiki:/config"
     restart: unless-stopped
+
+  rss:
+    image: mockdeep/stringer:0.1
+    container_name: rss
+    depends_on:
+      - rss-db
+    restart: unless-stopped
+    environment:
+      - SECRET_TOKEN=8ef98wef8a
+      - PORT=8080
+      - DATABASE_URL=postgres://db_user:a8df73gg82@rss-db:5432/stringer
   
   # 
   # Pi-hole
@@ -295,6 +306,20 @@ services:
     #network_mode: host
     restart: unless-stopped
   
+  # 
+  # Support services
+  #
+  
+  rss-db:
+    image: postgres:9.5-alpine
+    container_name: rss-db
+    restart: unless-stopped
+    volumes:
+      - "${DATA_DIR}/rss:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_PASSWORD=a8df73gg82
+      - POSTGRES_USER=db_user
+      - POSTGRES_DB=stringer
   
   #dev:
   #  build: dev
@@ -353,17 +378,6 @@ services:
   #    - "${HOME}/volume/downloads:/movies"
   #  restart: unless-stopped
   #
-  #rss:
-  #  image: mockdeep/stringer:0.1
-  #  container_name: rss
-  #  depends_on:
-  #    - rss-db
-  #  restart: unless-stopped
-  #  environment:
-  #    - SECRET_TOKEN=8ef98wef8a
-  #    - PORT=8080
-  #    - DATABASE_URL=postgres://db_user:a8df73gg82@rss-db:5432/stringer
-  #
   #ubooquity:
   #  image: lscr.io/linuxserver/ubooquity
   #  container_name: ubooquity
@@ -382,18 +396,4 @@ services:
   #    - 2203:2203
   #  restart: unless-stopped
   #
-  ## 
-  ## Support services
-  ##
-  #
-  #rss-db:
-  #  image: postgres:9.5-alpine
-  #  container_name: rss-db
-  #  restart: unless-stopped
-  #  volumes:
-  #    - "${HOME}/volume/data/rss:/var/lib/postgresql/data"
-  #  environment:
-  #    - POSTGRES_PASSWORD=a8df73gg82
-  #    - POSTGRES_USER=db_user
-  #    - POSTGRES_DB=stringer
 

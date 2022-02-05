@@ -34,14 +34,14 @@
 - [ ] RSS (+db) (find better?)
 - [ ] Ubooquity (find better)
 
-- [ ] Sonarr/Radarr/Bazarr (?)
-
 - [ ] Cleanup repository + volume
 - [ ] Drone (?)
 - [ ] Point DNS to Pi-Hole
 - [ ] Add intelligence to home page
 
 - [X] Remove old data
+
+- [ ] Sonarr/Radarr/Bazarr (?)
 
 # Infrastructure
 
@@ -64,8 +64,8 @@
 
 # Major infrastructre changes
 
-- [ ] Move to ansible
-- [ ] Make the installation generic for any IP, network, timezone, domain, and user name
+- [X] Move to ansible
+- [X] Make the installation generic for any IP, network, timezone, domain, and user name
   - Centralize passwords
 - [ ] Move to IPv6, open port 433 on router
 
