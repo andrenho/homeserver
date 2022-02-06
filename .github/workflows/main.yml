@@ -17,5 +17,6 @@ jobs:
           cat <<EOF > key.txt
           ${{secrets.SSH_PRIVATE_KEY}}
           EOF
+          chmod 600 key.txt
           ssh -o StrictHostKeychecking=no -i key.txt -p ${{secrets.SSH_PORT}} ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} "sudo -- sh -c 'cd /root/homeserver && ./start_prod.sh'"
         shell: bash
