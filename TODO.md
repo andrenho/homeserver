@@ -39,7 +39,7 @@
 - [X] Implement CI/CD on github actions
 - [ ] Login only with key
 
-- [ ] Add ptr to modem
+- [X] Add ptr to modem
 - [ ] Point DNS to Pi-Hole
 
 - [ ] MOTD
