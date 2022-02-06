@@ -40,7 +40,7 @@
 - [ ] Login only with key
 
 - [X] Add ptr to modem
-- [ ] Point DNS to Pi-Hole
+- [X] Point DNS to Pi-Hole
 
 - [ ] MOTD
 
