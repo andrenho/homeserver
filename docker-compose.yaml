@@ -211,8 +211,8 @@ services:
       - TZ=America/Sao_Paulo
     volumes:
       - "${VOLUME_DIR}:/srv"
-      - "${DATA_DIR}/explorer/filebrowser.db:/database/filebrowser.db"
-      - "${DATA_DIR}/explorer/settings.json:/config/settings.json"
+      - "${DATA_DIR}/explorer/filebrowser.db:/database.db"
+      - "${DATA_DIR}/explorer/settings.json:/.filebrowser.json"
   
   openbooks:
     image: evanbuss/openbooks
