@@ -15,5 +15,5 @@ jobs:
       - name: Deploy Homeserver
         run: |
           cat ${{secrets.SSH_PRIVATE_KEY}} > key.txt
-          ssh -t -i key.txt -p ${{secrets.SSH_PORT} ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} "sudo -- sh -c 'cd /root/homeserver && ./start_prod.sh'"
+          ssh -t -i key.txt -p ${{secrets.SSH_PORT}} ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} "sudo -- sh -c 'cd /root/homeserver && ./start_prod.sh'"
         shell: bash
