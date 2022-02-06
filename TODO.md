@@ -1,7 +1,3 @@
-# Configuration
-
-- [ ] Move dev and data back to main hard disk (?)
-
 # Development
 
 - [ ] Write software to run kindlegen
