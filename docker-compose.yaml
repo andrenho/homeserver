@@ -115,7 +115,7 @@ services:
       - "./mqtt/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro"
       - "${DATA_DIR}/mqtt:/mosquitto/data"
     ports:
-      - 1883:1883
+      - "${P}1883:1883"
 
   #
   # Proxy
@@ -134,6 +134,8 @@ services:
       HOST_DOMAIN: "${HOST_DOMAIN}"
     ports:
       - "${P}443:443"
+      - "${P}7444:7443"
+      - "${P}7444:7444"
 
   # 
   # Web services (public)
@@ -290,8 +292,6 @@ services:
       - PUID=${DATA_UID}
       - PGID=${DATA_GID}
       - TZ=America/Sao_Paulo
-    ports:
-      - "5000:5000"  # TODO - remove
   
   # 
   # Pi-hole
@@ -301,9 +301,9 @@ services:
     container_name: pihole
     image: pihole/pihole:latest
     ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "80:80/tcp"
+      - "${P}53:53/tcp"
+      - "${P}53:53/udp"
+      - "${P}80:80/tcp"
     environment:
       - TZ='America/Sao_Paulo'
       - FTLCONF_REPLY_ADDR4=192.168.15.2
