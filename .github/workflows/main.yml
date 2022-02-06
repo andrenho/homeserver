@@ -1,6 +1,5 @@
 name: Homeserver deployment
 
-# Controls when the workflow will run
 on:
   push:
     branches: [ master ]
@@ -13,14 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      
       - name: Deploy Homeserver
-        uses: appleboy/ssh-action@v0.1.4
-        with:
-          host: ${{secrets.SSH_HOST}}
-          username: ${{secrets.SSH_USER}}
-          port: ${{secrets.SSH_PORT}}
-          key: ${{secrets.SSH_PRIVATE_KEY}}
-          debug: true
-          script: ./start_prod.sh
+        run: |
+          cat ${{secrets.SSH_PRIVATE_KEY}} > key.txt
+          ssh -t -i key.txt -p ${{secrets.SSH_PORT} ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} "sudo -- sh -c 'cd /root/homeserver && ./start_prod.sh'"
+        shell: bash
