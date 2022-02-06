@@ -17,5 +17,5 @@ jobs:
           cat <<EOF > key.txt
           ${{secrets.SSH_PRIVATE_KEY}}
           EOF
-          ssh -t -i key.txt -p ${{secrets.SSH_PORT}} ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} "sudo -- sh -c 'cd /root/homeserver && ./start_prod.sh'"
+          ssh -vvv -i key.txt -p ${{secrets.SSH_PORT}} ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} "sudo -- sh -c 'cd /root/homeserver && ./start_prod.sh'"
         shell: bash
