@@ -1,0 +1,43 @@
+server {
+    listen                7443 ssl;
+
+    server_name           api.${HOST_DOMAIN};
+
+    ssl_certificate      /certs/live/${HOST_DOMAIN}-0001/fullchain.pem;
+    ssl_certificate_key  /certs/live/${HOST_DOMAIN}-0001/privkey.pem;
+
+    auth_basic            "off";
+
+    location / {
+        proxy_pass        http://192.168.15.2:7080;   # TODO - get dynamicly
+
+        proxy_set_header  Host $http_host;
+        proxy_set_header  X-Real-IP $remote_addr;
+        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto https;
+    }
+}
+
+server {
+    listen                7444 ssl;
+
+    server_name           api.${HOST_DOMAIN};
+
+    ssl_certificate      /certs/live/${HOST_DOMAIN}-0001/fullchain.pem;
+    ssl_certificate_key  /certs/live/${HOST_DOMAIN}-0001/privkey.pem;
+    server_name           api.homeserver.gamesmith.uk;
+
+    auth_basic            "off";
+
+    location / {
+        proxy_pass        http://192.168.15.2:7081;   # TODO - get dynamicly
+
+        proxy_set_header  Host $http_host;
+        proxy_set_header  X-Real-IP $remote_addr;
+        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header  X-Forwarded-Proto https;
+    }
+}
+
+
+# vim:syntax=nginx
