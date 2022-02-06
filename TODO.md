@@ -1,6 +1,6 @@
-# Infrastructure
+# Configuration
 
-- [ ] PiKVM
+- [ ] Move dev and data back to main hard disk (?)
 
 # Development
 
@@ -8,17 +8,17 @@
 - [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, start/stop services, and news
   - Check last backup date
   - Each directory size
-- [ ] Write a decent note taking app
+- [ ] Write/find a decent note taking app
 - [ ] Multi-feeds from news sites
 
-# Configuration
+# Problems
 
-- [ ] Move dev and data back to main hard disk (?)
+- [ ] Audioserve in mobile can't access the server
 
 # Major infrastructre changes
 
 - [ ] Move to IPv6, open port 433 on router
 
-# Problems
+# Infrastructure
 
-- [ ] Audioserve in mobile can't access the server
+- [ ] PiKVM
