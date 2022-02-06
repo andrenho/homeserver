@@ -1,5 +1,7 @@
 # homeserver
 
+![Deploy](https://github.com/andrenho/homeserver/actions/workflows/main.yml/badge.svg)
+
 # Running in test environment
 
 1. Create a temporary directory with `mkdir /tmp/data /tmp/volume`.

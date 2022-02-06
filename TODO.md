@@ -35,10 +35,14 @@
 - [X] Ubooquity (find better) - Kavita
 
 - [X] Cleanup repository + volume
+
+- [X] Implement CI/CD on github actions
+- [ ] Login only with key
+
 - [ ] Add ptr to modem
 - [ ] Point DNS to Pi-Hole
 
-- [ ] Implement CI/CD on github actions
+- [ ] MOTD
 
 # Infrastructure
 
