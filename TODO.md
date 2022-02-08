@@ -1,6 +1,10 @@
+# Problems
+
+- [ ] Audioserve in mobile can't access the server
+- [ ] Root user has a '$' instead of a '#'
+
 # Development
 
-- [ ] Write software to run kindlegen
 - [ ] Create new homepage with apps, graphs (CPU, RAM...), last backup date, start/stop services, and news
   - Check last backup date
   - Each directory size
