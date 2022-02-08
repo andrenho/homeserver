@@ -97,6 +97,7 @@ services:
   dlna:
     image: vladgh/minidlna
     container_name: dlna
+    restart: unless-stopped
     volumes:
       - "${VOLUME_DIR}:/media"
     environment:
@@ -145,6 +146,7 @@ services:
     image: lscr.io/linuxserver/plex
     container_name: plex
     network_mode: host
+    restart: unless-stopped
     environment:
       - PUID=${DATA_UID}
       - PGID=${DATA_GID}
@@ -161,6 +163,7 @@ services:
   homepage:
     image: dragas/thttpd
     container_name: homepage
+    restart: unless-stopped
     volumes:
       - "./homepage:/var/www/http:ro"
   
@@ -207,6 +210,7 @@ services:
   explorer:
     image: filebrowser/filebrowser
     container_name: explorer
+    restart: unless-stopped
     environment:
       - PUID=${DATA_UID}
       - PGID=${DATA_GID}
@@ -334,24 +338,6 @@ services:
       - POSTGRES_USER=db_user
       - POSTGRES_DB=stringer
   
-  #dev:
-  #  build: dev
-  #  container_name: dev
-  #  restart: unless-stopped
-  #  hostname: dev
-  #  volumes:
-  #    - "${HOME}/homeserver/dev:/docker-host"
-  #    - "${HOME}/volume/dev:/home/dev"
-  #  ports:
-  #    - "6969:22"
-  #    - "7000:7000"
-  #    - "7001:7001"
-  #    - "7002:7002"
-  #    - "7003:7003"
-  #    - "7080:7080"
-  #    - "7081:7081"
-  
-
   
   #sonarr:
   #  image: lscr.io/linuxserver/sonarr
