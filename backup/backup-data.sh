@@ -7,7 +7,7 @@ BACKUP_FILE=~/data-$(date -I).tar.bz2
 # compress data - don't kill the script if files were modified during compress
 
 set +e
-tar --exclude plex --exclude reader/cache -cvjf $BACKUP_FILE $DATA_DIR
+tar --exclude plex --exclude reader -cvjf $BACKUP_FILE $DATA_DIR
 exitcode=$?
 
 if [ "$exitcode" != "1" ] && [ "$exitcode" != "0" ]; then
