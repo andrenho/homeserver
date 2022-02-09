@@ -2,7 +2,7 @@
 
 - [X] Root user has a '$' instead of a '#'
 - [ ] Turn off screen
-- [ ] Not all services are auto-starting
+- [X] Not all services are auto-starting
 - [ ] Audioserve in mobile can't access the server
 
 # Services
