@@ -273,6 +273,21 @@ services:
       - "${DATA_DIR}/wiki:/config"
     restart: unless-stopped
 
+  emulators:
+    image: lscr.io/linuxserver/emulatorjs
+    container_name: emulators
+    environment:
+      - PUID=${DATA_UID}
+      - PGID=${DATA_GID}
+      - TZ=America/Chicago
+    ports:
+      - "${P}81:80/tcp"
+      - "${P}3000:3000/tcp"
+    volumes:
+      - "${DATA_DIR}/emulators/config:/config"
+      - "${VOLUME_DIR}/roms:/data"
+    restart: unless-stopped
+
   rss:
     # image: mockdeep/stringer:0.1
     image: mockdeep/stringer
@@ -323,7 +338,7 @@ services:
       - NET_ADMIN
     #network_mode: host
     restart: unless-stopped
-  
+
   # 
   # Support services
   #
