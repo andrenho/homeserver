@@ -105,7 +105,7 @@ services:
       - MINIDLNA_FRIENDLY_NAME=HomeServer
       - PUID=${DATA_UID}
       - GUID=${DATA_GID}
-      - TZ=America/Sao_Paulo
+      - TZ=America/Chicago
     network_mode: host
 
   mqtt:
@@ -172,23 +172,23 @@ services:
     container_name: hello
     restart: unless-stopped
       
-  torrent:
-    image: cr.hotio.dev/hotio/qbittorrent
-    container_name: torrent
-    restart: unless-stopped
-    environment:
-      - PUID=${DATA_UID}
-      - GUID=${DATA_GID}
-      - UMASK=002
-      - TZ=America/Sao_Paulo
-    volumes:
-      - "${DATA_DIR}/torrent:/config"
-      - "${VOLUME_DIR}/downloads:/downloads"
-      - "${VOLUME_DIR}/movies:/movies"
-      - "${VOLUME_DIR}/tv:/tv"
-      - "${VOLUME_DIR}/books:/books"
-      - "${VOLUME_DIR}/audiobooks:/audiobooks"
-  
+#  torrent:
+#    image: cr.hotio.dev/hotio/qbittorrent
+#    container_name: torrent
+#    restart: unless-stopped
+#    environment:
+#      - PUID=${DATA_UID}
+#      - GUID=${DATA_GID}
+#      - UMASK=002
+#      - TZ=America/Chicago
+#    volumes:
+#      - "${DATA_DIR}/torrent:/config"
+#      - "${VOLUME_DIR}/downloads:/downloads"
+#      - "${VOLUME_DIR}/movies:/movies"
+#      - "${VOLUME_DIR}/tv:/tv"
+#      - "${VOLUME_DIR}/books:/books"
+#      - "${VOLUME_DIR}/audiobooks:/audiobooks"
+#  
   portainer:
     image: cr.portainer.io/portainer/portainer-ce:latest
     container_name: portainer
@@ -199,7 +199,7 @@ services:
     environment:
       - PUID=${DATA_UID}
       - PGID=${DATA_GID}
-      - TZ=America/Sao_Paulo
+      - TZ=America/Chicago
   
   ssh:
     build: ssh
@@ -214,7 +214,7 @@ services:
     environment:
       - PUID=${DATA_UID}
       - PGID=${DATA_GID}
-      - TZ=America/Sao_Paulo
+      - TZ=America/Chicago
     volumes:
       - "${VOLUME_DIR}:/srv"
       - "${DATA_DIR}/explorer/filebrowser.db:/database.db"
@@ -224,7 +224,7 @@ services:
     image: evanbuss/openbooks
     container_name: openbooks
     restart: unless-stopped
-    command: --persist
+    command: --name homeserver --persist
     volumes:
       - "${VOLUME_DIR}/books:/books"
   
@@ -268,13 +268,14 @@ services:
     environment:
       - PUID=${DATA_UID}
       - PGID=${DATA_GID}
-      - TZ=America/Sao_Paulo
+      - TZ=America/Chicago
     volumes:
       - "${DATA_DIR}/wiki:/config"
     restart: unless-stopped
 
   rss:
-    image: mockdeep/stringer:0.1
+    # image: mockdeep/stringer:0.1
+    image: mockdeep/stringer
     container_name: rss
     depends_on:
       - rss-db
@@ -295,7 +296,7 @@ services:
     environment:
       - PUID=${DATA_UID}
       - PGID=${DATA_GID}
-      - TZ=America/Sao_Paulo
+      - TZ=America/Chicago
   
   # 
   # Pi-hole
@@ -309,7 +310,7 @@ services:
       - "${P}53:53/udp"
       - "${P}80:80/tcp"
     environment:
-      - TZ='America/Sao_Paulo'
+      - TZ='America/Chicago'
       - FTLCONF_REPLY_ADDR4=192.168.15.2
       - PIHOLE_DNS_=8.8.8.8;8.8.4.4
       - VIRTUAL_HOST=pihole.${HOST_DOMAIN}
@@ -345,7 +346,7 @@ services:
   #  environment:
   #    - PUID=1000
   #    - PGID=1000
-  #    - TZ=America/Sao_Paulo
+  #    - TZ=America/Chicago
   #  volumes:
   #    - "${HOME}/volume/data/sonarr/config:/config"
   #    - "${HOME}/volume/data/sonarr/tv:/tv"
@@ -358,7 +359,7 @@ services:
   #  environment:
   #    - PUID=1000
   #    - PGID=1000
-  #    - TZ=America/Sao_Paulo
+  #    - TZ=America/Chicago
   #  volumes:
   #    - "${HOME}/volume/data/radarr/config:/config"
   #    - "${HOME}/volume/data/radarr/movies:/movies"
@@ -371,7 +372,7 @@ services:
   #  environment:
   #    - PUID=1000
   #    - PGID=1000
-  #    - TZ=America/Sao_Paulo
+  #    - TZ=America/Chicago
   #  volumes:
   #    - "${HOME}/volume/data/bazarr/config:/config"
   #    - "${HOME}/volume/downloads:/movies"
@@ -383,7 +384,7 @@ services:
   #  environment:
   #    - PUID=1000
   #    - PGID=1000
-  #    - TZ=America/Sao_Paulo
+  #    - TZ=America/Chicago
   #    - MAXMEM=256
   #  volumes:
   #    - "${HOME}/volume/data/ubooquity:/config"

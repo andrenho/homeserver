@@ -1,3 +1,9 @@
+# TODO
+
+- [ ] Configure PiHole
+- [ ] Use VPN
+- [ ] Port forwarding
+
 # Problems
 
 - [X] Root user has a '$' instead of a '#'
@@ -8,6 +14,7 @@
 # Services
 
 - [ ] Cockpit
+- [ ] Samba
 
 # Development
 
@@ -17,10 +24,6 @@
 - [ ] Write/find a decent note taking app
 - [ ] Multi-feeds from news sites
 
-# Problems
-
-- [ ] Audioserve in mobile can't access the server
-
 # Major infrastructre changes
 
 - [ ] Move to IPv6, open port 433 on router
@@ -28,3 +31,7 @@
 # Infrastructure
 
 - [ ] PiKVM
+
+# Games
+
+- [ ] Emulators - MSX, Atari...

@@ -9,7 +9,7 @@ server {
     auth_basic            "off";
 
     location / {
-        proxy_pass        http://192.168.15.2:7080;   # TODO - get dynamicly
+        proxy_pass        http://192.168.4.45:7080;   # TODO - get dynamicly
 
         proxy_set_header  Host $http_host;
         proxy_set_header  X-Real-IP $remote_addr;
@@ -30,7 +30,7 @@ server {
     auth_basic            "off";
 
     location / {
-        proxy_pass        http://192.168.15.2:7081;   # TODO - get dynamicly
+        proxy_pass        http://192.168.4.45:7081;   # TODO - get dynamicly
 
         proxy_set_header  Host $http_host;
         proxy_set_header  X-Real-IP $remote_addr;
