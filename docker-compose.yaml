@@ -172,23 +172,23 @@ services:
     container_name: hello
     restart: unless-stopped
       
-#  torrent:
-#    image: cr.hotio.dev/hotio/qbittorrent
-#    container_name: torrent
-#    restart: unless-stopped
-#    environment:
-#      - PUID=${DATA_UID}
-#      - GUID=${DATA_GID}
-#      - UMASK=002
-#      - TZ=America/Chicago
-#    volumes:
-#      - "${DATA_DIR}/torrent:/config"
-#      - "${VOLUME_DIR}/downloads:/downloads"
-#      - "${VOLUME_DIR}/movies:/movies"
-#      - "${VOLUME_DIR}/tv:/tv"
-#      - "${VOLUME_DIR}/books:/books"
-#      - "${VOLUME_DIR}/audiobooks:/audiobooks"
-#  
+  torrent:
+    image: cr.hotio.dev/hotio/qbittorrent
+    container_name: torrent
+    restart: unless-stopped
+    environment:
+      - PUID=${DATA_UID}
+      - GUID=${DATA_GID}
+      - UMASK=002
+      - TZ=America/Chicago
+    volumes:
+      - "${DATA_DIR}/torrent:/config"
+      - "${VOLUME_DIR}/downloads:/downloads"
+      - "${VOLUME_DIR}/movies:/movies"
+      - "${VOLUME_DIR}/tv:/tv"
+      - "${VOLUME_DIR}/books:/books"
+      - "${VOLUME_DIR}/audiobooks:/audiobooks"
+  
   portainer:
     image: cr.portainer.io/portainer/portainer-ce:latest
     container_name: portainer

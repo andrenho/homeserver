@@ -1,10 +1,11 @@
 # TODO
 
 - [X] Configure PiHole
-- [ ] Use VPN
+- [X] Use VPN
 - [ ] Port forwarding
 - [ ] Games (web)
 - [ ] Steam
+- [ ] Samba
 
 # Problems
 
